@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Andressa Freire Viana — Currículo médico para residência médica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#F5F0EA; --sand-2:#FBF8F3; --white:#FFFFFF;
+    --graphite:#444444; --ink:#33322F; --muted:#857F77;
+    --sage:#7C9A92; --sage-deep:#5F7A72; --sage-deeper:#516a62;
+    --rose:#D8B3B0; --rose-text:#9C6F6B;
+    --line:rgba(124,154,146,.30); --line-soft:rgba(68,68,68,.10);
+    --shadow:0 1px 2px rgba(68,68,68,.03), 0 18px 40px -28px rgba(68,68,68,.22);
+    --shadow-lift:0 1px 2px rgba(68,68,68,.04), 0 26px 50px -30px rgba(68,68,68,.30);
+    --r:5px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--sand);color:var(--graphite);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:16px;line-height:1.7;font-weight:400;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:rgba(124,154,146,.22);}
+
+  h1,h2,h3{margin:0;color:var(--ink);font-weight:500;}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif;}
+  .baskerville{font-family:"Libre Baskerville",Georgia,serif;}
+
+  .eyebrow{display:flex;align-items:center;gap:13px;
+    font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--sage-deep);margin:0 0 22px;}
+  .eyebrow .num{font-variant-numeric:tabular-nums;color:var(--ink);opacity:.85;}
+  .eyebrow .rule{width:26px;height:1px;background:var(--sage);display:inline-block;flex:0 0 auto;}
+
+  .lead{font-family:"Libre Baskerville",Georgia,serif;
+    font-size:clamp(1.12rem,1.7vw,1.42rem);line-height:1.62;color:var(--graphite);font-weight:400;}
+  .body-note{font-size:1.02rem;line-height:1.78;color:var(--graphite);}
+
+  .container{width:min(var(--maxw),90vw);margin-inline:auto;}
+  .section{padding:clamp(74px,9vw,128px) 0;}
+  .section--white{background:var(--white);}
+  .section-head{max-width:760px;margin-bottom:clamp(40px,5vw,64px);scroll-margin-top:90px;}
+  .section-head h2{font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(2.1rem,3.7vw,3.15rem);line-height:1.07;font-weight:500;}
+  .section-head .lead{margin-top:20px;}
+  .section-head--center{margin-inline:auto;text-align:center;}
+  .section-head--center .eyebrow{justify-content:center;}
+  section[id]{scroll-margin-top:84px;}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;
+    font-family:"Inter",sans-serif;font-size:.95rem;font-weight:500;letter-spacing:.01em;
+    padding:14px 26px;border-radius:var(--r);cursor:pointer;border:1px solid transparent;
+    transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease;
+    line-height:1;white-space:nowrap;}
+  .btn-primary{background:var(--sage-deep);color:#fff;}
+  .btn-primary:hover{background:var(--sage-deeper);transform:translateY(-1px);}
+  .btn-line{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-line:hover{border-color:var(--sage);background:rgba(124,154,146,.07);transform:translateY(-1px);}
+  .btn-sm{padding:11px 18px;font-size:.85rem;}
+  .ico-wa,.ico-arrow{width:18px;height:18px;flex:0 0 auto;}
+  .btn svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  :focus-visible{outline:2px solid var(--sage);outline-offset:3px;border-radius:2px;}
+
+  .site-header{position:sticky;top:0;z-index:50;
+    background:rgba(245,240,234,.78);backdrop-filter:saturate(120%) blur(10px);
+    border-bottom:1px solid transparent;transition:border-color .3s ease,background .3s ease;}
+  .site-header.scrolled{border-bottom-color:var(--line);background:rgba(245,240,234,.92);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px;}
+  .wordmark{display:flex;align-items:baseline;gap:10px;}
+  .wordmark b{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.28rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);line-height:1;}
+  .wordmark span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .nav-links{display:flex;gap:30px;}
+  .nav-links a{font-size:.84rem;letter-spacing:.04em;color:var(--graphite);transition:color .2s ease;}
+  .nav-links a:hover{color:var(--sage-deep);}
+  .header-cta{display:flex;align-items:center;gap:14px;}
+
+  .hero{padding:clamp(56px,7vw,104px) 0 clamp(64px,8vw,108px);position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(34px,5vw,76px);align-items:center;}
+  .hero-name{font-family:"Cormorant Garamond",serif;font-weight:500;
+    font-size:clamp(2.7rem,6.2vw,5.3rem);line-height:1.01;letter-spacing:.025em;
+    text-transform:uppercase;color:var(--ink);}
+  .hero-statement{font-family:"Cormorant Garamond",serif;font-weight:500;font-style:italic;
+    font-size:clamp(1.5rem,2.7vw,2.18rem);line-height:1.22;color:var(--graphite);
+    margin-top:26px;max-width:20ch;}
+  .hero-support{font-size:1.05rem;line-height:1.7;color:var(--graphite);margin-top:22px;max-width:42ch;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero-rule{height:1px;background:var(--line);width:64px;margin-top:38px;}
+
+  .portrait{position:relative;width:100%;aspect-ratio:4/5;background:var(--sand-2);
+    border:1px solid var(--line);border-radius:var(--r);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    box-shadow:var(--shadow);}
+  .portrait .ico-portrait{width:62px;height:62px;stroke:var(--sage);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:.85;}
+  .portrait .pcap{font-size:.92rem;letter-spacing:.02em;color:var(--graphite);}
+  .portrait .psub{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:-8px;}
+  .tick{position:absolute;width:14px;height:14px;border:solid var(--sage);opacity:.7;}
+  .tick.t1{top:14px;left:14px;border-width:1px 0 0 1px;}
+  .tick.t2{top:14px;right:14px;border-width:1px 1px 0 0;}
+  .tick.t3{bottom:14px;left:14px;border-width:0 0 1px 1px;}
+  .tick.t4{bottom:14px;right:14px;border-width:0 1px 1px 0;}
+
+  .ico{width:26px;height:26px;stroke:var(--sage-deep);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:clamp(24px,2.6vw,34px);box-shadow:var(--shadow);
+    transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;}
+  .card:hover{border-color:var(--sage);box-shadow:var(--shadow-lift);transform:translateY(-2px);}
+  .card .ico{margin-bottom:18px;}
+  .card h3{font-size:1.08rem;font-weight:600;color:var(--ink);font-family:"Inter",sans-serif;letter-spacing:.005em;margin-bottom:9px;}
+  .card p{font-size:.95rem;line-height:1.62;color:var(--graphite);margin:0;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,24px);}
+
+  .diff{background:var(--white);border:1px solid var(--line-soft);border-radius:var(--r);
+    padding:clamp(22px,2.4vw,30px);display:flex;gap:18px;align-items:flex-start;
+    transition:border-color .25s ease,transform .25s ease;}
+  .diff:hover{border-color:var(--sage);transform:translateY(-2px);}
+  .diff .ico{flex:0 0 auto;width:24px;height:24px;margin-top:2px;}
+  .diff h3{font-size:1.01rem;font-weight:600;color:var(--ink);font-family:"Inter",sans-serif;margin:0 0 6px;}
+  .diff p{font-size:.92rem;line-height:1.58;color:var(--graphite);margin:0;}
+
+  .timeline{max-width:760px;margin-top:8px;}
+  .tl-item{display:grid;grid-template-columns:auto 1fr;gap:26px;padding-bottom:38px;position:relative;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-marker{display:flex;flex-direction:column;align-items:center;}
+  .tl-num{width:46px;height:46px;border:1px solid var(--sage);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;background:var(--white);
+    font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:var(--sage-deep);flex:0 0 auto;}
+  .tl-line{width:1px;flex:1;background:var(--line);margin:8px 0 -34px;}
+  .tl-item:last-child .tl-line{display:none;}
+  .tl-body{padding-top:8px;}
+  .tl-body h3{font-size:1.16rem;font-weight:600;color:var(--ink);font-family:"Inter",sans-serif;margin:0 0 8px;}
+  .tl-body p{font-size:.98rem;line-height:1.65;color:var(--graphite);margin:0;max-width:52ch;}
+
+  /* Folder map (signature) */
+  .folder-map{position:relative;max-width:1000px;margin:0 auto;aspect-ratio:1000/560;}
+  .fm-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible;}
+  .fm-lines path{stroke:var(--sage);stroke-width:1.1;fill:none;opacity:.5;}
+  .fm-lines circle{fill:var(--sage);}
+  .fm-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+    display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .folder-icon{width:clamp(168px,21vw,206px);height:auto;display:block;filter:drop-shadow(0 22px 30px rgba(95,122,114,.18));}
+  .fm-folder-label{margin-top:16px;font-family:"Inter",sans-serif;font-weight:600;font-size:.84rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:9px 16px;box-shadow:var(--shadow);white-space:nowrap;}
+  .fm-node{position:absolute;z-index:2;width:196px;transform:translate(-50%,-50%);
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow);
+    transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;}
+  .fm-node:hover{border-color:var(--sage);transform:translate(-50%,-50%) scale(1.025);box-shadow:var(--shadow-lift);}
+  .fm-node .ico{width:21px;height:21px;flex:0 0 auto;}
+  .fm-node .fm-t{font-size:.86rem;font-weight:500;color:var(--ink);line-height:1.25;}
+  .fm-node.n1{left:16%;top:12%;}
+  .fm-node.n2{left:13.5%;top:37%;}
+  .fm-node.n3{left:13.5%;top:63%;}
+  .fm-node.n4{left:16%;top:88%;}
+  .fm-node.n5{left:84%;top:12%;}
+  .fm-node.n6{left:86.5%;top:37%;}
+  .fm-node.n7{left:86.5%;top:63%;}
+  .fm-node.n8{left:84%;top:88%;}
+
+  /* CV example */
+  .cv-wrap{display:flex;justify-content:center;}
+  .cv-paper{width:min(780px,100%);background:var(--white);border:1px solid var(--line);
+    border-radius:var(--r);box-shadow:var(--shadow-lift);padding:clamp(28px,4vw,52px);position:relative;}
+  .cv-tag{position:absolute;top:18px;right:18px;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--rose-text);background:rgba(216,179,176,.20);border:1px solid rgba(216,179,176,.5);
+    border-radius:3px;padding:5px 10px;font-weight:500;}
+  .cv-head{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:26px;}
+  .cv-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;color:var(--ink);line-height:1.1;}
+  .cv-role{font-family:"Libre Baskerville",serif;font-size:1rem;color:var(--sage-deep);margin-top:6px;}
+  .cv-contact{font-size:.82rem;color:var(--muted);margin-top:10px;letter-spacing:.01em;}
+  .cv-section{margin-bottom:24px;}
+  .cv-section:last-child{margin-bottom:0;}
+  .cv-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);font-weight:600;
+    display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .cv-label::after{content:"";flex:1;height:1px;background:var(--line);}
+  .cv-entry{margin-bottom:13px;}
+  .cv-entry:last-child{margin-bottom:0;}
+  .cv-entry .et{display:flex;justify-content:space-between;gap:16px;align-items:baseline;}
+  .cv-entry .et b{font-size:.97rem;font-weight:600;color:var(--ink);}
+  .cv-entry .et span{font-size:.8rem;color:var(--muted);white-space:nowrap;}
+  .cv-entry p{font-size:.9rem;color:var(--graphite);margin:3px 0 0;line-height:1.5;}
+  .cv-foot{margin-top:24px;font-size:.78rem;color:var(--muted);font-style:italic;line-height:1.5;border-top:1px dashed var(--line);padding-top:16px;}
+  .cv-caption{text-align:center;font-size:.84rem;color:var(--muted);margin-top:22px;font-style:italic;}
+
+  /* Calendar */
+  .calendar{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--white);box-shadow:var(--shadow);}
+  .cal-row{display:grid;grid-template-columns:1.5fr 1.25fr 1fr 1.25fr .9fr;align-items:center;gap:18px;padding:20px clamp(20px,2.4vw,30px);border-bottom:1px solid var(--line);}
+  .cal-row:last-child{border-bottom:none;}
+  .cal-head{background:var(--sand-2);}
+  .cal-head .cal-cell{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .cal-cell{font-size:.92rem;color:var(--graphite);line-height:1.4;}
+  .cal-cell.inst{font-family:"Cormorant Garamond",serif;font-size:1.32rem;font-weight:600;color:var(--ink);}
+  .pill{display:inline-flex;align-items:center;font-size:.74rem;font-weight:500;letter-spacing:.02em;padding:5px 11px;border-radius:20px;}
+  .pill.sage{background:rgba(124,154,146,.16);color:var(--sage-deep);}
+  .pill.rose{background:rgba(216,179,176,.22);color:var(--rose-text);}
+  .cal-note{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:18px;line-height:1.5;}
+
+  /* Results */
+  .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.2vw,30px);}
+  .result{display:flex;gap:16px;align-items:flex-start;padding:6px 0;}
+  .result .ico-check{width:24px;height:24px;flex:0 0 auto;stroke:var(--sage);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-top:3px;}
+  .result h3{font-size:1.02rem;font-weight:600;color:var(--ink);font-family:"Inter",sans-serif;margin:0 0 5px;line-height:1.35;}
+  .result p{font-size:.9rem;color:var(--graphite);margin:0;line-height:1.55;}
+
+  /* Plans */
+  .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,26px);align-items:start;}
+  .plan{background:var(--white);border:1px solid var(--line);border-radius:8px;
+    padding:clamp(28px,3vw,38px);box-shadow:var(--shadow);position:relative;
+    display:flex;flex-direction:column;height:100%;
+    transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;}
+  .plan:hover{border-color:var(--sage);box-shadow:var(--shadow-lift);transform:translateY(-3px);}
+  .plan.featured{border-color:var(--sage);box-shadow:var(--shadow-lift);transform:translateY(-6px);}
+  .plan.featured::before{content:"";position:absolute;inset:0;border-radius:8px;border:1px solid var(--sage);opacity:.5;pointer-events:none;margin:-4px;}
+  .plan-flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#fff;
+    background:var(--sage-deep);padding:6px 14px;border-radius:20px;white-space:nowrap;}
+  .plan-name{font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,2.4vw,2.1rem);font-weight:600;color:var(--ink);line-height:1;}
+  .plan-rule{height:1px;background:var(--line);margin:20px 0;}
+  .plan ul{list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:11px;flex:1;}
+  .plan li{display:flex;gap:11px;align-items:flex-start;font-size:.93rem;color:var(--graphite);line-height:1.45;}
+  .plan li svg{width:18px;height:18px;flex:0 0 auto;stroke:var(--sage);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:3px;}
+  .plan-price{margin-bottom:22px;}
+  .plan-price .pre{font-size:.78rem;letter-spacing:.04em;color:var(--muted);}
+  .plan-price .val{font-size:1.85rem;font-weight:600;color:var(--ink);font-family:"Inter",sans-serif;letter-spacing:-.01em;display:block;margin-top:2px;}
+  .plan .btn{width:100%;justify-content:center;}
+
+  /* Trust */
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,26px);margin-bottom:clamp(22px,2.5vw,30px);}
+  .trust-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,2.8vw,36px);box-shadow:var(--shadow);}
+  .trust-card .tnum{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--sage-deep);display:block;margin-bottom:14px;line-height:1;}
+  .trust-card h3{font-size:1.08rem;font-weight:600;color:var(--ink);font-family:"Inter",sans-serif;margin:0 0 10px;line-height:1.3;}
+  .trust-card p{font-size:.93rem;color:var(--graphite);margin:0;line-height:1.6;}
+  .testimonial-reserved{border:1px dashed var(--line);border-radius:var(--r);background:rgba(255,255,255,.4);padding:clamp(28px,4vw,44px);text-align:center;}
+  .testimonial-reserved .tr-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);font-weight:600;margin-bottom:10px;}
+  .testimonial-reserved p{font-family:"Libre Baskerville",serif;font-style:italic;font-size:1.04rem;color:var(--muted);margin:0 auto;max-width:54ch;line-height:1.55;}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding:24px 4px;font-family:"Inter",sans-serif;font-size:1.06rem;font-weight:500;color:var(--ink);}
+  .faq-icon{position:relative;width:18px;height:18px;flex:0 0 auto;}
+  .faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--sage-deep);transition:transform .3s ease,opacity .3s ease;}
+  .faq-icon::before{top:50%;left:0;width:100%;height:1.5px;transform:translateY(-50%);}
+  .faq-icon::after{left:50%;top:0;width:1.5px;height:100%;transform:translateX(-50%);}
+  .faq-item.open .faq-icon::after{transform:translateX(-50%) scaleY(0);opacity:0;}
+  .faq-a{overflow:hidden;max-height:0;transition:max-height .35s ease;}
+  .faq-a-inner{padding:0 4px 26px;font-size:.98rem;line-height:1.7;color:var(--graphite);max-width:64ch;}
+
+  /* Institutional */
+  .inst-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(34px,5vw,72px);align-items:center;}
+  .inst-text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.2vw,2.8rem);font-weight:500;line-height:1.08;text-transform:uppercase;letter-spacing:.02em;margin-bottom:28px;}
+  .inst-text p{font-size:1.02rem;line-height:1.82;color:var(--graphite);margin:0 0 19px;max-width:58ch;}
+  .inst-text p:last-child{margin-bottom:0;}
+  .inst-text .first{font-family:"Libre Baskerville",serif;font-size:1.1rem;line-height:1.7;color:var(--ink);}
+  .inst-text .name-hl{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:var(--sage-deep);font-size:1.18em;}
+  .inst-text .inst-closing{font-style:italic;color:var(--sage-deep);}
+  .inst-portrait .portrait{aspect-ratio:3/4;}
+
+  /* Footer */
+  .footer{background:var(--sand-2);border-top:1px solid var(--line);padding:clamp(56px,7vw,88px) 0 clamp(34px,4vw,48px);}
+  .footer-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:48px;}
+  .footer-name{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4vw,3rem);font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);line-height:1;}
+  .footer-tagline{font-size:.86rem;color:var(--muted);margin-top:12px;letter-spacing:.02em;}
+  .footer-contact{display:flex;gap:clamp(28px,4vw,60px);flex-wrap:wrap;margin-bottom:40px;}
+  .fc-block .fc-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);font-weight:600;margin-bottom:8px;}
+  .fc-block a,.fc-block span{font-size:1.05rem;color:var(--ink);}
+  .fc-block a:hover{color:var(--sage-deep);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;}
+  .footer-bottom small{font-size:.78rem;color:var(--muted);letter-spacing:.02em;}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* Responsive */
+  @media(max-width:980px){
+    .grid-3{grid-template-columns:repeat(2,1fr);}
+    .results-grid{grid-template-columns:repeat(2,1fr);}
+    .trust-grid{grid-template-columns:1fr;}
+    .plans-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto;}
+    .plan.featured{transform:none;}
+    .inst-grid{grid-template-columns:1fr;}
+    .inst-portrait{max-width:340px;}
+    .hero-grid{grid-template-columns:1fr;gap:44px;}
+    .hero-right{max-width:380px;}
+    .nav-links{display:none;}
+  }
+  @media(max-width:900px){
+    .folder-map{position:static;aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:13px;max-width:540px;}
+    .fm-lines{display:none;}
+    .fm-center{grid-column:1/-1;position:static;transform:none;margin:0 auto 14px;}
+    .fm-node{position:static;transform:none;width:auto;}
+    .fm-node:hover{transform:translateY(-2px);}
+    .fm-folder-label{white-space:normal;text-align:center;}
+  }
+  @media(max-width:680px){
+    .grid-3,.grid-2,.results-grid{grid-template-columns:1fr;}
+    .header-cta .btn span.lbl{display:none;}
+    .wordmark span{display:none;}
+    .cal-head{display:none;}
+    .cal-row{grid-template-columns:1fr;gap:9px;padding:20px;}
+    .cal-cell{display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .cal-cell::before{content:attr(data-label);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+    .cal-cell.inst{display:block;margin-bottom:6px;}
+    .cal-cell.inst::before{display:none;}
+    .footer-top{align-items:flex-start;}
+  }
+  @media(max-width:420px){ .folder-map{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1!important;transform:none!important;transition:none;}
+    *{transition-duration:.01ms!important;}
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="wordmark" href="#top" aria-label="Andressa Freire Viana — início">
+      <b>Andressa&nbsp;Freire&nbsp;Viana</b>
+      <span>Currículo&nbsp;·&nbsp;Residência</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#recebe">O que você recebe</a>
+      <a href="#planos">Planos</a>
+      <a href="#institucional">Quem desenvolve</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary btn-sm" data-wa href="https://wa.me/5514991457503">
+        <svg class="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
+        <span class="lbl">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-left reveal">
+      <h1 class="hero-name">Andressa<br>Freire Viana</h1>
+      <p class="hero-statement">Sua trajetória acadêmica merece ser apresentada da forma correta.</p>
+      <p class="hero-support">Organização curricular e documental para candidatos à residência médica.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-wa href="https://wa.me/5514991457503">
+          <svg class="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
+          Solicitar pelo WhatsApp
+        </a>
+        <a class="btn btn-line" href="#institucional">
+          Quem desenvolve seu currículo
+          <svg class="ico-arrow" viewBox="0 0 24 24"><path d="M12 5v13M6 12l6 6 6-6"/></svg>
+        </a>
+      </div>
+      <div class="hero-rule"></div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="portrait">
+        <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span>
+        <svg class="ico-portrait" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.4"/><path d="M5.5 19.5c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg>
+        <span class="pcap">Foto profissional da Andressa</span>
+        <span class="psub">Espaço reservado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="contexto">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="num">01</span><span class="rule"></span>Contexto</p>
+      <h2>Por que o currículo importa?</h2>
+      <p class="lead">Em muitos processos seletivos de residência médica, a análise curricular influencia diretamente a classificação final do candidato.</p>
+      <p class="body-note" style="margin-top:18px;max-width:680px;">Atividades acadêmicas, monitorias, pesquisa científica, extensão universitária e produção intelectual costumam compor parte da pontuação dos editais. Uma documentação organizada facilita a apresentação dessas atividades e reduz problemas durante o processo de inscrição.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M9.5 3h5M10.5 3v6.2L5.7 17a1.8 1.8 0 0 0 1.6 2.7h9.4a1.8 1.8 0 0 0 1.6-2.7l-4.8-7.8V3"/><path d="M7.7 14h8.6"/></svg>
+        <h3>Pesquisa Científica</h3>
+        <p>Iniciação científica, projetos e produção acadêmica desenvolvida ao longo da graduação.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 9l9-3.6L21 9l-9 3.6L3 9z"/><path d="M7 10.7V15c0 1.1 2.2 2.4 5 2.4s5-1.3 5-2.4v-4.3"/><path d="M21 9v4"/></svg>
+        <h3>Monitorias</h3>
+        <p>Atividades de monitoria em disciplinas, com registro adequado de carga horária e período.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="2.4"/><circle cx="16" cy="9.2" r="2"/><path d="M4.5 18c0-2.6 2-4.4 4.5-4.4s4.5 1.8 4.5 4.4"/><path d="M14.5 17.6c.1-2 1.5-3.3 3.4-3.3 1.4 0 2.6.8 3.1 2"/></svg>
+        <h3>Ligas Acadêmicas</h3>
+        <p>Participação, diretoria e atividades organizadas no âmbito das ligas acadêmicas.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M8 11l8-3.6M8 13l8 3.6"/></svg>
+        <h3>Extensão</h3>
+        <p>Projetos de extensão universitária e ações desenvolvidas junto à comunidade.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M12 6.2C10 4.9 7.4 4.2 4.8 4.2v13c2.6 0 5.2.7 7.2 2 2-1.3 4.6-2 7.2-2v-13C16.6 4.2 14 4.9 12 6.2z"/><path d="M12 6.2v13"/></svg>
+        <h3>Publicações</h3>
+        <p>Artigos, resumos e capítulos, com a referência apresentada de forma padronizada.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="14.5" r="4.3"/><path d="M9.2 10.8 7 3.5M14.8 10.8 17 3.5M9 4.2l3 2 3-2"/><path d="M12 12.7l.6 1.3 1.4.2-1 1 .25 1.4L12 16.2l-1.25.7.25-1.4-1-1 1.4-.2z"/></svg>
+        <h3>Premiações</h3>
+        <p>Prêmios, menções e reconhecimentos obtidos em eventos e atividades acadêmicas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dificuldades">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="num">02</span><span class="rule"></span>Diagnóstico</p>
+      <h2>O que costuma gerar dificuldade?</h2>
+      <p class="lead">Pontos recorrentes que tornam a organização do currículo mais trabalhosa do que precisaria ser.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="diff">
+        <svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="9.5" height="12.5" rx="1.3" transform="rotate(-9 8.25 12.75)"/><rect x="9.5" y="5" width="9.5" height="12.5" rx="1.3" transform="rotate(8 14.25 11.25)"/></svg>
+        <div><h3>Certificados espalhados</h3><p>Comprovantes em e-mails, pastas e aplicativos diferentes, difíceis de reunir na hora da inscrição.</p></div>
+      </div>
+      <div class="diff">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M7 3.5h6.5L18 8v12.5H7z"/><path d="M13.5 3.5V8H18"/><path d="M9.5 12h7M9.5 15h7M9.5 18h3.5" stroke-dasharray="2.2 2.2"/></svg>
+        <div><h3>Documentação incompleta</h3><p>Atividades sem o certificado correspondente ou com dados que faltam para a comprovação.</p></div>
+      </div>
+      <div class="diff">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3.5 7h3.2l9 10h3.3M3.5 17h3.2l3-3.3M16 7h3.7M18 5l2 2-2 2M18 15l2 2-2 2"/></svg>
+        <div><h3>Falta de organização</h3><p>Material sem um padrão claro, o que dificulta a leitura e a conferência dos documentos.</p></div>
+      </div>
+      <div class="diff">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3"/><path d="M12 7v5.2l3.4 2.1"/></svg>
+        <div><h3>Pouco tempo para estruturar o currículo</h3><p>A rotina de estudos e plantões deixa pouco espaço para organizar documentos com calma.</p></div>
+      </div>
+      <div class="diff">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m19.5 19.5-3.9-3.9"/><path d="M8.6 11l1.7 1.7 3-3.3"/></svg>
+        <div><h3>Dificuldade para identificar o que pontua</h3><p>Dúvidas sobre quais atividades são consideradas e como cada uma é avaliada pela banca.</p></div>
+      </div>
+      <div class="diff">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M7 4.5v5.3a3.5 3.5 0 0 0 3.5 3.5H17M7 19.5v-6.2M14.5 10.5 17.5 13.5l-3 3"/><circle cx="7" cy="4.5" r="1.5"/><circle cx="7" cy="19.5" r="1.5"/></svg>
+        <div><h3>Diferenças entre as bancas</h3><p>Cada processo seletivo adota critérios próprios de pontuação e de apresentação curricular.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="ajuda">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="num">03</span><span class="rule"></span>Processo</p>
+      <h2>Como posso ajudar</h2>
+      <p class="lead">Um percurso simples, do envio dos seus documentos à entrega da pasta completa.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-num">1</div><div class="tl-line"></div></div>
+        <div class="tl-body"><h3>Você envia seus documentos</h3><p>Você reúne seus comprovantes com o apoio de um checklist. Eu recebo todo o material e dou início à organização.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-num">2</div><div class="tl-line"></div></div>
+        <div class="tl-body"><h3>Organização curricular</h3><p>Classifico e estruturo as atividades acadêmicas conforme os critérios do processo seletivo escolhido.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-num">3</div><div class="tl-line"></div></div>
+        <div class="tl-body"><h3>Estruturação dos materiais</h3><p>Monto o currículo mestre e as versões adaptadas, com padronização, hierarquia e clareza de leitura.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker"><div class="tl-num">4</div><div class="tl-line"></div></div>
+        <div class="tl-body"><h3>Entrega da pasta completa</h3><p>Você recebe a Pasta Residência Médica organizada, pronta para acompanhar suas inscrições.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="recebe">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow"><span class="num">04</span><span class="rule"></span>Entrega</p>
+      <h2>O que você recebe</h2>
+      <p class="lead">Tudo reunido em uma única pasta organizada — currículos, documentos e materiais de apoio.</p>
+    </div>
+    <div class="folder-map reveal">
+      <svg class="fm-lines" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path d="M500 280 L160 67"/><path d="M500 280 L135 207"/><path d="M500 280 L135 353"/><path d="M500 280 L160 493"/>
+        <path d="M500 280 L840 67"/><path d="M500 280 L865 207"/><path d="M500 280 L865 353"/><path d="M500 280 L840 493"/>
+        <circle cx="500" cy="280" r="4"/>
+      </svg>
+      <div class="fm-center">
+        <svg class="folder-icon" viewBox="0 0 220 180" role="img" aria-label="Pasta Residência Médica">
+          <rect x="74" y="22" width="86" height="64" rx="5" fill="#FFFFFF" stroke="#7C9A92" stroke-width="1.6"/>
+          <line x1="86" y1="40" x2="148" y2="40" stroke="rgba(68,68,68,.16)" stroke-width="1.4"/>
+          <line x1="86" y1="52" x2="148" y2="52" stroke="rgba(68,68,68,.16)" stroke-width="1.4"/>
+          <line x1="86" y1="64" x2="130" y2="64" stroke="rgba(68,68,68,.16)" stroke-width="1.4"/>
+          <rect x="62" y="34" width="100" height="64" rx="5" fill="#FCFAF7" stroke="#7C9A92" stroke-width="1.6"/>
+          <path d="M30 66 h44 l12 -14 h66 a10 10 0 0 1 10 10 v74 a10 10 0 0 1 -10 10 H30 a10 10 0 0 1 -10 -10 V76 a10 10 0 0 1 10 -10 z" fill="rgba(124,154,146,.16)" stroke="#7C9A92" stroke-width="1.8"/>
+          <path d="M22 92 h176 v52 a10 10 0 0 1 -10 10 H32 a10 10 0 0 1 -10 -10 z" fill="#FFFFFF" stroke="#7C9A92" stroke-width="1.8"/>
+          <line x1="24" y1="92" x2="196" y2="92" stroke="#7C9A92" stroke-width="1.6"/>
+        </svg>
+        <div class="fm-folder-label">Pasta Residência Médica</div>
+      </div>
+      <article class="fm-node n1"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5V7.5H18"/><path d="M9.5 12h7M9.5 15.2h7"/></svg><span class="fm-t">Currículo Mestre</span></article>
+      <article class="fm-node n2"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5V7.5H18"/><path d="M9.5 12.5h7M9.5 15.7h4"/></svg><span class="fm-t">Currículo USP</span></article>
+      <article class="fm-node n3"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5V7.5H18"/><path d="M9.5 12.5h7M9.5 15.7h4"/></svg><span class="fm-t">Currículo UNICAMP</span></article>
+      <article class="fm-node n4"><svg class="ico" viewBox="0 0 24 24"><path d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5V7.5H18"/><path d="M9.5 12.5h7M9.5 15.7h4"/></svg><span class="fm-t">Currículo UNIFESP</span></article>
+      <article class="fm-node n5"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20.5V9l8-5 8 5v11.5"/><path d="M10 20.5v-5h4v5"/><path d="M12 7.5v.01"/></svg><span class="fm-t">Currículo Hospitais Premium</span></article>
+      <article class="fm-node n6"><svg class="ico" viewBox="0 0 24 24"><path d="M6 4h9l3 3v13H6z"/><path d="M8.5 10l1.5 1.5 3-3M8.5 15l1.5 1.5 3-3"/></svg><span class="fm-t">Checklist Documental</span></article>
+      <article class="fm-node n7"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14" rx="2"/><path d="M4 9.5h16M8 3.5v4M16 3.5v4"/></svg><span class="fm-t">Calendário de Editais</span></article>
+      <article class="fm-node n8"><svg class="ico" viewBox="0 0 24 24"><path d="M12 6.2C10.3 5 8.2 4.5 6 4.5v13c2.2 0 4.3.5 6 1.7 1.7-1.2 3.8-1.7 6-1.7v-13c-2.2 0-4.3.5-6 1.7z"/><path d="M12 6.2v13"/></svg><span class="fm-t">Manual Estratégico</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="exemplo">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow"><span class="num">05</span><span class="rule"></span>Amostra</p>
+      <h2>Exemplo de estrutura curricular</h2>
+      <p class="lead">Uma amostra visual, com dados fictícios, para demonstrar como as informações podem ser organizadas com clareza.</p>
+    </div>
+    <div class="cv-wrap reveal">
+      <article class="cv-paper">
+        <span class="cv-tag">Exemplo fictício</span>
+        <header class="cv-head">
+          <div class="cv-name">Marina Almeida Ribeiro</div>
+          <div class="cv-role">Medicina — Universidade Federal de Vale Verde</div>
+          <div class="cv-contact">São Paulo, SP · contato@exemplo.com · (00) 00000-0000 — dados fictícios</div>
+        </header>
+        <div class="cv-section">
+          <div class="cv-label">Formação Acadêmica</div>
+          <div class="cv-entry">
+            <div class="et"><b>Graduação em Medicina</b><span>2019 – 2024</span></div>
+            <p>Universidade Federal de Vale Verde (instituição fictícia, utilizada apenas para demonstração).</p>
+          </div>
+        </div>
+        <div class="cv-section">
+          <div class="cv-label">Atividades Acadêmicas</div>
+          <div class="cv-entry">
+            <div class="et"><b>Monitoria em Clínica Médica</b><span>2022 – 2023</span></div>
+            <p>Departamento de Clínica Médica · 120 horas · seleção por desempenho acadêmico.</p>
+          </div>
+          <div class="cv-entry">
+            <div class="et"><b>Liga Acadêmica de Cardiologia</b><span>2021 – 2023</span></div>
+            <p>Membro efetivo e diretora de pesquisa · organização de cursos e ações de extensão.</p>
+          </div>
+          <div class="cv-entry">
+            <div class="et"><b>Iniciação Científica (PIBIC)</b><span>2022 – 2023</span></div>
+            <p>Projeto "Marcadores inflamatórios na insuficiência cardíaca" · bolsa de iniciação científica.</p>
+          </div>
+          <div class="cv-entry">
+            <div class="et"><b>Apresentação em Congresso</b><span>2023</span></div>
+            <p>XII Congresso de Clínica Médica (fictício) · apresentação oral de trabalho.</p>
+          </div>
+          <div class="cv-entry">
+            <div class="et"><b>Publicação de Resumo</b><span>2023</span></div>
+            <p>Anais do XII Congresso de Clínica Médica (fictício) · resumo expandido.</p>
+          </div>
+          <div class="cv-entry">
+            <div class="et"><b>Projeto de Extensão</b><span>2021 – 2022</span></div>
+            <p>"Saúde na Comunidade" · ações de educação em saúde em unidades básicas.</p>
+          </div>
+        </div>
+        <div class="cv-section">
+          <div class="cv-label">Premiações</div>
+          <div class="cv-entry">
+            <div class="et"><b>Menção honrosa</b><span>2023</span></div>
+            <p>Mostra Científica de Vale Verde (fictícia) · categoria pesquisa clínica.</p>
+          </div>
+        </div>
+        <p class="cv-foot">Documento ilustrativo, com dados fictícios, criado exclusivamente para demonstrar a organização visual das informações. Não representa pessoa real.</p>
+      </article>
+    </div>
+    <p class="cv-caption reveal">A estrutura final é adaptada aos critérios da banca escolhida e aos seus documentos reais.</p>
+  </div>
+</section>
+
+<section class="section" id="calendario">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="num">06</span><span class="rule"></span>Datas</p>
+      <h2>Calendário de editais</h2>
+      <p class="lead">Uma visão organizada das principais datas para acompanhar inscrições, provas e envio de documentos.</p>
+    </div>
+    <div class="calendar reveal">
+      <div class="cal-row cal-head">
+        <div class="cal-cell">Instituição / Banca</div>
+        <div class="cal-cell">Previsão de inscrição</div>
+        <div class="cal-cell">Data da prova</div>
+        <div class="cal-cell">Envio documental</div>
+        <div class="cal-cell">Status</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-cell inst" data-label="">USP-SP</div>
+        <div class="cal-cell" data-label="Inscrição">Prevista para setembro</div>
+        <div class="cal-cell" data-label="Prova">Novembro</div>
+        <div class="cal-cell" data-label="Envio documental"><span class="pill sage">Análise curricular</span></div>
+        <div class="cal-cell" data-label="Status">Previsto</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-cell inst" data-label="">UNICAMP</div>
+        <div class="cal-cell" data-label="Inscrição">Prevista para outubro</div>
+        <div class="cal-cell" data-label="Prova">Novembro</div>
+        <div class="cal-cell" data-label="Envio documental"><span class="pill sage">Currículo / Lattes</span></div>
+        <div class="cal-cell" data-label="Status">Previsto</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-cell inst" data-label="">UNIFESP</div>
+        <div class="cal-cell" data-label="Inscrição">Prevista para outubro</div>
+        <div class="cal-cell" data-label="Prova">Dezembro</div>
+        <div class="cal-cell" data-label="Envio documental"><span class="pill sage">Currículo / Lattes</span></div>
+        <div class="cal-cell" data-label="Status">Previsto</div>
+      </div>
+      <div class="cal-row">
+        <div class="cal-cell inst" data-label="">Hospitais Premium</div>
+        <div class="cal-cell" data-label="Inscrição">Datas variáveis</div>
+        <div class="cal-cell" data-label="Prova">Conforme edital</div>
+        <div class="cal-cell" data-label="Envio documental"><span class="pill rose">Acompanhar edital</span></div>
+        <div class="cal-cell" data-label="Status">A confirmar</div>
+      </div>
+    </div>
+    <p class="cal-note reveal">Datas ilustrativas para fins de demonstração. O calendário final deve ser atualizado conforme os editais oficiais.</p>
+  </div>
+</section>
+
+<section class="section section--white" id="resultados">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="num">07</span><span class="rule"></span>Resultado</p>
+      <h2>Resultados deste trabalho</h2>
+      <p class="lead">O que muda, na prática, quando o currículo e a documentação estão bem organizados.</p>
+    </div>
+    <div class="results-grid reveal">
+      <div class="result"><svg class="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Mais organização documental</h3><p>Todos os comprovantes reunidos, classificados e fáceis de localizar.</p></div></div>
+      <div class="result"><svg class="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Mais segurança durante a inscrição</h3><p>Menos dúvidas e imprevistos no momento de enviar os documentos.</p></div></div>
+      <div class="result"><svg class="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Currículos estruturados profissionalmente</h3><p>Apresentação padronizada, clara e adequada a cada processo seletivo.</p></div></div>
+      <div class="result"><svg class="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Menos risco de perda de pontuação</h3><p>Documentação adequada reduz falhas que poderiam custar pontos por inconsistência.</p></div></div>
+      <div class="result"><svg class="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Maior facilidade para futuras inscrições</h3><p>Com a versão editável, atualizar o currículo se torna simples e rápido.</p></div></div>
+      <div class="result"><svg class="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Apresentação mais clara das atividades</h3><p>Sua trajetória acadêmica fica legível e bem hierarquizada para a banca.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="planos">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow"><span class="num">08</span><span class="rule"></span>Planos</p>
+      <h2>Planos disponíveis</h2>
+      <p class="lead">Três formatos de trabalho, conforme o número de bancas e a profundidade da organização desejada.</p>
+    </div>
+    <div class="plans-grid reveal">
+      <div class="plan">
+        <div class="plan-name">Essencial</div>
+        <div class="plan-rule"></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Mestre</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo para banca específica</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão PDF</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão editável</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Organização de documentos</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
+        </ul>
+        <div class="plan-price"><span class="pre">Por apenas</span><span class="val">R$ 350,00</span></div>
+        <a class="btn btn-line" data-wa data-plan="Essencial" href="https://wa.me/5514991457503">Solicitar pelo WhatsApp</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="plan-flag">Mais escolhido</span>
+        <div class="plan-name">Avançado</div>
+        <div class="plan-rule"></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Mestre</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Dois currículos para banca específica</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Hospitais Premium</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão PDF</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão editável</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Organização de documentos</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
+        </ul>
+        <div class="plan-price"><span class="pre">Por apenas</span><span class="val">R$ 550,00</span></div>
+        <a class="btn btn-primary" data-wa data-plan="Avançado" href="https://wa.me/5514991457503">Solicitar pelo WhatsApp</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-name">Premium</div>
+        <div class="plan-rule"></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Mestre</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo USP</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo UNICAMP</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo UNIFESP</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Hospitais Premium</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão PDF e versão editável</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Organização de documentos</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Manual Estratégico de Currículo</li>
+        </ul>
+        <div class="plan-price"><span class="pre">Por apenas</span><span class="val">R$ 850,00</span></div>
+        <a class="btn btn-line" data-wa data-plan="Premium" href="https://wa.me/5514991457503">Solicitar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="confianca">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow"><span class="num">09</span><span class="rule"></span>Confiança</p>
+      <h2>Confiança construída no detalhe</h2>
+      <p class="lead">Antes de qualquer promessa, o trabalho se apoia em experiência, prática e estudo contínuo.</p>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust-card">
+        <span class="tnum">I</span>
+        <h3>Experiência com conteúdo médico</h3>
+        <p>Anos de trabalho com produção de conteúdo na área médica, ao lado de equipes técnicas e editoriais.</p>
+      </div>
+      <div class="trust-card">
+        <span class="tnum">II</span>
+        <h3>Atuação com análise curricular médica</h3>
+        <p>Vivência prática na avaliação e na organização de currículos para processos seletivos da área da saúde.</p>
+      </div>
+      <div class="trust-card">
+        <span class="tnum">III</span>
+        <h3>Estudo contínuo de editais e critérios de pontuação</h3>
+        <p>Acompanhamento das normas das principais bancas e dos critérios que orientam a análise curricular.</p>
+      </div>
+    </div>
+    <div class="testimonial-reserved reveal">
+      <div class="tr-label">Depoimentos</div>
+      <p>Espaço reservado para depoimentos de clientes, quando autorizados.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white" id="faq">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow"><span class="num">10</span><span class="rule"></span>Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq1">Quais documentos preciso enviar?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq1"><div class="faq-a-inner">Certificados de cursos, monitorias, ligas, pesquisa, extensão, publicações, premiações e demais comprovantes acadêmicos. Logo no início do trabalho, você recebe um checklist para reunir tudo com tranquilidade.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq2">Posso escolher qualquer banca?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq2"><div class="faq-a-inner">Sim. O currículo é estruturado conforme os critérios da banca ou instituição que você indicar. Também é possível preparar versões para mais de um processo seletivo.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq3">Recebo versão editável?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq3"><div class="faq-a-inner">Sim. Além do PDF final, você recebe uma versão editável, para que possa atualizar o material em inscrições futuras.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq4">Qual o prazo de entrega?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq4"><div class="faq-a-inner">O prazo é combinado no início, conforme o volume de documentos e o plano escolhido. Você acompanha cada etapa até a entrega da pasta completa.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq5">O currículo garante aprovação?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq5"><div class="faq-a-inner">Não. O currículo não garante aprovação. O trabalho tem como objetivo organizar e estruturar suas informações de forma clara, profissional e adequada aos critérios documentais de cada processo seletivo.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq6">Posso atualizar meu currículo futuramente?<span class="faq-icon" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq6"><div class="faq-a-inner">Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples — basta acrescentar os novos comprovantes à estrutura já montada.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="institucional">
+  <div class="container">
+    <div class="inst-grid">
+      <div class="inst-portrait reveal">
+        <div class="portrait">
+          <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span>
+          <svg class="ico-portrait" viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.4"/><path d="M5.5 19.5c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg>
+          <span class="pcap">Foto profissional da Andressa</span>
+          <span class="psub">Espaço reservado</span>
+        </div>
+      </div>
+      <div class="inst-text reveal">
+        <p class="eyebrow"><span class="num">11</span><span class="rule"></span>Autoria</p>
+        <h2>Quem desenvolve seu currículo</h2>
+        <p class="first">Meu nome é <span class="name-hl">Andressa Freire Viana</span>. Sou comunicóloga e atuo há mais de seis anos com produção de conteúdo, organização de informações e desenvolvimento de materiais estratégicos.</p>
+        <p>Ao longo da minha trajetória, trabalhei com conteúdo médico em uma startup reconhecida nacionalmente, atuei como Analista Curricular Médico e também como Social Media em agência de marketing. Essas experiências me permitiram desenvolver uma visão detalhada sobre organização documental, comunicação e valorização de trajetórias profissionais.</p>
+        <p>Nos últimos anos, concentrei meus estudos nos processos seletivos de residência médica e nos critérios utilizados pelas principais bancas do país. Passei a analisar editais, sistemas de pontuação e formas de apresentação curricular, buscando compreender como cada atividade acadêmica pode ser organizada e apresentada de maneira clara e consistente.</p>
+        <p>Hoje, cada material é elaborado pessoalmente por mim. Meu trabalho consiste em transformar documentos, certificados e experiências acadêmicas em currículos estruturados, organizados e adequados aos processos seletivos para os quais foram desenvolvidos.</p>
+        <p class="inst-closing">Acredito que uma trajetória construída ao longo de anos merece ser apresentada com o mesmo cuidado dedicado à sua formação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-name">Andressa Freire Viana</div>
+        <div class="footer-tagline">Organização e estruturação de currículos médicos para residência.</div>
+      </div>
+      <a class="btn btn-primary" data-wa href="https://wa.me/5514991457503">
+        <svg class="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
+        Solicitar pelo WhatsApp
+      </a>
+    </div>
+    <div class="footer-contact">
+      <div class="fc-block">
+        <div class="fc-label">WhatsApp</div>
+        <a data-wa href="https://wa.me/5514991457503">(14) 99145-7503</a>
+      </div>
+      <div class="fc-block">
+        <div class="fc-label">E-mail</div>
+        <a href="mailto:andressafreireviana@gmail.com">andressafreireviana@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2025 Andressa Freire Viana. Todos os direitos reservados.</small>
+      <small>Currículo médico · Residência médica</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header=document.getElementById('siteHeader');
+  function onScroll(){ if(window.scrollY>10){header.classList.add('scrolled');}else{header.classList.remove('scrolled');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var PHONE='5514991457503';
+  var nodes=document.querySelectorAll('[data-wa]');
+  for(var i=0;i<nodes.length;i++){
+    var el=nodes[i];
+    var plan=el.getAttribute('data-plan');
+    var msg = plan
+      ? 'Olá, Andressa. Tenho interesse no Plano '+plan+' para organizar meu currículo para residência médica.'
+      : 'Olá, Andressa. Tenho interesse em organizar meu currículo para residência médica.';
+    el.setAttribute('href','https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg));
+    el.setAttribute('target','_blank');
+    el.setAttribute('rel','noopener');
+  }
+
+  var qs=document.querySelectorAll('.faq-q');
+  for(var j=0;j<qs.length;j++){
+    qs[j].addEventListener('click',function(){
+      var item=this.closest('.faq-item');
+      var panel=item.querySelector('.faq-a');
+      if(item.classList.contains('open')){
+        item.classList.remove('open'); panel.style.maxHeight=null; this.setAttribute('aria-expanded','false');
+      } else {
+        item.classList.add('open'); panel.style.maxHeight=panel.scrollHeight+'px'; this.setAttribute('aria-expanded','true');
+      }
+    });
+  }
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    for(var k=0;k<els.length;k++){ io.observe(els[k]); }
+  } else {
+    for(var m=0;m<els.length;m++){ els[m].classList.add('in'); }
+  }
+})();
+</script>
+</body>
+</html>
