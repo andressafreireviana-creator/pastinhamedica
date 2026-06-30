@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 // Ajuste para o domínio final de produção (ou defina NEXT_PUBLIC_SITE_URL).
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pastinhamedica.com.br";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pastinhamedica.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
