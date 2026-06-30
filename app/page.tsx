@@ -550,6 +550,19 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <a
+        className="wa-float"
+        href={whatsappHref()}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale comigo no WhatsApp"
+      >
+        <span className="wa-float-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
+        </span>
+        <span className="wa-float-label">Fale comigo</span>
+      </a>
     </div>
   );
 }

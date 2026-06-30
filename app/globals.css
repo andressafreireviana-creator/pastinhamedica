@@ -319,3 +319,25 @@
   .portrait--image{overflow:hidden;background:var(--white);}
   .portrait-img{object-fit:cover;border-radius:calc(var(--r) - 1px);}
 
+  /* Floating WhatsApp CTA */
+  .wa-float{position:fixed;right:clamp(18px,3vw,32px);bottom:clamp(18px,3vw,32px);z-index:60;
+    display:inline-flex;align-items:center;gap:0;height:58px;padding:0;border-radius:30px;
+    background:var(--sage-deep);color:#fff;box-shadow:var(--shadow-lift);overflow:hidden;
+    transition:padding .3s ease,background .25s ease,transform .25s ease,box-shadow .25s ease;}
+  .wa-float:hover{background:var(--sage-deeper);transform:translateY(-2px);}
+  .wa-float .wa-float-ico{width:58px;height:58px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+  .wa-float .wa-float-ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .wa-float .wa-float-label{max-width:0;white-space:nowrap;font-family:var(--font-inter),sans-serif;
+    font-size:.92rem;font-weight:500;letter-spacing:.01em;opacity:0;
+    transition:max-width .3s ease,opacity .25s ease,padding .3s ease;}
+  .wa-float:hover .wa-float-label,.wa-float:focus-visible .wa-float-label{max-width:200px;opacity:1;padding-right:22px;}
+  .wa-float::before{content:"";position:absolute;inset:0;border-radius:30px;border:1px solid var(--sage);
+    opacity:.6;animation:wa-pulse 2.6s ease-out infinite;pointer-events:none;}
+  @keyframes wa-pulse{0%{transform:scale(1);opacity:.55;}70%{transform:scale(1.18);opacity:0;}100%{opacity:0;}}
+  @media(max-width:680px){
+    .wa-float .wa-float-label{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wa-float::before{animation:none;}
+  }
+
