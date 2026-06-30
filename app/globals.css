@@ -752,3 +752,8 @@
     .card:hover,.diff:hover,.edital-card:hover,.plan:hover{transform:none;}
     .cv-dialog[open]{animation:none;}
   }
+
+  /* CTA humanizada em "Quem monta" */
+  .inst-cta-line{margin:24px 0 0;font-size:1.04rem;color:var(--graphite);font-weight:500;line-height:1.5;}
+  .inst-text .inst-cta{display:inline-flex;margin-top:14px;}
+  .inst-text .sealbadge{display:flex;width:fit-content;margin-top:24px;}

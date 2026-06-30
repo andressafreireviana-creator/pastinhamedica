@@ -107,8 +107,8 @@ export default function Home() {
         <div className="container">
           <div className="hero-offer reveal">
             <p className="eyebrow"><span className="rule"></span>Edital · Banca · Currículo</p>
-            <h1 className="hero-name">Currículo e pasta para residência médica, no padrão do edital</h1>
-            <p className="hero-sub">Trabalho operacional: o Pastinha Médica <b>monta seus currículos</b> e <b>organiza a pasta de documentos</b> conforme o anexo do edital. Padronização e redução de erro, sem glosa por formato. Não é mentoria nem curso.</p>
+            <h1 className="hero-name">Sua trajetória acadêmica merece ser apresentada da forma correta.</h1>
+            <p className="hero-sub">Organização curricular e documental para candidatos à residência médica.</p>
 
             <div className="alert" role="note">
               <svg className="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 21 19H3z" /><path d="M12 10v4.2M12 17.2v.01" /></svg>
@@ -132,7 +132,7 @@ export default function Home() {
             <div className="hero-actions">
               <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
                 <svg className="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
-                Solicitar pelo WhatsApp
+                Fale comigo no WhatsApp
               </a>
               <a className="btn btn-line" href="#checklist">Baixar checklist de documentos</a>
             </div>
@@ -350,7 +350,7 @@ export default function Home() {
             </div>
             <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
               <svg className="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
-              Solicitar pelo WhatsApp
+              Fale comigo no WhatsApp
             </a>
           </div>
           <div className="editais-list reveal">
@@ -386,7 +386,7 @@ export default function Home() {
                 <li>{check}Currículo Lattes (quando exigido ou recomendado)</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 350,00</span></div>
-              <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
+              <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
             </div>
 
             <div className="plan featured p-adv">
@@ -403,7 +403,7 @@ export default function Home() {
                 <li>{check}Checklist da banca personalizado</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 550,00</span></div>
-              <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
+              <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
             </div>
 
             <div className="plan p-prem">
@@ -420,7 +420,7 @@ export default function Home() {
                 <li>{check}Relatório com a pontuação estimada do candidato</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 850,00</span></div>
-              <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
+              <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
             </div>
           </div>
         </div>
@@ -468,13 +468,19 @@ export default function Home() {
             </div>
             <div className="inst-text reveal">
               <h2>Quem monta a sua pastinha</h2>
-              <p className="first">Quem opera o Pastinha Médica é <span className="name-hl">Andressa Freire Viana</span>, comunicóloga com mais de seis anos em organização de informações e materiais técnicos.</p>
-              <p>Trabalhou com conteúdo médico em uma startup nacional, como Analista Curricular Médico e como Social Media em agência. Hoje, o foco são os processos seletivos de residência: editais, pontuação e formato. Cada pasta é montada pessoalmente. Trabalho operacional: <b>não é mentoria nem curso.</b></p>
+              <p className="first">Oi! Eu sou a <span className="name-hl">Andressa Freire Viana</span>. Se você chegou até aqui, é bem provável que esteja se preparando para a residência e queira deixar a documentação impecável, sem perder ponto por um detalhe de formato. É justamente nisso que eu te ajudo.</p>
+              <p>Sou comunicóloga e há mais de seis anos organizo informações e materiais técnicos. Já trabalhei com conteúdo médico em uma startup nacional, como Analista Curricular Médico e como Social Media. Hoje dedico meu tempo a entender os editais, a pontuação e o formato que cada banca exige.</p>
+              <p>Eu mesma monto cada pasta, com cuidado e no padrão que a banca espera. Organizo a sua documentação e estruturo os seus currículos. É trabalho operacional, mão na massa ao seu lado: <b>não é mentoria nem curso.</b></p>
               <ul className="inst-points">
                 <li><span className="rb-check" aria-hidden="true">{check}</span>Experiência com conteúdo médico</li>
                 <li><span className="rb-check" aria-hidden="true">{check}</span>Atuação com análise curricular médica</li>
                 <li><span className="rb-check" aria-hidden="true">{check}</span>Estudo contínuo de editais e critérios de pontuação</li>
               </ul>
+              <p className="inst-cta-line">Quer entender como ficaria a sua pasta? Me chama, sem compromisso.</p>
+              <a className="btn btn-primary inst-cta" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+                <svg className="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
+                Fale comigo!
+              </a>
               <div className="sealbadge">
                 <span className="star" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 4l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7L6.2 9l4.7-.7z"/></svg>
@@ -497,7 +503,7 @@ export default function Home() {
             </div>
             <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
               <svg className="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
-              Solicitar pelo WhatsApp
+              Fale comigo no WhatsApp
             </a>
           </div>
           <div className="footer-contact">
