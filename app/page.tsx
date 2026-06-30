@@ -1,14 +1,32 @@
 import Image from "next/image";
 import { LandingInteractions } from "./landing-interactions";
 import { ChecklistForm } from "./checklist-form";
+import { CvExampleModal } from "./cv-modal";
 
 type PlanName = "Essencial" | "Avançado" | "Premium";
 
 const phoneNumber = "5514991457503";
 
-// Placeholder on-brand em public/andressa.jpg — substitua pelo arquivo real
+// Placeholder on-brand em public/andressa.jpg. Substitua pelo arquivo real
 // (mesmo caminho) que a foto aparece automaticamente.
 const andressaPhotoSrc = "/andressa.jpg";
+
+const editais = [
+  { n: "PSU-MG (AREMG)", t: "Pública · MG" },
+  { n: "USP-SP", t: "Pública · SP" },
+  { n: "USP-RP", t: "Pública · SP" },
+  { n: "UNICAMP", t: "Pública · SP" },
+  { n: "UNIFESP", t: "Pública · SP" },
+  { n: "UNESP", t: "Pública · SP" },
+  { n: "Einstein", t: "Premium · SP" },
+  { n: "Sírio-Libanês", t: "Premium · SP" },
+  { n: "HCPA", t: "Pública · RS" },
+  { n: "HC-UFPR", t: "Pública · PR" },
+  { n: "HC-UFMG", t: "Pública · MG" },
+  { n: "FAMERP", t: "Pública · SP" },
+  { n: "Beneficência Portuguesa (BP)", t: "Premium · SP" },
+  { n: "Hospital Moinhos de Vento", t: "Premium · RS" },
+];
 
 function whatsappHref(plan?: PlanName) {
   const message = plan
@@ -53,13 +71,17 @@ function PortraitPlaceholder() {
   );
 }
 
+const check = (
+  <svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2" /></svg>
+);
+
 export default function Home() {
   return (
     <div id="top">
       <LandingInteractions />
       <header className="site-header" id="siteHeader">
         <div className="container header-inner">
-          <a className="wordmark" href="#top" aria-label="Pastinha Médica — início">
+          <a className="wordmark" href="#top" aria-label="Pastinha Médica, início">
             <span className="wordmark-ico" aria-hidden="true"><span></span><span></span></span>
             <b>Pastinha&nbsp;Médica</b>
           </a>
@@ -78,7 +100,7 @@ export default function Home() {
           </div>
         </div>
       </header>
-      
+
       <main id="conteudo">
 
       <section className="hero hero--offer" aria-label="Apresentação">
@@ -86,13 +108,13 @@ export default function Home() {
           <div className="hero-offer reveal">
             <p className="eyebrow"><span className="rule"></span>Edital · Banca · Currículo</p>
             <h1 className="hero-name">Currículo e pasta para residência médica, no padrão do edital</h1>
-            <p className="hero-sub">Trabalho operacional: o Pastinha Médica <b>monta seus currículos</b> e <b>organiza a pasta de documentos</b> conforme o anexo do edital — padronização e redução de erro, sem glosa por formato. Não é mentoria nem curso.</p>
+            <p className="hero-sub">Trabalho operacional: o Pastinha Médica <b>monta seus currículos</b> e <b>organiza a pasta de documentos</b> conforme o anexo do edital. Padronização e redução de erro, sem glosa por formato. Não é mentoria nem curso.</p>
 
             <div className="alert" role="note">
               <svg className="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 21 19H3z" /><path d="M12 10v4.2M12 17.2v.01" /></svg>
               <div>
                 <span className="alert-label">Atenção · editais 2026</span>
-                <p><b>As inscrições começam a chegar.</b> USP, UNICAMP e UNIFESP costumam abrir entre setembro e outubro. Pasta pronta antes do edital evita correria — e perda de pontos por formato.</p>
+                <p><b>As inscrições começam a chegar.</b> USP, UNICAMP e UNIFESP costumam abrir entre setembro e outubro. Pasta pronta antes do edital evita correria e perda de pontos por formato.</p>
               </div>
             </div>
 
@@ -113,32 +135,23 @@ export default function Home() {
                 Solicitar pelo WhatsApp
               </a>
               <a className="btn btn-line" href="#checklist">Baixar checklist de documentos</a>
-              <a className="btn btn-line" href="#editais">Ver mapa dos editais</a>
             </div>
 
             <div className="hero-rule"></div>
-            <dl className="proof-bar" aria-label="Destaques do trabalho">
-              <div className="proof-item">
-                <dt className="sr-only">Bancas atendidas</dt>
-                <dd><b>USP · UNICAMP · UNIFESP</b><span>Versões por banca específica</span></dd>
+            <div className="hero-foot">
+              <div className="hero-banks">
+                <span className="hb-label">Para as principais bancas e instituições</span>
+                <p className="hb-list">UNICAMP, UNIFESP, USP-SP/RP, UFMG e muitas outras…</p>
               </div>
-              <div className="proof-item">
-                <dt className="sr-only">Entregáveis na pasta</dt>
-                <dd><b>9 itens</b><span>Currículos, checklist e calendário</span></dd>
-              </div>
-              <div className="proof-item">
-                <dt className="sr-only">Formatos</dt>
-                <dd><b>PDF + editável</b><span>Atualize quando precisar</span></dd>
-              </div>
-            </dl>
+              <a className="btn btn-line" href="#editais">Consultar</a>
+            </div>
           </div>
         </div>
       </section>
-      
+
       <section className="section section--white" id="contexto">
         <div className="container">
           <div className="section-head reveal">
-            <p className="eyebrow"><span className="num">01</span><span className="rule"></span>Contexto</p>
             <h2>Por que o currículo importa?</h2>
             <p className="lead">Em muitos processos seletivos de residência médica, a análise curricular influencia diretamente a classificação final do candidato.</p>
             <p className="body-note context-note">Atividades acadêmicas, monitorias, pesquisa científica, extensão universitária e produção intelectual costumam compor parte da pontuação dos editais. Uma documentação organizada facilita a apresentação dessas atividades e reduz problemas durante o processo de inscrição.</p>
@@ -175,13 +188,20 @@ export default function Home() {
               <p>Prêmios, menções e reconhecimentos obtidos em eventos e atividades acadêmicas.</p>
             </div>
           </div>
+          <div className="result-band reveal">
+            <span className="rb-label">O que muda, na prática</span>
+            <ul className="rb-list">
+              <li><span className="rb-check" aria-hidden="true">{check}</span>Documentação reunida e fácil de localizar</li>
+              <li><span className="rb-check" aria-hidden="true">{check}</span>Menos risco de glosa por formato</li>
+              <li><span className="rb-check" aria-hidden="true">{check}</span>Apresentação clara e padronizada para a banca</li>
+            </ul>
+          </div>
         </div>
       </section>
-      
+
       <section className="section" id="dificuldades">
         <div className="container">
           <div className="section-head reveal">
-            <p className="eyebrow"><span className="num">02</span><span className="rule"></span>Diagnóstico</p>
             <h2>O que costuma gerar dificuldade?</h2>
             <p className="lead">Pontos recorrentes que tornam a organização do currículo mais trabalhosa do que precisaria ser.</p>
           </div>
@@ -213,11 +233,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       <section className="section section--white" id="ajuda">
         <div className="container">
           <div className="section-head reveal">
-            <p className="eyebrow"><span className="num">03</span><span className="rule"></span>Processo</p>
             <h2>Como posso ajudar</h2>
             <p className="lead">Um percurso simples, do envio dos seus documentos à entrega da pasta completa.</p>
           </div>
@@ -241,13 +260,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       <section className="section" id="recebe">
         <div className="container">
           <div className="section-head section-head--center reveal">
-            <p className="eyebrow"><span className="num">04</span><span className="rule"></span>Entrega</p>
             <h2>O que você recebe</h2>
-            <p className="lead">Tudo reunido em uma única pasta organizada — currículos, documentos e materiais de apoio.</p>
+            <p className="lead">Tudo reunido em uma única pasta organizada: currículos, documentos e materiais de apoio.</p>
           </div>
           <div className="folder-map reveal">
             <svg className="fm-lines" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -257,14 +275,14 @@ export default function Home() {
             </svg>
             <div className="fm-center">
               <svg className="folder-icon" viewBox="0 0 220 180" role="img" aria-label="Pasta Residência Médica">
-                <rect x="74" y="22" width="86" height="64" rx="5" fill="#FFFFFF" stroke="#7C9A92" strokeWidth="1.6"/>
-                <line x1="86" y1="40" x2="148" y2="40" stroke="rgba(68,68,68,.16)" strokeWidth="1.4"/>
-                <line x1="86" y1="52" x2="148" y2="52" stroke="rgba(68,68,68,.16)" strokeWidth="1.4"/>
-                <line x1="86" y1="64" x2="130" y2="64" stroke="rgba(68,68,68,.16)" strokeWidth="1.4"/>
-                <rect x="62" y="34" width="100" height="64" rx="5" fill="#FCFAF7" stroke="#7C9A92" strokeWidth="1.6"/>
-                <path d="M30 66 h44 l12 -14 h66 a10 10 0 0 1 10 10 v74 a10 10 0 0 1 -10 10 H30 a10 10 0 0 1 -10 -10 V76 a10 10 0 0 1 10 -10 z" fill="rgba(124,154,146,.16)" stroke="#7C9A92" strokeWidth="1.8"/>
-                <path d="M22 92 h176 v52 a10 10 0 0 1 -10 10 H32 a10 10 0 0 1 -10 -10 z" fill="#FFFFFF" stroke="#7C9A92" strokeWidth="1.8"/>
-                <line x1="24" y1="92" x2="196" y2="92" stroke="#7C9A92" strokeWidth="1.6"/>
+                <rect x="74" y="22" width="86" height="64" rx="5" fill="#FFFFFF" stroke="#6FA6B8" strokeWidth="1.6"/>
+                <line x1="86" y1="40" x2="148" y2="40" stroke="rgba(46,46,46,.16)" strokeWidth="1.4"/>
+                <line x1="86" y1="52" x2="148" y2="52" stroke="rgba(46,46,46,.16)" strokeWidth="1.4"/>
+                <line x1="86" y1="64" x2="130" y2="64" stroke="rgba(46,46,46,.16)" strokeWidth="1.4"/>
+                <rect x="62" y="34" width="100" height="64" rx="5" fill="#F7F9FA" stroke="#6FA6B8" strokeWidth="1.6"/>
+                <path d="M30 66 h44 l12 -14 h66 a10 10 0 0 1 10 10 v74 a10 10 0 0 1 -10 10 H30 a10 10 0 0 1 -10 -10 V76 a10 10 0 0 1 10 -10 z" fill="rgba(111,166,184,.16)" stroke="#2F5D62" strokeWidth="1.8"/>
+                <path d="M22 92 h176 v52 a10 10 0 0 1 -10 10 H32 a10 10 0 0 1 -10 -10 z" fill="#FFFFFF" stroke="#2F5D62" strokeWidth="1.8"/>
+                <line x1="24" y1="92" x2="196" y2="92" stroke="#2F5D62" strokeWidth="1.6"/>
               </svg>
               <div className="fm-folder-label">Pasta Residência Médica</div>
             </div>
@@ -277,15 +295,17 @@ export default function Home() {
             <article className="fm-node n7"><svg className="ico" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14" rx="2"/><path d="M4 9.5h16M8 3.5v4M16 3.5v4"/></svg><span className="fm-t">Calendário de Editais</span></article>
             <article className="fm-node n8"><svg className="ico" viewBox="0 0 24 24"><path d="M12 6.2C10.3 5 8.2 4.5 6 4.5v13c2.2 0 4.3.5 6 1.7 1.7-1.2 3.8-1.7 6-1.7v-13c-2.2 0-4.3.5-6 1.7z"/><path d="M12 6.2v13"/></svg><span className="fm-t">Manual Estratégico</span></article>
           </div>
+          <div className="recebe-cta reveal">
+            <CvExampleModal />
+          </div>
         </div>
       </section>
 
       <section className="section section--cool" id="checklist">
         <div className="container">
           <div className="section-head section-head--center reveal">
-            <p className="eyebrow"><span className="num">05</span><span className="rule"></span>Checklist</p>
             <h2>Checklist de documentos da pasta</h2>
-            <p className="lead">A lista operacional do que você precisa reunir e entregar — com o detalhe de cada item. Baixe o PDF completo deixando seu contato.</p>
+            <p className="lead">A lista operacional do que você precisa reunir e entregar, com o detalhe de cada item. Baixe o PDF completo deixando seu contato.</p>
           </div>
           <div className="checklist-grid reveal">
             <div className="checklist-preview">
@@ -317,75 +337,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--white" id="exemplo">
-        <div className="container">
-          <div className="section-head section-head--center reveal">
-            <p className="eyebrow"><span className="num">06</span><span className="rule"></span>Amostra</p>
-            <h2>Exemplo de estrutura curricular</h2>
-            <p className="lead">Uma amostra visual, com dados fictícios, para demonstrar como as informações podem ser organizadas com clareza.</p>
-          </div>
-          <div className="cv-wrap reveal">
-            <article className="cv-paper">
-              <span className="cv-tag">Exemplo fictício</span>
-              <header className="cv-head">
-                <div className="cv-name">Marina Almeida Ribeiro</div>
-                <div className="cv-role">Medicina — Universidade Federal de Vale Verde</div>
-                <div className="cv-contact">São Paulo, SP · contato@exemplo.com · (00) 00000-0000 — dados fictícios</div>
-              </header>
-              <div className="cv-section">
-                <div className="cv-label">Formação Acadêmica</div>
-                <div className="cv-entry">
-                  <div className="et"><b>Graduação em Medicina</b><span>2019 – 2024</span></div>
-                  <p>Universidade Federal de Vale Verde (instituição fictícia, utilizada apenas para demonstração).</p>
-                </div>
-              </div>
-              <div className="cv-section">
-                <div className="cv-label">Atividades Acadêmicas</div>
-                <div className="cv-entry">
-                  <div className="et"><b>Monitoria em Clínica Médica</b><span>2022 – 2023</span></div>
-                  <p>Departamento de Clínica Médica · 120 horas · seleção por desempenho acadêmico.</p>
-                </div>
-                <div className="cv-entry">
-                  <div className="et"><b>Liga Acadêmica de Cardiologia</b><span>2021 – 2023</span></div>
-                  <p>Membro efetivo e diretora de pesquisa · organização de cursos e ações de extensão.</p>
-                </div>
-                <div className="cv-entry">
-                  <div className="et"><b>Iniciação Científica (PIBIC)</b><span>2022 – 2023</span></div>
-                  <p>Projeto &quot;Marcadores inflamatórios na insuficiência cardíaca&quot; · bolsa de iniciação científica.</p>
-                </div>
-                <div className="cv-entry">
-                  <div className="et"><b>Apresentação em Congresso</b><span>2023</span></div>
-                  <p>XII Congresso de Clínica Médica (fictício) · apresentação oral de trabalho.</p>
-                </div>
-                <div className="cv-entry">
-                  <div className="et"><b>Publicação de Resumo</b><span>2023</span></div>
-                  <p>Anais do XII Congresso de Clínica Médica (fictício) · resumo expandido.</p>
-                </div>
-                <div className="cv-entry">
-                  <div className="et"><b>Projeto de Extensão</b><span>2021 – 2022</span></div>
-                  <p>&quot;Saúde na Comunidade&quot; · ações de educação em saúde em unidades básicas.</p>
-                </div>
-              </div>
-              <div className="cv-section">
-                <div className="cv-label">Premiações</div>
-                <div className="cv-entry">
-                  <div className="et"><b>Menção honrosa</b><span>2023</span></div>
-                  <p>Mostra Científica de Vale Verde (fictícia) · categoria pesquisa clínica.</p>
-                </div>
-              </div>
-              <p className="cv-foot">Documento ilustrativo, com dados fictícios, criado exclusivamente para demonstrar a organização visual das informações. Não representa pessoa real.</p>
-            </article>
-          </div>
-          <p className="cv-caption reveal">A estrutura final é adaptada aos critérios da banca escolhida e aos seus documentos reais.</p>
-        </div>
-      </section>
-      
       <section className="section" id="editais">
         <div className="container">
           <div className="section-head reveal">
-            <p className="eyebrow"><span className="num">07</span><span className="rule"></span>Datas · urgência</p>
             <h2>Mapa dos principais editais</h2>
-            <p className="lead">As janelas de inscrição se aproximam. Acompanhe as bancas, a previsão de abertura e o que cada uma exige no envio documental.</p>
+            <p className="lead">Vamos mapear os editais. As janelas de inscrição se aproximam e acompanhamos as bancas e instituições com você, do edital ao envio documental.</p>
           </div>
           <div className="editais-cta reveal">
             <div className="ec-txt">
@@ -397,148 +353,71 @@ export default function Home() {
               Solicitar pelo WhatsApp
             </a>
           </div>
-          <div className="calendar reveal">
-            <div className="cal-row cal-head">
-              <div className="cal-cell">Instituição / Banca</div>
-              <div className="cal-cell">Previsão de inscrição</div>
-              <div className="cal-cell">Data da prova</div>
-              <div className="cal-cell">Envio documental</div>
-              <div className="cal-cell">Status</div>
-            </div>
-            <div className="cal-row">
-              <div className="cal-cell inst" data-label="">USP-SP</div>
-              <div className="cal-cell" data-label="Inscrição">Prevista para setembro</div>
-              <div className="cal-cell" data-label="Prova">Novembro</div>
-              <div className="cal-cell" data-label="Envio documental"><span className="pill sage">Análise curricular</span></div>
-              <div className="cal-cell" data-label="Status"><span className="pill rose">Inscrição em breve</span></div>
-            </div>
-            <div className="cal-row">
-              <div className="cal-cell inst" data-label="">UNICAMP</div>
-              <div className="cal-cell" data-label="Inscrição">Prevista para outubro</div>
-              <div className="cal-cell" data-label="Prova">Novembro</div>
-              <div className="cal-cell" data-label="Envio documental"><span className="pill sage">Currículo / Lattes</span></div>
-              <div className="cal-cell" data-label="Status"><span className="pill rose">Inscrição em breve</span></div>
-            </div>
-            <div className="cal-row">
-              <div className="cal-cell inst" data-label="">UNIFESP</div>
-              <div className="cal-cell" data-label="Inscrição">Prevista para outubro</div>
-              <div className="cal-cell" data-label="Prova">Dezembro</div>
-              <div className="cal-cell" data-label="Envio documental"><span className="pill sage">Currículo / Lattes</span></div>
-              <div className="cal-cell" data-label="Status"><span className="pill rose">Inscrição em breve</span></div>
-            </div>
-            <div className="cal-row">
-              <div className="cal-cell inst" data-label="">Hospitais Premium</div>
-              <div className="cal-cell" data-label="Inscrição">Datas variáveis</div>
-              <div className="cal-cell" data-label="Prova">Conforme edital</div>
-              <div className="cal-cell" data-label="Envio documental"><span className="pill sage">Acompanhar edital</span></div>
-              <div className="cal-cell" data-label="Status"><span className="pill ok">A confirmar</span></div>
-            </div>
+          <div className="editais-list reveal">
+            {editais.map((e) => {
+              const premium = e.t.startsWith("Premium");
+              return (
+                <div className="edital-card" key={e.n}>
+                  <b>{e.n}</b>
+                  <span className={`pill ${premium ? "gold" : "sage"}`}>{e.t}</span>
+                </div>
+              );
+            })}
           </div>
-          <p className="cal-note reveal">Datas ilustrativas para fins de demonstração. O calendário final deve ser atualizado conforme os editais oficiais.</p>
-        </div>
-      </section>
-      
-      <section className="section section--cool" id="padrao">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="eyebrow"><span className="num">08</span><span className="rule"></span>Prova de método</p>
-            <h2>Erro de formato × padrão da banca</h2>
-            <p className="lead">O que costuma gerar glosa por formato — e como a pasta organizada apresenta a mesma informação.</p>
-          </div>
-          <div className="compare reveal">
-            <div className="col bad">
-              <div className="col-h"><span className="badge-ico" aria-hidden="true">✕</span>Errado</div>
-              <ul>
-                <li>Experiências fora de ordem</li>
-                <li>Títulos sem comprovação anexa</li>
-                <li>Campos extras não exigidos no edital</li>
-                <li>PDF gerado de print</li>
-              </ul>
-            </div>
-            <div className="col good">
-              <div className="col-h"><span className="badge-ico" aria-hidden="true">✓</span>Correto</div>
-              <ul>
-                <li>Ordem cronológica inversa</li>
-                <li>Cada título pareado ao seu comprovante</li>
-                <li>Apenas os campos do edital</li>
-                <li>PDF pesquisável e nomeado</li>
-              </ul>
-            </div>
-          </div>
+          <p className="cal-note reveal">Lista de referência das principais bancas e instituições. As datas oficiais variam a cada ano e confirmamos cada edital junto com você.</p>
         </div>
       </section>
 
-      <section className="section section--white" id="resultados">
-        <div className="container">
-          <div className="section-head reveal">
-            <p className="eyebrow"><span className="num">09</span><span className="rule"></span>Resultado</p>
-            <h2>Resultados deste trabalho</h2>
-            <p className="lead">O que muda, na prática, quando o currículo e a documentação estão bem organizados.</p>
-          </div>
-          <div className="results-grid reveal">
-            <div className="result"><svg className="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Mais organização documental</h3><p>Todos os comprovantes reunidos, classificados e fáceis de localizar.</p></div></div>
-            <div className="result"><svg className="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Mais segurança durante a inscrição</h3><p>Menos dúvidas e imprevistos no momento de enviar os documentos.</p></div></div>
-            <div className="result"><svg className="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Currículos estruturados profissionalmente</h3><p>Apresentação padronizada, clara e adequada a cada processo seletivo.</p></div></div>
-            <div className="result"><svg className="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Menos risco de perda de pontuação</h3><p>Documentação adequada reduz falhas que poderiam custar pontos por inconsistência.</p></div></div>
-            <div className="result"><svg className="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Maior facilidade para futuras inscrições</h3><p>Com a versão editável, atualizar o currículo se torna simples e rápido.</p></div></div>
-            <div className="result"><svg className="ico-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg><div><h3>Apresentação mais clara das atividades</h3><p>Sua trajetória acadêmica fica legível e bem hierarquizada para a banca.</p></div></div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="section" id="planos">
+      <section className="section section--cool" id="planos">
         <div className="container">
           <div className="section-head section-head--center reveal">
-            <p className="eyebrow"><span className="num">10</span><span className="rule"></span>Planos</p>
             <h2>Planos disponíveis</h2>
             <p className="lead">Três formatos de trabalho, conforme o número de bancas e a profundidade da organização desejada.</p>
           </div>
           <div className="plans-grid reveal">
-            <div className="plan">
+            <div className="plan p-ess">
               <div className="plan-name">Essencial</div>
               <div className="plan-rule"></div>
               <ul>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Mestre</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo para banca específica</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão PDF</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão editável</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Organização de documentos</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
+                <li>{check}Currículo adaptado ao barema</li>
+                <li>{check}Versão PDF</li>
+                <li>{check}Versão editável</li>
+                <li>{check}Organização digital da documentação</li>
+                <li>{check}Currículo Lattes (quando exigido ou recomendado)</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 350,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
             </div>
-      
-            <div className="plan featured">
+
+            <div className="plan featured p-adv">
               <span className="plan-flag">Mais escolhido</span>
               <div className="plan-name">Avançado</div>
               <div className="plan-rule"></div>
               <ul>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Mestre</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Dois currículos para banca específica</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Hospitais Premium</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão PDF</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão editável</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Organização de documentos</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
+                <li>{check}Currículo Mestre (Vitae)</li>
+                <li>{check}Currículo adaptado ao barema (formato de acordo com a banca)</li>
+                <li>{check}Currículo Hospitais Premium</li>
+                <li>{check}Versão PDF</li>
+                <li>{check}Versão editável</li>
+                <li>{check}Organização digital da documentação</li>
+                <li>{check}Checklist da banca personalizado</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 550,00</span></div>
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
             </div>
-      
-            <div className="plan">
+
+            <div className="plan p-prem">
               <div className="plan-name">Premium</div>
               <div className="plan-rule"></div>
               <ul>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Mestre</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo USP</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo UNICAMP</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo UNIFESP</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Currículo Hospitais Premium</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Versão PDF e versão editável</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Organização de documentos</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
-                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Manual Estratégico de Currículo</li>
+                <li>{check}Currículo Mestre (Vitae)</li>
+                <li>{check}Currículo adaptado ao barema (até duas bancas diferentes)</li>
+                <li>{check}Currículo Hospitais Premium</li>
+                <li>{check}Versão PDF</li>
+                <li>{check}Versão editável</li>
+                <li>{check}Organização digital da documentação</li>
+                <li>{check}Checklist da banca personalizado</li>
+                <li>{check}Relatório com a pontuação estimada do candidato</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 850,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
@@ -546,42 +425,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      <section className="section" id="confianca">
-        <div className="container">
-          <div className="section-head section-head--center reveal">
-            <p className="eyebrow"><span className="num">11</span><span className="rule"></span>Confiança</p>
-            <h2>Confiança construída no detalhe</h2>
-            <p className="lead">Antes de qualquer promessa, o trabalho se apoia em experiência, prática e estudo contínuo.</p>
-          </div>
-          <div className="trust-grid reveal">
-            <div className="trust-card">
-              <span className="tnum">I</span>
-              <h3>Experiência com conteúdo médico</h3>
-              <p>Anos de trabalho com produção de conteúdo na área médica, ao lado de equipes técnicas e editoriais.</p>
-            </div>
-            <div className="trust-card">
-              <span className="tnum">II</span>
-              <h3>Atuação com análise curricular médica</h3>
-              <p>Vivência prática na avaliação e na organização de currículos para processos seletivos da área da saúde.</p>
-            </div>
-            <div className="trust-card">
-              <span className="tnum">III</span>
-              <h3>Estudo contínuo de editais e critérios de pontuação</h3>
-              <p>Acompanhamento das normas das principais bancas e dos critérios que orientam a análise curricular.</p>
-            </div>
-          </div>
-          <div className="testimonial-reserved reveal">
-            <div className="tr-label">Depoimentos</div>
-            <p>Espaço reservado para depoimentos de clientes, quando autorizados.</p>
-          </div>
-        </div>
-      </section>
-      
+
       <section className="section section--white" id="faq">
         <div className="container">
           <div className="section-head section-head--center reveal">
-            <p className="eyebrow"><span className="num">12</span><span className="rule"></span>Dúvidas</p>
             <h2>Perguntas frequentes</h2>
           </div>
           <div className="faq reveal">
@@ -607,12 +454,12 @@ export default function Home() {
             </div>
             <div className="faq-item">
               <button className="faq-q" aria-expanded="false" aria-controls="faq6">Posso atualizar meu currículo futuramente?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq6"><div className="faq-a-inner">Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples — basta acrescentar os novos comprovantes à estrutura já montada.</div></div>
+              <div className="faq-a" id="faq6"><div className="faq-a-inner">Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples: basta acrescentar os novos comprovantes à estrutura já montada.</div></div>
             </div>
           </div>
         </div>
       </section>
-      
+
       <section className="section" id="institucional">
         <div className="container">
           <div className="inst-grid">
@@ -620,13 +467,15 @@ export default function Home() {
               <PortraitPlaceholder />
             </div>
             <div className="inst-text reveal">
-              <p className="eyebrow"><span className="num">13</span><span className="rule"></span>Autoria</p>
               <h2>Quem monta a sua pastinha</h2>
-              <p className="first">Quem opera o Pastinha Médica é <span className="name-hl">Andressa Freire Viana</span>, comunicóloga com mais de seis anos em produção de conteúdo, organização de informações e estruturação de materiais técnicos.</p>
-              <p>Trabalhou com conteúdo médico em uma startup reconhecida nacionalmente, atuou como Analista Curricular Médico e como Social Media em agência. Dessas experiências vem o domínio de organização documental e padronização de informação.</p>
-              <p>O foco atual são os processos seletivos de residência médica: leitura de editais, sistemas de pontuação e regras de apresentação curricular — para que cada atividade acadêmica entre na pasta no formato que a banca espera.</p>
-              <p>Cada pasta é montada pessoalmente. O trabalho é operacional: transformar documentos, certificados e experiências em currículos estruturados e em uma pasta organizada, na ordem do anexo do edital. <b>Não é mentoria nem curso.</b></p>
-              <div className="sealbadge" style={{ marginTop: "8px" }}>
+              <p className="first">Quem opera o Pastinha Médica é <span className="name-hl">Andressa Freire Viana</span>, comunicóloga com mais de seis anos em organização de informações e materiais técnicos.</p>
+              <p>Trabalhou com conteúdo médico em uma startup nacional, como Analista Curricular Médico e como Social Media em agência. Hoje, o foco são os processos seletivos de residência: editais, pontuação e formato. Cada pasta é montada pessoalmente. Trabalho operacional: <b>não é mentoria nem curso.</b></p>
+              <ul className="inst-points">
+                <li><span className="rb-check" aria-hidden="true">{check}</span>Experiência com conteúdo médico</li>
+                <li><span className="rb-check" aria-hidden="true">{check}</span>Atuação com análise curricular médica</li>
+                <li><span className="rb-check" aria-hidden="true">{check}</span>Estudo contínuo de editais e critérios de pontuação</li>
+              </ul>
+              <div className="sealbadge">
                 <span className="star" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 4l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2-4.2 2.2.8-4.7L6.2 9l4.7-.7z"/></svg>
                 </span>
@@ -636,9 +485,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       </main>
-      
+
       <footer className="footer">
         <div className="container">
           <div className="footer-top">
@@ -662,7 +511,7 @@ export default function Home() {
             </div>
           </div>
           <div className="footer-bottom">
-            <small>© 2025 Andressa Freire Viana. Todos os direitos reservados.</small>
+            <small>© 2026 Andressa Freire Viana. Todos os direitos reservados.</small>
             <small>Pastinha Médica · Currículo médico · Residência médica</small>
           </div>
         </div>

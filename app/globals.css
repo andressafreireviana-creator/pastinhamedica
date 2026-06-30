@@ -670,3 +670,85 @@
   /* Foco acessível geral reforçado para o brand teal */
   :focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px;}
 
+
+  /* ===================================================================
+     AJUSTES DE REVISÃO — sombreado sutil, mais cor nos planos,
+     novos componentes (hero/editais/modal/resultados). Profissional.
+     =================================================================== */
+
+  /* Sombreado sutil (a borda continua estruturando; a sombra dá profundidade) */
+  .card,.diff,.plan,.cv-paper,.checklist-preview,.lead-form,.alert,
+  .editais-cta,.edital-card,.result-band{
+    box-shadow:0 1px 2px rgba(46,46,46,.04),0 16px 32px -24px rgba(47,93,98,.34);}
+  .card,.diff,.edital-card,.plan{
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);}
+  .card:hover,.diff:hover,.edital-card:hover{
+    transform:translateY(-3px);border-color:var(--sage);
+    box-shadow:0 2px 4px rgba(46,46,46,.05),0 22px 42px -22px rgba(47,93,98,.45);}
+
+  /* Hero — linha de bancas + botão Consultar */
+  .hero-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:16px 24px;margin-top:clamp(26px,4vw,38px);padding-top:clamp(20px,3vw,28px);
+    border-top:1px solid var(--line-soft);}
+  .hero-banks .hb-label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+  .hero-banks .hb-list{margin:0;font-size:1.06rem;color:var(--ink);font-weight:600;letter-spacing:-.005em;}
+  .hero-foot .btn{flex:0 0 auto;}
+
+  /* Faixa de resultados dentro de "Por que o currículo importa?" */
+  .result-band{margin-top:clamp(28px,4vw,40px);border:1px solid var(--line);border-radius:var(--r);
+    background:var(--white);padding:clamp(18px,2.2vw,24px) clamp(20px,2.6vw,28px);}
+  .result-band .rb-label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+  .rb-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 30px;}
+  .rb-list li{display:flex;align-items:center;gap:9px;font-size:.96rem;color:var(--graphite);font-weight:500;}
+  .rb-check{display:inline-flex;flex:0 0 auto;}
+  .rb-check svg{width:18px;height:18px;stroke:var(--success);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* Mapa dos editais — lista de instituições */
+  .editais-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:14px;}
+  .edital-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:16px 18px;display:flex;flex-direction:column;gap:11px;border-left:3px solid var(--sage);}
+  .edital-card b{font-weight:600;color:var(--ink);font-size:1rem;line-height:1.25;}
+  .edital-card .pill{align-self:flex-start;}
+  .pill.gold{background:rgba(184,161,106,.16);color:#7e6a2f;border:1px solid rgba(184,161,106,.45);}
+  .edital-card:has(.pill.gold){border-left-color:var(--gold);}
+
+  /* Planos — mais cor por acento, destaque com leve realce (acessível) */
+  .plan{--accent:var(--sage);border-top:3px solid var(--accent);}
+  .plan.p-ess{--accent:#6FA6B8;}
+  .plan.p-adv{--accent:#2F5D62;}
+  .plan.p-prem{--accent:#B8A16A;}
+  .plan li svg{stroke:var(--accent);}
+  .plan .plan-rule{background:linear-gradient(90deg,var(--accent),transparent);height:2px;}
+  .plan.featured{background:rgba(47,93,98,.045);border-color:var(--line-2);}
+  .plan:hover{transform:translateY(-5px);box-shadow:0 2px 4px rgba(46,46,46,.05),0 26px 48px -24px rgba(47,93,98,.5);}
+
+  /* Botão "Exemplo de estrutura curricular" sob a pasta */
+  .recebe-cta{display:flex;justify-content:center;margin-top:clamp(30px,4vw,48px);}
+  .recebe-cta .btn svg{width:18px;height:18px;}
+
+  /* Modal do exemplo de currículo */
+  .cv-dialog{border:none;padding:0;background:transparent;width:min(820px,94vw);max-height:92vh;
+    margin:auto;color:var(--graphite);}
+  .cv-dialog::backdrop{background:rgba(44,53,56,.55);backdrop-filter:blur(2px);}
+  .cv-dialog-inner{position:relative;max-height:92vh;overflow:auto;padding:6px 6px 10px;}
+  .cv-dialog-close{position:sticky;top:0;float:right;display:flex;width:38px;height:38px;
+    align-items:center;justify-content:center;background:var(--white);border:1px solid var(--line);
+    border-radius:50%;cursor:pointer;color:var(--ink);box-shadow:var(--shadow-lift);z-index:3;}
+  .cv-dialog-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;}
+  .cv-dialog-close:hover{background:var(--sand-2);border-color:var(--sage);}
+  .cv-dialog[open]{animation:dialogIn .28s var(--ease);}
+  @keyframes dialogIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .cv-dialog .cv-caption{color:#cfd8dc;margin-top:16px;}
+
+  /* Pontos do "Quem monta" (antes em Confiança) */
+  .inst-points{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .inst-points li{display:flex;align-items:center;gap:11px;font-size:.99rem;color:var(--graphite);font-weight:500;}
+  .inst-points .rb-check svg{width:19px;height:19px;}
+  .inst-text .sealbadge{margin-top:24px;}
+
+  @media (prefers-reduced-motion: reduce){
+    .card:hover,.diff:hover,.edital-card:hover,.plan:hover{transform:none;}
+    .cv-dialog[open]{animation:none;}
+  }

@@ -18,11 +18,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pastinhamedica.com.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Pastinha Médica — Currículo para residência médica | Andressa Freire Viana",
+    default: "Pastinha Médica · Currículo para residência médica | Andressa Freire Viana",
     template: "%s · Pastinha Médica",
   },
   description:
-    "Organização curricular e documental para candidatos à residência médica. Currículo Mestre, versões por banca (USP, UNICAMP, UNIFESP), checklist e calendário de editais — montados com clareza e padrão profissional.",
+    "Organização curricular e documental para candidatos à residência médica. Currículo Mestre, versões por banca (USP, UNICAMP, UNIFESP), checklist e calendário de editais, montados com clareza e padrão profissional.",
   applicationName: "Pastinha Médica",
   authors: [{ name: "Andressa Freire Viana" }],
   creator: "Andressa Freire Viana",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: siteUrl,
     siteName: "Pastinha Médica",
-    title: "Pastinha Médica — Currículo para residência médica",
+    title: "Pastinha Médica · Currículo para residência médica",
     description:
       "Sua trajetória acadêmica apresentada da forma correta. Organização curricular e documental para candidatos à residência médica.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pastinha Médica — Currículo para residência médica",
+    title: "Pastinha Médica · Currículo para residência médica",
     description:
       "Organização curricular e documental para candidatos à residência médica.",
   },
@@ -88,7 +88,7 @@ const jsonLd = {
       telephone: "+55-14-99145-7503",
       areaServed: "BR",
       inLanguage: "pt-BR",
-      priceRange: "R$350–R$850",
+      priceRange: "R$350 a R$850",
       founder: { "@type": "Person", name: "Andressa Freire Viana" },
       provider: { "@type": "Person", name: "Andressa Freire Viana" },
       makesOffer: [
@@ -141,7 +141,7 @@ const jsonLd = {
         },
         {
           q: "Posso atualizar meu currículo futuramente?",
-          a: "Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples — basta acrescentar os novos comprovantes à estrutura já montada.",
+          a: "Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples: basta acrescentar os novos comprovantes à estrutura já montada.",
         },
       ].map(({ q, a }) => ({
         "@type": "Question",
