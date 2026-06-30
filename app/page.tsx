@@ -83,14 +83,17 @@ export default function Home() {
         <div className="container header-inner">
           <a className="wordmark" href="#top" aria-label="Pastinha Médica, início">
             <span className="wordmark-ico" aria-hidden="true"><span></span><span></span></span>
-            <b>Pastinha&nbsp;Médica</b>
+            <span className="wordmark-text">
+              <b>Pastinha&nbsp;Médica</b>
+              <span className="wordmark-by">Por Andressa Freire Viana</span>
+            </span>
           </a>
           <nav className="nav-links" aria-label="Navegação principal">
-            <a href="#recebe">A pasta</a>
+            <a href="#recebe">A pastinha</a>
             <a href="#checklist">Checklist</a>
             <a href="#editais">Editais</a>
             <a href="#planos">Planos</a>
-            <a href="#institucional">Quem monta</a>
+            <a href="#institucional">Quem sou</a>
           </nav>
           <div className="header-cta">
             <a className="btn btn-primary btn-sm" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
@@ -106,7 +109,6 @@ export default function Home() {
       <section className="hero hero--offer" aria-label="Apresentação">
         <div className="container">
           <div className="hero-offer reveal">
-            <p className="eyebrow"><span className="rule"></span>Edital · Banca · Currículo</p>
             <h1 className="hero-name">Sua trajetória acadêmica merece ser apresentada da forma correta.</h1>
             <p className="hero-sub">Organização curricular e documental para candidatos à residência médica.</p>
 

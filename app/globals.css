@@ -761,3 +761,42 @@
   /* Captura de lead — estados do formulário */
   .lf-success-cta{margin-top:8px !important;}
   .lead-form .btn[disabled]{opacity:.65;cursor:default;}
+
+  /* ===================================================================
+     AJUSTES FINOS (rodada 3)
+     =================================================================== */
+
+  /* Wordmark com assinatura "Por Andressa Freire Viana" */
+  .wordmark{align-items:center;}
+  .wordmark-text{display:flex;flex-direction:column;line-height:1.08;}
+  .wordmark .wordmark-by{font-size:.68rem;letter-spacing:.01em;text-transform:none;font-weight:500;
+    color:var(--muted);margin-top:3px;}
+
+  /* Hero: mais respiro entre titulo/subtitulo e o aviso de editais */
+  .hero-offer .hero-sub{margin-top:20px;}
+  .hero-offer .alert{margin-top:clamp(40px,6vw,62px);}
+
+  /* Quem monta: foto alinhada ao topo do texto */
+  .inst-grid{align-items:start;}
+
+  /* Planos: destaque dourado no recomendado (Avancado); Premium em petroleo */
+  .plan.p-adv{--accent:var(--gold);}
+  .plan.p-prem{--accent:#2F5D62;}
+  .plan.featured{border:2px solid var(--gold);background:rgba(184,161,106,.10);}
+  .plan.featured .plan-flag{background:var(--gold);color:#2b2b28;}
+  .plan.featured:hover{box-shadow:0 2px 4px rgba(46,46,46,.05),0 26px 48px -24px rgba(184,161,106,.6);}
+
+  /* Botao dourado de destaque (exemplo de curriculo) */
+  .btn-gold{background:var(--gold);color:#2b2b28;border:1px solid var(--gold);font-weight:600;
+    box-shadow:0 1px 2px rgba(46,46,46,.05),0 16px 32px -20px rgba(184,161,106,.75);}
+  .btn-gold:hover{background:#a8915c;border-color:#a8915c;transform:translateY(-2px);}
+  .btn-gold svg{stroke:#2b2b28;}
+
+  /* Botao flutuante do WhatsApp: pulso de atencao (3x) ao carregar */
+  .wa-float{animation:waAttention 1.7s ease-out 3;}
+  @keyframes waAttention{
+    0%{box-shadow:var(--shadow-lift),0 0 0 0 rgba(111,166,184,.6);}
+    70%{box-shadow:var(--shadow-lift),0 0 0 18px rgba(111,166,184,0);}
+    100%{box-shadow:var(--shadow-lift),0 0 0 0 rgba(111,166,184,0);}
+  }
+  @media(prefers-reduced-motion:reduce){ .wa-float{animation:none;} }
