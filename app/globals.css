@@ -1,19 +1,35 @@
 @import "tailwindcss";
 
 :root{
-    --sand:#F5F0EA; --sand-2:#FBF8F3; --white:#FFFFFF;
-    --graphite:#42423E; --ink:#2C2B28; --muted:#6F685F;
-    --sage:#7C9A92; --sage-deep:#557067; --sage-deeper:#46615a;
-    --rose:#D8B3B0; --rose-text:#8C5E5A;
-    --line:rgba(124,154,146,.30); --line-soft:rgba(68,68,68,.10);
-    --shadow:0 1px 2px rgba(68,68,68,.03), 0 18px 40px -28px rgba(68,68,68,.22);
-    --shadow-lift:0 1px 2px rgba(68,68,68,.04), 0 26px 50px -30px rgba(68,68,68,.30);
-    --shadow-glow:0 24px 60px -28px rgba(85,112,103,.45);
-    --r:10px; --r-lg:18px; --r-pill:999px; --maxw:1180px;
-    --ring:0 0 0 3px rgba(124,154,146,.42);
-    --grad-sage:linear-gradient(135deg,var(--sage-deep) 0%,var(--sage-deeper) 100%);
-    --grad-sheen:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0));
+    /* ===== Brand Kit — Pastinha Médica · paleta clínica, baixa saturação ===== */
+    --sand:#F7F9FA;        /* off-white · canvas */
+    --sand-2:#E6E9EC;      /* cinza frio · seções operacionais */
+    --white:#FFFFFF;       /* branco · boxes */
+    --graphite:#2E2E2E;    /* grafite · corpo */
+    --ink:#2F5D62;         /* petróleo · títulos/bordas */
+    --muted:#4C6A73;       /* azul ardósia · secundário */
+    --sage:#6FA6B8;        /* azul cirúrgico · destaque/linhas */
+    --sage-deep:#2F5D62;   /* petróleo · ações primárias */
+    --sage-deeper:#244A4E; /* petróleo escuro · hover */
+    --success:#7C9A92;     /* sálvia · correto */
+    --rose:#B45B4C;        /* tijolo · erro/urgência (compat .pill.rose) */
+    --rose-text:#B45B4C;   /* tijolo */
+    --gold:#B8A16A;        /* dourado · selo raro */
+    --line:rgba(47,93,98,.22);   /* hairline petróleo */
+    --line-2:#2F5D62;            /* borda estrutural 2px */
+    --line-soft:rgba(46,46,46,.10);
+    --shadow:0 1px 2px rgba(46,46,46,.04);
+    --shadow-lift:0 6px 18px -12px rgba(47,93,98,.26);
+    --shadow-glow:0 6px 18px -12px rgba(47,93,98,.26);
+    --r:5px; --r-lg:6px; --r-pill:999px; --maxw:1180px;
+    --ring:0 0 0 3px rgba(111,166,184,.45);
+    /* Regra de marca: sem gradiente. Tokens mantidos chapados p/ compatibilidade. */
+    --grad-sage:#2F5D62;
+    --grad-sheen:transparent;
     --ease:cubic-bezier(.2,.65,.25,1);
+    /* Uma só família: serifadas remapeadas para Inter (hierarquia por peso). */
+    --font-cormorant:var(--font-inter);
+    --font-libre:var(--font-inter);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
@@ -336,14 +352,8 @@
     font-size:.92rem;font-weight:500;letter-spacing:.01em;opacity:0;
     transition:max-width .3s ease,opacity .25s ease,padding .3s ease;}
   .wa-float:hover .wa-float-label,.wa-float:focus-visible .wa-float-label{max-width:200px;opacity:1;padding-right:22px;}
-  .wa-float::before{content:"";position:absolute;inset:0;border-radius:30px;border:1px solid var(--sage);
-    opacity:.6;animation:wa-pulse 2.6s ease-out infinite;pointer-events:none;}
-  @keyframes wa-pulse{0%{transform:scale(1);opacity:.55;}70%{transform:scale(1.18);opacity:0;}100%{opacity:0;}}
   @media(max-width:680px){
     .wa-float .wa-float-label{display:none;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    .wa-float::before{animation:none;}
   }
 
   /* ===================================================================
@@ -467,4 +477,196 @@
     body::before{display:none;}
     .nav-links a::after{transition:none;}
   }
+
+  /* ===================================================================
+     BRAND KIT OVERRIDE — Pastinha Médica
+     Clínico, chapado, documento (não card). Sem gradiente, foto ou
+     textura em preenchimentos. A borda faz o trabalho, não a sombra.
+     Esta camada vem por último e prevalece sobre a camada "premium".
+     =================================================================== */
+
+  /* Remove gradientes/aurora/glows da camada anterior (regra de marca) */
+  body::before{content:none;display:none;}
+  .btn-primary::after,.card::after,.plan::after,.hero-right::before{content:none;display:none;}
+
+  /* Tipografia: Inter, hierarquia por peso (700/600/400), tracking fechado */
+  body{font-family:var(--font-inter),-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;}
+  .serif,.baskerville{font-family:var(--font-inter),sans-serif;}
+  .section-head h2,.hero-name,.plan-name,.footer-name,.inst-text h2{
+    font-family:var(--font-inter),sans-serif;font-weight:700;letter-spacing:-.012em;}
+  .cv-name,.tl-num,.cal-cell.inst,.trust-card .tnum,.proof-item b,.fm-folder-label,.plan-price .val{
+    font-family:var(--font-inter),sans-serif;font-weight:600;}
+  .lead{font-family:var(--font-inter),sans-serif;font-style:normal;color:var(--muted);font-weight:400;}
+  .inst-text .first{font-family:var(--font-inter),sans-serif;}
+  .inst-text .name-hl{font-family:var(--font-inter),sans-serif;font-style:normal;font-weight:700;color:var(--ink);font-size:1em;}
+  .inst-text .inst-closing{font-style:normal;color:var(--muted);}
+  .cv-role{font-family:var(--font-inter),sans-serif;}
+
+  /* Header: sólido off-white, hairline (sem vidro pesado) */
+  .site-header{background:rgba(247,249,250,.92);backdrop-filter:saturate(100%) blur(8px);
+    -webkit-backdrop-filter:saturate(100%) blur(8px);border-bottom:1px solid transparent;}
+  .site-header.scrolled{background:rgba(247,249,250,.97);box-shadow:none;border-bottom-color:var(--line);}
+  .wordmark b{font-family:var(--font-inter),sans-serif;font-weight:700;letter-spacing:.01em;text-transform:none;font-size:1.12rem;}
+  .wordmark-ico{width:30px;height:30px;flex:0 0 auto;border:2px solid var(--ink);border-radius:4px;
+    display:flex;flex-direction:column;justify-content:center;gap:3px;padding:7px;}
+  .wordmark-ico span{display:block;height:2px;background:var(--ink);border-radius:2px;}
+  .wordmark-ico span:nth-child(2){width:70%;}
+
+  /* Botões — chapados, cantos quase retos */
+  .btn{border-radius:var(--r);box-shadow:none;}
+  .btn-primary{background:var(--sage-deep);color:#fff;box-shadow:none;}
+  .btn-primary:hover{background:var(--sage-deeper);transform:none;box-shadow:none;}
+  .btn-line{background:var(--white);color:var(--ink);border:2px solid var(--line-2);
+    backdrop-filter:none;padding:13px 24px;}
+  .btn-line:hover{background:var(--sand-2);transform:none;box-shadow:none;border-color:var(--sage-deeper);}
+  .btn svg{stroke-width:1.75;}
+
+  /* Ícones — lineares, ardósia (kit: contorno apenas, traço 1.75) */
+  .ico{stroke:var(--muted);stroke-width:1.6;}
+  .card .ico,.diff .ico,.fm-node .ico{stroke:var(--muted);}
+  .ico-check,.plan li svg{stroke:var(--success);}
+  .eyebrow{color:var(--sage);}      /* azul cirúrgico */
+  .eyebrow .num{color:var(--ink);}
+  .eyebrow .rule{background:var(--sage);}
+
+  /* Cards/diffs/planos/trust — documento: a borda faz o trabalho */
+  .card,.diff,.plan,.trust-card,.cv-paper,.calendar,.fm-node{border-radius:var(--r);box-shadow:none;}
+  .card{box-shadow:var(--shadow);}
+  .card:hover,.diff:hover,.trust-card:hover,.plan:hover{transform:none;box-shadow:none;border-color:var(--line-2);}
+  .card:hover{box-shadow:var(--shadow);}
+  .fm-node:hover{transform:translate(-50%,-50%);box-shadow:none;border-color:var(--line-2);}
+  @media(max-width:900px){ .fm-node:hover{transform:none;} }
+
+  /* Plano em destaque — emfase por borda petróleo 2px (sem glow) */
+  .plan.featured{box-shadow:none;border:2px solid var(--line-2);transform:none;}
+  .plan.featured::before{content:none;display:none;}
+  .plan-flag{background:var(--sage-deep);color:#fff;border-color:transparent;box-shadow:none;
+    letter-spacing:.12em;border-radius:var(--r);}
+
+  /* Pills de status: cirúrgico = info, tijolo = urgência, sálvia = ok */
+  .pill{border-radius:var(--r-pill);border:1px solid transparent;}
+  .pill.sage{background:rgba(111,166,184,.16);color:var(--sage-deeper);}
+  .pill.rose{background:rgba(180,91,76,.14);color:var(--rose-text);border-color:rgba(180,91,76,.3);}
+  .pill.ok{background:rgba(124,154,146,.18);color:#4c6258;}
+  .cal-row:not(.cal-head):hover{background:rgba(111,166,184,.06);}
+  .cv-tag{color:var(--muted);background:var(--sand-2);border-color:var(--line);border-radius:4px;}
+
+  /* Seções alternadas usam cinza frio (kit) em vez de branco puro onde fizer sentido */
+  .section--white{background:var(--white);}
+  .section--cool{background:var(--sand-2);}
+
+  /* Portrait → foto da autora (frame clínico) */
+  .portrait{background:var(--white);border:1px solid var(--line);box-shadow:none;border-radius:var(--r);}
+  .portrait--image{border:2px solid var(--line-2);}
+  .tick{border-color:var(--sage);}
+  .portrait .ico-portrait{stroke:var(--muted);}
+
+  /* ---------- Novos componentes ---------- */
+
+  /* Caixa de alerta / urgência (gatilho dos editais) — borda tijolo 2px */
+  .alert{display:flex;gap:14px;align-items:flex-start;background:var(--white);
+    border:1px solid var(--line);border-left:3px solid var(--rose);border-radius:var(--r);
+    padding:16px 18px;}
+  .alert .ico{stroke:var(--rose);width:22px;height:22px;flex:0 0 auto;margin-top:1px;}
+  .alert-label{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--rose);display:block;margin-bottom:3px;}
+  .alert b{font-weight:600;color:var(--graphite);}
+  .alert p{margin:2px 0 0;font-size:.92rem;color:var(--muted);line-height:1.5;}
+
+  /* Hero operacional (sem retrato) */
+  .hero--offer{padding:clamp(48px,7vw,96px) 0 clamp(40px,6vw,72px);}
+  .hero--offer .container{display:block;}
+  .hero-offer{max-width:760px;}
+  .hero-offer .hero-name{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.05;text-transform:none;
+    letter-spacing:-.02em;margin-bottom:0;}
+  .hero-offer .hero-sub{font-size:clamp(1.05rem,1.6vw,1.32rem);color:var(--muted);line-height:1.55;
+    margin-top:18px;max-width:60ch;font-weight:400;}
+  .hero-offer .alert{margin-top:26px;max-width:620px;}
+  .hero-actions{margin-top:26px;}
+  .hero-actions .btn{padding:14px 24px;}
+
+  /* Grupo de "o que é / não é" — posicionamento operacional */
+  .opbox{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;max-width:680px;}
+  .opbox>div{border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;background:var(--white);}
+  .opbox .op-h{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .opbox .is .op-h{color:var(--sage-deeper);}
+  .opbox .isnot .op-h{color:var(--rose);}
+  .opbox p{margin:0;font-size:.9rem;color:var(--muted);line-height:1.5;}
+  @media(max-width:680px){ .opbox{grid-template-columns:1fr;} }
+
+  /* Botão de mapeamento de editais (linha destacada) */
+  .editais-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+    border:2px solid var(--line-2);border-radius:var(--r);padding:18px 22px;background:var(--white);margin-bottom:28px;}
+  .editais-cta .ec-txt b{display:block;font-weight:600;color:var(--graphite);font-size:1.02rem;}
+  .editais-cta .ec-txt span{font-size:.88rem;color:var(--muted);}
+
+  /* ---------- Checklist (captura de lead) ---------- */
+  .checklist-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,38px);align-items:start;}
+  @media(max-width:880px){ .checklist-grid{grid-template-columns:1fr;} }
+  .checklist-preview{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:clamp(20px,2.5vw,28px);}
+  .checkitem{display:grid;grid-template-columns:auto 1fr;gap:13px;padding:13px 0;border-bottom:1px solid var(--line);}
+  .checkitem:last-child{border-bottom:none;}
+  .checkitem .box{width:18px;height:18px;border:1.5px solid var(--muted);border-radius:3px;margin-top:2px;
+    display:flex;align-items:center;justify-content:center;}
+  .checkitem .box svg{width:12px;height:12px;stroke:var(--success);stroke-width:2.4;fill:none;}
+  .checkitem.done .box{border-color:var(--success);background:rgba(124,154,146,.14);}
+  .checkitem b{font-weight:600;color:var(--graphite);font-size:.96rem;}
+  .checkitem span{display:block;font-size:.82rem;color:var(--muted);margin-top:2px;}
+  .checklist-more{font-size:.84rem;color:var(--muted);margin-top:14px;font-style:normal;}
+
+  .lead-form{background:var(--sand-2);border:1px solid var(--line);border-radius:var(--r);
+    padding:clamp(22px,3vw,30px);}
+  .lead-form h3{font-size:1.16rem;font-weight:700;color:var(--ink);margin:0 0 6px;letter-spacing:-.01em;}
+  .lead-form .lf-sub{font-size:.92rem;color:var(--muted);margin:0 0 20px;line-height:1.5;}
+  .lf-field{margin-bottom:16px;}
+  .lf-field label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--sage-deeper);margin-bottom:7px;}
+  .lf-field input{width:100%;font-family:inherit;font-size:.98rem;color:var(--graphite);
+    background:var(--white);border:1.5px solid var(--line);border-radius:var(--r);padding:12px 14px;
+    transition:border-color .2s var(--ease);}
+  .lf-field input::placeholder{color:#9aa7ab;}
+  .lf-field input:focus{outline:none;border-color:var(--sage-deep);box-shadow:var(--ring);}
+  .lf-field input:focus-visible{outline:none;}
+  .lf-field input[aria-invalid="true"]{border-color:var(--rose);}
+  .lf-error{font-size:.8rem;color:var(--rose);margin-top:6px;font-weight:500;}
+  .lead-form .btn{width:100%;justify-content:center;margin-top:6px;}
+  .lf-note{font-size:.78rem;color:var(--muted);margin-top:14px;line-height:1.5;text-align:center;}
+  .lf-success{display:flex;gap:12px;align-items:flex-start;background:rgba(124,154,146,.12);
+    border:1px solid rgba(124,154,146,.5);border-radius:var(--r);padding:18px;}
+  .lf-success svg{width:22px;height:22px;stroke:var(--success);stroke-width:2;fill:none;flex:0 0 auto;margin-top:1px;}
+  .lf-success b{display:block;color:var(--sage-deeper);font-weight:700;margin-bottom:3px;}
+  .lf-success p{margin:0;font-size:.9rem;color:var(--muted);line-height:1.5;}
+  .lf-success a{color:var(--sage-deep);font-weight:600;text-decoration:underline;}
+
+  /* ---------- Comparativo Errado / Correto (prova de método) ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,22px);}
+  @media(max-width:680px){ .compare{grid-template-columns:1fr;} }
+  .compare .col{border-radius:var(--r);padding:clamp(20px,2.4vw,26px);border:1px solid;}
+  .compare .col.bad{background:rgba(180,91,76,.06);border-color:rgba(180,91,76,.4);}
+  .compare .col.good{background:rgba(124,154,146,.08);border-color:rgba(124,154,146,.5);}
+  .compare .col-h{display:flex;align-items:center;gap:9px;font-size:.72rem;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;}
+  .compare .bad .col-h{color:var(--rose);}
+  .compare .good .col-h{color:var(--sage-deeper);}
+  .compare .col-h .badge-ico{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;color:#fff;font-size:.8rem;flex:0 0 auto;}
+  .compare .bad .badge-ico{background:var(--rose);}
+  .compare .good .badge-ico{background:var(--success);}
+  .compare ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .compare li{display:flex;gap:10px;font-size:.94rem;color:var(--graphite);line-height:1.45;}
+  .compare li::before{font-weight:700;flex:0 0 auto;}
+  .compare .bad li::before{content:"✕";color:var(--rose);}
+  .compare .good li::before{content:"✓";color:var(--success);}
+
+  /* Selo dourado (raro) */
+  .sealbadge{display:inline-flex;align-items:center;gap:11px;border:1.5px solid var(--gold);
+    border-radius:var(--r-pill);padding:9px 18px 9px 14px;background:rgba(184,161,106,.08);}
+  .sealbadge .star{width:26px;height:26px;border:1.5px solid var(--gold);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:var(--gold);flex:0 0 auto;}
+  .sealbadge .sb-t b{display:block;font-weight:700;font-size:.86rem;color:var(--graphite);line-height:1.2;}
+  .sealbadge .sb-t span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+  /* Foco acessível geral reforçado para o brand teal */
+  :focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px;}
 

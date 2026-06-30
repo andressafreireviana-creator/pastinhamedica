@@ -1,27 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter, Libre_Baskerville } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+// Brand kit: uma só família (Inter). A hierarquia vem do peso, nunca de uma
+// segunda fonte. As variáveis --font-cormorant/--font-libre são mapeadas para
+// Inter em globals.css para preservar referências existentes.
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const libre = Libre_Baskerville({
-  variable: "--font-libre",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -83,7 +70,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F5F0EA",
+  themeColor: "#2F5D62",
   colorScheme: "light",
 };
 
@@ -171,10 +158,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${inter.variable} ${cormorant.variable} ${libre.variable}`}
-    >
+    <html lang="pt-BR" className={inter.variable}>
       <body>
         <a className="skip-link" href="#conteudo">
           Pular para o conteúdo
