@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pastinha Médica">
+  <rect x="6" y="6" width="52" height="52" rx="13" fill="#F7F9FA" stroke="#2F5D62" stroke-width="5"/>
+  <rect x="19" y="27" width="26" height="5" rx="2.5" fill="#2F5D62"/>
+  <rect x="19" y="37" width="18" height="5" rx="2.5" fill="#2F5D62"/>
+</svg>
