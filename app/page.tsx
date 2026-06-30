@@ -2,6 +2,7 @@ import Image from "next/image";
 import { LandingInteractions } from "./landing-interactions";
 import { ChecklistForm } from "./checklist-form";
 import { CvExampleModal } from "./cv-modal";
+import { editais } from "./editais-data";
 
 type PlanName = "Essencial" | "Avançado" | "Premium";
 
@@ -11,22 +12,18 @@ const phoneNumber = "5514991457503";
 // (mesmo caminho) que a foto aparece automaticamente.
 const andressaPhotoSrc = "/andressa.jpg";
 
-const editais = [
-  { n: "PSU-MG (AREMG)", t: "Pública · MG" },
-  { n: "USP-SP", t: "Pública · SP" },
-  { n: "USP-RP", t: "Pública · SP" },
-  { n: "UNICAMP", t: "Pública · SP" },
-  { n: "UNIFESP", t: "Pública · SP" },
-  { n: "UNESP", t: "Pública · SP" },
-  { n: "Einstein", t: "Premium · SP" },
-  { n: "Sírio-Libanês", t: "Premium · SP" },
-  { n: "HCPA", t: "Pública · RS" },
-  { n: "HC-UFPR", t: "Pública · PR" },
-  { n: "HC-UFMG", t: "Pública · MG" },
-  { n: "FAMERP", t: "Pública · SP" },
-  { n: "Beneficência Portuguesa (BP)", t: "Premium · SP" },
-  { n: "Hospital Moinhos de Vento", t: "Premium · RS" },
-];
+function statusPill(status?: string) {
+  switch (status) {
+    case "Inscrição em breve":
+      return "rose";
+    case "Inscrições abertas":
+      return "ok";
+    case "Encerrado":
+      return "muted";
+    default:
+      return "ok";
+  }
+}
 
 function whatsappHref(plan?: PlanName) {
   const message = plan
@@ -360,8 +357,23 @@ export default function Home() {
               const premium = e.t.startsWith("Premium");
               return (
                 <div className="edital-card" key={e.n}>
-                  <b>{e.n}</b>
-                  <span className={`pill ${premium ? "gold" : "sage"}`}>{e.t}</span>
+                  <div className="ec-top">
+                    <b>{e.n}</b>
+                    <span className={`pill ${premium ? "gold" : "sage"}`}>{e.t}</span>
+                  </div>
+                  <dl className="ec-dates">
+                    <div><dt>Inscrição</dt><dd>{e.inscricao ?? "A confirmar"}</dd></div>
+                    <div><dt>Prova</dt><dd>{e.prova ?? "A confirmar"}</dd></div>
+                  </dl>
+                  <div className="ec-foot">
+                    <span className={`pill ${statusPill(e.status)}`}>{e.status ?? "A confirmar"}</span>
+                    {e.url && (
+                      <a className="ec-link" href={e.url} target="_blank" rel="noopener noreferrer">
+                        Ver edital
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               );
             })}
