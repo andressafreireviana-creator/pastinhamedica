@@ -320,7 +320,6 @@
   @media(max-width:680px){
     .grid-3,.grid-2,.results-grid{grid-template-columns:1fr;}
     .header-cta .btn span.lbl{display:none;}
-    .wordmark span{display:none;}
     .cal-head{display:none;}
     .cal-row{grid-template-columns:1fr;gap:9px;padding:20px;}
     .cal-cell{display:flex;justify-content:space-between;align-items:center;gap:16px;}
