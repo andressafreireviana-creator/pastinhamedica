@@ -757,3 +757,7 @@
   .inst-cta-line{margin:24px 0 0;font-size:1.04rem;color:var(--graphite);font-weight:500;line-height:1.5;}
   .inst-text .inst-cta{display:inline-flex;margin-top:14px;}
   .inst-text .sealbadge{display:flex;width:fit-content;margin-top:24px;}
+
+  /* Captura de lead — estados do formulário */
+  .lf-success-cta{margin-top:8px !important;}
+  .lead-form .btn[disabled]{opacity:.65;cursor:default;}

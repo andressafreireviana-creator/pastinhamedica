@@ -25,6 +25,7 @@ export function ChecklistForm({ fileHref, phoneNumber }: Props) {
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
   const [errors, setErrors] = useState<Errors>({});
+  const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
 
   function downloadFile() {
@@ -36,24 +37,31 @@ export function ChecklistForm({ fileHref, phoneNumber }: Props) {
     a.remove();
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const whatsappHref = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    `Olá, Andressa! Acabei de baixar o checklist e quero conversar sobre a minha pasta.\nNome: ${nome.trim()}`,
+  )}`;
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const found = validate(nome, email, telefone);
     setErrors(found);
     if (Object.keys(found).length > 0) return;
 
-    // Lead chega à Andressa pelo WhatsApp; o aluno recebe o PDF no mesmo clique.
-    const message =
-      "Olá, Andressa. Quero o checklist de documentos do Pastinha Médica.\n" +
-      `Nome: ${nome.trim()}\n` +
-      `E-mail: ${email.trim()}\n` +
-      `Telefone: ${telefone.trim()}`;
-    window.open(
-      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+    setSending(true);
+    // Captura do lead: enviado automaticamente para o e-mail da Andressa.
+    // É best-effort — mesmo se falhar, o download do PDF acontece.
+    try {
+      await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome: nome.trim(), email: email.trim(), telefone: telefone.trim() }),
+      });
+    } catch {
+      // silencioso: não bloqueia a entrega do checklist
+    }
+
     downloadFile();
+    setSending(false);
     setDone(true);
   }
 
@@ -65,13 +73,20 @@ export function ChecklistForm({ fileHref, phoneNumber }: Props) {
             <path d="M5 12.5l4.3 4.3L19 7.2" />
           </svg>
           <div>
-            <b>Checklist liberado.</b>
+            <b>Checklist liberado!</b>
             <p>
               O download começou automaticamente. Se não baixou,{" "}
               <a href={fileHref} download="checklist-pastinha-medica.pdf">
                 clique aqui para baixar o PDF
               </a>
-              . Seu contato foi encaminhado pelo WhatsApp.
+              .
+            </p>
+            <p className="lf-success-cta">
+              Se quiser adiantar,{" "}
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                fale comigo no WhatsApp
+              </a>
+              . Já recebi seu contato e te chamo em breve.
             </p>
           </div>
         </div>
@@ -151,8 +166,8 @@ export function ChecklistForm({ fileHref, phoneNumber }: Props) {
         )}
       </div>
 
-      <button className="btn btn-primary" type="submit">
-        Baixar checklist em PDF
+      <button className="btn btn-primary" type="submit" disabled={sending}>
+        {sending ? "Enviando…" : "Baixar checklist em PDF"}
       </button>
       <p className="lf-note">
         Usamos seu contato apenas para enviar o checklist e tirar dúvidas sobre a organização da pasta.
