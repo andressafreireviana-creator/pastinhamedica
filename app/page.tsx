@@ -292,25 +292,25 @@ export default function Home() {
               <p className="eyebrow"><span className="rule"></span>Prévia do checklist</p>
               <div className="checkitem done">
                 <span className="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg></span>
-                <div><b>Registro no conselho (CRM)</b><span>Dentro da validade.</span></div>
+                <div><b>01 · Documentos pessoais</b><span>RG, CPF e identificação profissional.</span></div>
               </div>
               <div className="checkitem">
                 <span className="box" aria-hidden="true"></span>
-                <div><b>Comprovantes de título</b><span>Na ordem do anexo do edital.</span></div>
+                <div><b>02 · Formação acadêmica</b><span>Histórico escolar e monitorias.</span></div>
               </div>
               <div className="checkitem">
                 <span className="box" aria-hidden="true"></span>
-                <div><b>Monitorias</b><span>Certificado com carga horária e período.</span></div>
+                <div><b>03 · Atividades complementares</b><span>Congressos, extensões e certificações.</span></div>
               </div>
               <div className="checkitem">
                 <span className="box" aria-hidden="true"></span>
-                <div><b>Iniciação científica e publicações</b><span>Declaração do projeto e referências padronizadas.</span></div>
+                <div><b>04 · Organização digital</b><span>Árvore de diretórios padronizada.</span></div>
               </div>
               <div className="checkitem">
                 <span className="box" aria-hidden="true"></span>
-                <div><b>PDF pesquisável e nomeado</b><span>Sem print, na ordem correta.</span></div>
+                <div><b>05 · Padronização de arquivos</b><span>Nomeação dos PDFs (ANO_Tipo_Descrição).</span></div>
               </div>
-              <p className="checklist-more">+ ligas, extensão, premiações e as regras de formato no PDF completo.</p>
+              <p className="checklist-more">Guia completo de 8 páginas, com cada documento e o passo a passo de organização.</p>
             </div>
             <ChecklistForm fileHref="/checklist-pastinha-medica.pdf" phoneNumber={phoneNumber} />
           </div>
