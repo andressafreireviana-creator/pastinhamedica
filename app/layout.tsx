@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { editais } from "./editais-data";
 import "./globals.css";
 
 // Brand kit: uma só família (Inter). A hierarquia vem do peso, nunca de uma
@@ -22,20 +23,26 @@ export const metadata: Metadata = {
     template: "%s · Pastinha Médica",
   },
   description:
-    "Organização curricular e documental para candidatos à residência médica. Currículo Mestre, versões por banca (USP, UNICAMP, UNIFESP), checklist e calendário de editais, montados com clareza e padrão profissional.",
+    "Currículo médico e organização da pasta de documentos conforme o edital, para a residência médica. Acompanhe inscrições, datas de prova e previsões dos editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais) e monte sua pasta no padrão de cada banca.",
   applicationName: "Pastinha Médica",
   authors: [{ name: "Andressa Freire Viana" }],
   creator: "Andressa Freire Viana",
   publisher: "Andressa Freire Viana",
   category: "education",
   keywords: [
-    "currículo residência médica",
-    "pastinha médica",
+    "currículo médico",
+    "currículo para residência médica",
+    "organização de pasta conforme edital",
+    "organização documental residência médica",
+    "editais de residência médica 2026",
+    "inscrições residência médica",
+    "datas de prova residência médica",
+    "previsão de editais residência médica",
     "análise curricular médica",
     "currículo Lattes residência",
-    "organização documental residência",
-    "currículo USP UNICAMP UNIFESP",
+    "currículo USP UNICAMP UNIFESP UNESP",
     "prova de títulos residência médica",
+    "pastinha médica",
   ],
   alternates: { canonical: "/" },
   formatDetection: { telephone: false, email: false, address: false },
@@ -44,15 +51,15 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: siteUrl,
     siteName: "Pastinha Médica",
-    title: "Pastinha Médica · Currículo para residência médica",
+    title: "Currículo médico e editais de residência | Pastinha Médica",
     description:
-      "Sua trajetória acadêmica apresentada da forma correta. Organização curricular e documental para candidatos à residência médica.",
+      "Currículo médico e organização da pasta de documentos conforme o edital. Acompanhe inscrições, datas e previsões dos editais de residência médica.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pastinha Médica · Currículo para residência médica",
+    title: "Currículo médico e editais de residência | Pastinha Médica",
     description:
-      "Organização curricular e documental para candidatos à residência médica.",
+      "Currículo médico e pasta de documentos no padrão do edital. Inscrições, datas e previsões dos editais de residência médica.",
   },
   robots: {
     index: true,
@@ -89,6 +96,16 @@ const jsonLd = {
       areaServed: "BR",
       inLanguage: "pt-BR",
       priceRange: "R$350 a R$850",
+      serviceType:
+        "Organização de currículo médico e da pasta de documentos para residência médica, conforme o edital",
+      slogan: "Sua trajetória acadêmica apresentada da forma correta.",
+      knowsAbout: [
+        "Editais de residência médica",
+        "Inscrições e datas de prova da residência médica",
+        "Currículo médico",
+        "Organização da pasta de documentos conforme o edital",
+        "Análise curricular médica",
+      ],
       founder: { "@type": "Person", name: "Andressa Freire Viana" },
       provider: { "@type": "Person", name: "Andressa Freire Viana" },
       makesOffer: [
@@ -143,10 +160,31 @@ const jsonLd = {
           q: "Posso atualizar meu currículo futuramente?",
           a: "Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples: basta acrescentar os novos comprovantes à estrutura já montada.",
         },
+        {
+          q: "Quando abrem as inscrições da residência médica?",
+          a: "As datas variam a cada ano e por banca. USP, UNICAMP e UNIFESP costumam abrir as inscrições entre setembro e outubro, com provas entre novembro e dezembro. No mapa de editais do site você acompanha a previsão de inscrição, a data de prova e o link oficial de cada banca.",
+        },
+        {
+          q: "Quais editais de residência médica vocês acompanham?",
+          a: "Acompanhamos os principais editais: PSU-MG (AREMG), USP-SP, USP-RP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês, HCPA, HC-UFPR, HC-UFMG, FAMERP, Beneficência Portuguesa e Hospital Moinhos de Vento, com a pasta de documentos montada conforme cada edital.",
+        },
       ].map(({ q, a }) => ({
         "@type": "Question",
         name: q,
         acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${siteUrl}#editais`,
+      name: "Editais de residência médica acompanhados",
+      description:
+        "Principais editais de residência médica com previsão de inscrições, datas de prova e envio documental.",
+      itemListElement: editais.map((e, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: e.n,
+        url: e.url,
       })),
     },
   ],

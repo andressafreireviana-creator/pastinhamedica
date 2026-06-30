@@ -339,8 +339,8 @@ export default function Home() {
       <section className="section" id="editais">
         <div className="container">
           <div className="section-head reveal">
-            <h2>Mapa dos principais editais</h2>
-            <p className="lead">Vamos mapear os editais. As janelas de inscrição se aproximam e acompanhamos as bancas e instituições com você, do edital ao envio documental.</p>
+            <h2>Editais de residência médica: inscrições, datas e previsões</h2>
+            <p className="lead">Acompanhe as inscrições, as datas de prova e as previsões dos principais editais de residência médica (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e outras bancas) e organize a sua pasta de documentos conforme cada edital.</p>
           </div>
           <div className="editais-cta reveal">
             <div className="ec-txt">
@@ -469,6 +469,14 @@ export default function Home() {
             <div className="faq-item">
               <button className="faq-q" aria-expanded="false" aria-controls="faq6">Posso atualizar meu currículo futuramente?<span className="faq-icon" aria-hidden="true"></span></button>
               <div className="faq-a" id="faq6"><div className="faq-a-inner">Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples: basta acrescentar os novos comprovantes à estrutura já montada.</div></div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq7">Quando abrem as inscrições da residência médica?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq7"><div className="faq-a-inner">As datas variam a cada ano e por banca. USP, UNICAMP e UNIFESP costumam abrir as inscrições entre setembro e outubro, com provas entre novembro e dezembro. No mapa de editais do site você acompanha a previsão de inscrição, a data de prova e o link oficial de cada banca.</div></div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq8">Quais editais de residência médica vocês acompanham?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq8"><div className="faq-a-inner">Acompanhamos os principais editais: PSU-MG (AREMG), USP-SP, USP-RP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês, HCPA, HC-UFPR, HC-UFMG, FAMERP, Beneficência Portuguesa e Hospital Moinhos de Vento, com a pasta de documentos montada conforme cada edital.</div></div>
             </div>
           </div>
         </div>
