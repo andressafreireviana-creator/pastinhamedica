@@ -74,11 +74,12 @@ export default function Home() {
         </div>
       </header>
       
-      <main>
-      
-      <section className="hero">
+      <main id="conteudo">
+
+      <section className="hero" aria-label="Apresentação">
         <div className="container hero-grid">
           <div className="hero-left reveal">
+            <p className="hero-badge"><span className="dot" aria-hidden="true"></span>Currículo para residência médica</p>
             <h1 className="hero-name">Andressa<br />Freire Viana</h1>
             <p className="hero-statement">Sua trajetória acadêmica merece ser apresentada da forma correta.</p>
             <p className="hero-support">Organização curricular e documental para candidatos à residência médica.</p>
@@ -93,6 +94,20 @@ export default function Home() {
               </a>
             </div>
             <div className="hero-rule"></div>
+            <dl className="proof-bar" aria-label="Destaques do trabalho">
+              <div className="proof-item">
+                <dt className="sr-only">Bancas atendidas</dt>
+                <dd><b>USP · UNICAMP · UNIFESP</b><span>Versões por banca específica</span></dd>
+              </div>
+              <div className="proof-item">
+                <dt className="sr-only">Entregáveis na pasta</dt>
+                <dd><b>9 itens</b><span>Currículos, checklist e calendário</span></dd>
+              </div>
+              <div className="proof-item">
+                <dt className="sr-only">Formatos</dt>
+                <dd><b>PDF + editável</b><span>Atualize quando precisar</span></dd>
+              </div>
+            </dl>
           </div>
           <div className="hero-right reveal">
             <PortraitPlaceholder />
@@ -411,7 +426,7 @@ export default function Home() {
                 <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2"/></svg>Checklist documental</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 550,00</span></div>
-              <a className="btn btn-primary" href="https://wa.me/5514991457503">Solicitar pelo WhatsApp</a>
+              <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Solicitar pelo WhatsApp</a>
             </div>
       
             <div className="plan">
