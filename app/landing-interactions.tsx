@@ -57,10 +57,60 @@ export function LandingInteractions() {
       revealElements.forEach((element) => element.classList.add("in"));
     }
 
+    // Scrollspy: highlight the nav link of the section currently in view.
+    const navLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>(".nav-links a[href^='#']"),
+    );
+    const linkById = new Map(
+      navLinks.map((link) => [link.getAttribute("href")?.slice(1) ?? "", link]),
+    );
+    const spiedSections = Array.from(linkById.keys())
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    let spy: IntersectionObserver | null = null;
+
+    if ("IntersectionObserver" in window && spiedSections.length > 0) {
+      const visible = new Set<string>();
+
+      const setActive = () => {
+        let active: string | null = null;
+        for (const id of linkById.keys()) {
+          if (visible.has(id)) {
+            active = id;
+          }
+        }
+        linkById.forEach((link, id) => {
+          if (id === active) {
+            link.setAttribute("aria-current", "true");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              visible.add(entry.target.id);
+            } else {
+              visible.delete(entry.target.id);
+            }
+          });
+          setActive();
+        },
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+      );
+
+      spiedSections.forEach((section) => spy?.observe(section));
+    }
+
     return () => {
       window.removeEventListener("scroll", updateHeader);
       cleanupFaq.forEach((cleanup) => cleanup());
       observer?.disconnect();
+      spy?.disconnect();
     };
   }, []);
 
