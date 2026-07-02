@@ -137,16 +137,20 @@ const jsonLd = {
       "@id": `${siteUrl}#faq`,
       mainEntity: [
         {
+          q: "O que exatamente a Pastinha Médica faz?",
+          a: "Organizamos a sua documentação e elaboramos o seu currículo médico no formato exigido pelo edital da banca escolhida. Você envia os comprovantes e nós fazemos todo o trabalho técnico de organização e estruturação da pasta. Não é mentoria, curso ou consultoria: é a execução operacional do serviço.",
+        },
+        {
           q: "Quais documentos preciso enviar?",
-          a: "Certificados de cursos, monitorias, ligas, pesquisa, extensão, publicações, premiações e demais comprovantes acadêmicos. Logo no início do trabalho, você recebe um checklist para reunir tudo com tranquilidade.",
+          a: "Certificados de cursos, monitorias, ligas, pesquisa, extensão, publicações, premiações e demais comprovantes acadêmicos. Logo no início você recebe um checklist para reunir tudo com tranquilidade.",
         },
         {
-          q: "Posso escolher qualquer banca?",
-          a: "Sim. O currículo é estruturado conforme os critérios da banca ou instituição que você indicar. Também é possível preparar versões para mais de um processo seletivo.",
+          q: "Vocês atendem qualquer banca?",
+          a: "Sim. O currículo é elaborado conforme os critérios da banca ou instituição que você indicar. Também é possível preparar versões para mais de um processo seletivo.",
         },
         {
-          q: "Recebo versão editável?",
-          a: "Sim. Além do PDF final, você recebe uma versão editável, para que possa atualizar o material em inscrições futuras.",
+          q: "Como recebo o material?",
+          a: "Você recebe o currículo em PDF final e em versão editável, junto com a pasta organizada. Assim fica pronto para a inscrição e fácil de atualizar em processos futuros.",
         },
         {
           q: "Qual o prazo de entrega?",
@@ -154,11 +158,7 @@ const jsonLd = {
         },
         {
           q: "O currículo garante aprovação?",
-          a: "Não. O currículo não garante aprovação. O trabalho tem como objetivo organizar e estruturar suas informações de forma clara, profissional e adequada aos critérios documentais de cada processo seletivo.",
-        },
-        {
-          q: "Posso atualizar meu currículo futuramente?",
-          a: "Sim. Com a versão editável e a organização documental entregue, novas atualizações tornam-se simples: basta acrescentar os novos comprovantes à estrutura já montada.",
+          a: "Não. O currículo não garante aprovação. O objetivo é organizar e apresentar as suas informações de forma clara, profissional e adequada aos critérios documentais de cada processo seletivo.",
         },
         {
           q: "Quando abrem as inscrições da residência médica?",
