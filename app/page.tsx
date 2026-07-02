@@ -393,11 +393,10 @@ export default function Home() {
               <div className="plan-name">Essencial</div>
               <div className="plan-rule"></div>
               <ul>
-                <li>{check}Currículo adaptado ao barema</li>
+                <li>{check}Currículo adaptado ao barema (no formato exigido pela banca)</li>
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
-                <li>{check}Currículo Lattes (quando exigido ou recomendado)</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 250,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
