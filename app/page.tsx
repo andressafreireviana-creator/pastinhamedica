@@ -111,15 +111,16 @@ export default function Home() {
       <section className="hero hero--offer" aria-label="Apresentação">
         <div className="container">
           <div className="hero-offer reveal">
-            <h1 className="hero-name">Seu currículo para residência médica, elaborado conforme os critérios da banca.</h1>
-            <p className="hero-sub">Você envia sua documentação e nós organizamos a sua pasta e elaboramos o currículo no formato exigido pelo edital da banca escolhida. Um serviço operacional para estudantes de Medicina, internos e recém-formados na corrida pela residência.</p>
+            <p className="eyebrow hero-eyebrow"><span className="rule"></span>Organização curricular para residência médica</p>
+            <h1 className="hero-name">Seu currículo para residência médica, no padrão exigido pela banca.</h1>
+            <p className="hero-sub">Você envia a documentação e nós organizamos a pasta e elaboramos o currículo no formato do edital. Um serviço operacional para estudantes de Medicina, internos e recém-formados.</p>
 
-            <div className="alert alert--calm" role="note">
-              <svg className="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 19 6v5c0 4.3-2.9 7.3-7 8.6C7.9 18.3 5 15.3 5 11V6z" /><path d="M9 11.5l2 2 4-4" /></svg>
-              <div>
-                <span className="alert-label">Por que isso importa</span>
-                <p>Evite perder pontos por documentação desorganizada. Cada item entra na pasta no padrão que a banca espera avaliar.</p>
-              </div>
+            <div className="hero-actions">
+              <a className="btn btn-primary btn-lg" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+                {waIcon}
+                Quero organizar meu currículo
+              </a>
+              <a className="btn btn-line" href="#checklist">Baixar checklist de documentos</a>
             </div>
 
             <div className="opbox">
@@ -129,16 +130,8 @@ export default function Home() {
               </div>
               <div className="isnot">
                 <div className="op-h">✕ Não é</div>
-                <p>Mentoria, coaching, curso ou consultoria. É a execução técnica do trabalho, feita por nós.</p>
+                <p>Mentoria, coaching, curso ou consultoria. É a execução técnica, feita por nós.</p>
               </div>
-            </div>
-
-            <div className="hero-actions">
-              <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-                {waIcon}
-                Quero organizar meu currículo
-              </a>
-              <a className="btn btn-line" href="#checklist">Baixar checklist de documentos</a>
             </div>
 
             <div className="hero-rule"></div>
@@ -163,26 +156,26 @@ export default function Home() {
           <div className="grid-2 reveal">
             <div className="diff">
               <svg className="ico" viewBox="0 0 24 24"><path d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5V7.5H18"/><path d="M9.5 12h7M9.5 15.2h5"/></svg>
-              <div><h3>Organização documental baseada nos editais</h3><p>Cada documento entra na pasta seguindo o anexo e as exigências do processo seletivo.</p></div>
+              <div><h3>Organização documental conforme os editais</h3><p>Cada documento na pasta segue o anexo e as exigências do edital.</p></div>
             </div>
             <div className="diff">
               <svg className="ico" viewBox="0 0 24 24"><path d="M12 3.5 3.5 8 12 12.5 20.5 8z"/><path d="M3.5 12 12 16.5 20.5 12"/></svg>
-              <div><h3>Currículos personalizados conforme a banca</h3><p>Versões específicas para diferentes bancas de residência médica, no formato que cada uma pede.</p></div>
+              <div><h3>Currículos personalizados por banca</h3><p>Versões específicas para cada banca, no formato que ela exige.</p></div>
             </div>
             <div className="diff">
               <svg className="ico" viewBox="0 0 24 24"><path d="M8 6h11M8 12h11M8 18h9"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg>
-              <div><h3>Processo estruturado por critérios oficiais</h3><p>Cada etapa segue os critérios de pontuação e apresentação definidos no edital.</p></div>
+              <div><h3>Processo padronizado por critérios oficiais</h3><p>Cada etapa segue os critérios de pontuação e apresentação do edital.</p></div>
             </div>
             <div className="diff">
               <svg className="ico" viewBox="0 0 24 24"><path d="M12 3.5 19 6v5c0 4.3-2.9 7.3-7 8.6C7.9 18.3 5 15.3 5 11V6z"/><path d="M9 11.5l2 2 4-4"/></svg>
-              <div><h3>Metodologia para reduzir erros na análise</h3><p>Padronização e conferência pensadas para diminuir falhas e glosas por formato.</p></div>
+              <div><h3>Estrutura pensada para facilitar a análise</h3><p>Padronização e conferência para reduzir glosas por formato.</p></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 3 — O QUE VOCÊ RECEBE (primeiro, antes dos detalhes) */}
-      <section className="section" id="recebe" aria-label="O que você recebe">
+      <section className="section section--tint" id="recebe" aria-label="O que você recebe">
         <div className="container">
           <div className="section-head section-head--center reveal">
             <h2>O que você recebe</h2>
@@ -223,33 +216,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4 — COMO FUNCIONA (5 passos) */}
+      {/* 4 — COMO FUNCIONA (fluxo visual em 4 passos) */}
       <section className="section section--white" id="como-funciona" aria-label="Como funciona">
         <div className="container">
-          <div className="section-head reveal">
+          <div className="section-head section-head--center reveal">
             <h2>Como funciona</h2>
-            <p className="lead">Um processo simples e estruturado, do seu envio à entrega final. Você acompanha cada etapa.</p>
+            <p className="lead">Do seu envio à entrega final, em quatro passos. Você acompanha cada etapa.</p>
           </div>
-          <div className="timeline reveal">
-            <div className="tl-item">
-              <div className="tl-marker"><div className="tl-num">1</div><div className="tl-line"></div></div>
-              <div className="tl-body"><h3>Você envia sua documentação</h3><p>Reúne seus comprovantes com o apoio do nosso checklist e envia tudo pelo WhatsApp.</p></div>
+          <div className="flow reveal">
+            <div className="flow-step">
+              <div className="flow-ico"><span className="flow-n">1</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5V7.5H18"/><path d="M12 17v-6M9.5 13.2 12 10.7l2.5 2.5"/></svg></div>
+              <div className="flow-body"><h3>Envie seus documentos</h3><p>Reúna os comprovantes com o nosso checklist.</p></div>
             </div>
-            <div className="tl-item">
-              <div className="tl-marker"><div className="tl-num">2</div><div className="tl-line"></div></div>
-              <div className="tl-body"><h3>Analisamos seus documentos</h3><p>Conferimos cada comprovante e identificamos o que pontua no edital da banca escolhida.</p></div>
+            <div className="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5"/></svg></div>
+            <div className="flow-step">
+              <div className="flow-ico"><span className="flow-n">2</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5 6.2 5h5l2 2.2H20a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 20 19H5.5A1.5 1.5 0 0 1 4 17.5z"/></svg></div>
+              <div className="flow-body"><h3>Organizamos sua pasta</h3><p>Na ordem exigida pelo anexo do edital.</p></div>
             </div>
-            <div className="tl-item">
-              <div className="tl-marker"><div className="tl-num">3</div><div className="tl-line"></div></div>
-              <div className="tl-body"><h3>Organizamos toda a sua pasta</h3><p>Classificamos e estruturamos a documentação na ordem exigida pelo anexo do edital.</p></div>
+            <div className="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5"/></svg></div>
+            <div className="flow-step">
+              <div className="flow-ico"><span className="flow-n">3</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5 4.8 17 15 6.8l2.2 2.2L7 19.2z"/><path d="M14.2 4.6 16 2.8 20.2 7l-1.8 1.8z"/></svg></div>
+              <div className="flow-body"><h3>Elaboramos seu currículo</h3><p>No formato e nos critérios da banca.</p></div>
             </div>
-            <div className="tl-item">
-              <div className="tl-marker"><div className="tl-num">4</div><div className="tl-line"></div></div>
-              <div className="tl-body"><h3>Elaboramos seu currículo conforme a banca</h3><p>Montamos o currículo no formato e nos critérios da banca, com padronização e clareza de leitura.</p></div>
-            </div>
-            <div className="tl-item">
-              <div className="tl-marker"><div className="tl-num">5</div><div className="tl-line"></div></div>
-              <div className="tl-body"><h3>Você recebe tudo pronto para envio</h3><p>Pasta e currículo finalizados, em PDF e versão editável, prontos para a sua inscrição.</p></div>
+            <div className="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5"/></svg></div>
+            <div className="flow-step">
+              <div className="flow-ico"><span className="flow-n">4</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M8.4 12.2l2.5 2.5 4.7-4.9"/></svg></div>
+              <div className="flow-body"><h3>Receba tudo pronto</h3><p>Em PDF e versão editável, pronto para a inscrição.</p></div>
             </div>
           </div>
         </div>
@@ -307,7 +299,7 @@ export default function Home() {
       </section>
 
       {/* 6 — EDITAIS */}
-      <section className="section" id="editais" aria-label="Mapa dos editais">
+      <section className="section section--tint" id="editais" aria-label="Mapa dos editais">
         <div className="container">
           <div className="section-head reveal">
             <h2>Editais de residência médica: inscrições, datas e previsões</h2>
@@ -536,7 +528,7 @@ export default function Home() {
               <b>Pronto para deixar seu currículo no padrão da banca?</b>
               <span>Envie sua documentação pelo WhatsApp e cuidamos de toda a organização e elaboração para você.</span>
             </div>
-            <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-primary btn-lg" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
               {waIcon}
               Quero organizar meu currículo
             </a>
