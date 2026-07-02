@@ -399,7 +399,7 @@ export default function Home() {
                 <li>{check}Organização digital da documentação</li>
                 <li>{check}Currículo Lattes (quando exigido ou recomendado)</li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 350,00</span></div>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 250,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
             </div>
 
@@ -416,7 +416,7 @@ export default function Home() {
                 <li>{check}Organização digital da documentação</li>
                 <li>{check}Checklist da banca personalizado</li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 550,00</span></div>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span></div>
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
             </div>
 
@@ -433,7 +433,7 @@ export default function Home() {
                 <li>{check}Checklist da banca personalizado</li>
                 <li>{check}Relatório com a pontuação estimada do candidato</li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 850,00</span></div>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 750,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a>
             </div>
           </div>

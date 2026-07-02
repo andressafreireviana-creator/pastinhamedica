@@ -95,7 +95,7 @@ const jsonLd = {
       telephone: "+55-14-99145-7503",
       areaServed: "BR",
       inLanguage: "pt-BR",
-      priceRange: "R$350 a R$850",
+      priceRange: "R$250 a R$750",
       serviceType:
         "Organização de currículo médico e da pasta de documentos para residência médica, conforme o edital",
       slogan: "Sua trajetória acadêmica apresentada da forma correta.",
@@ -112,21 +112,21 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Plano Essencial",
-          price: "350.00",
+          price: "250.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },
         {
           "@type": "Offer",
           name: "Plano Avançado",
-          price: "550.00",
+          price: "450.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },
         {
           "@type": "Offer",
           name: "Plano Premium",
-          price: "850.00",
+          price: "750.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },
