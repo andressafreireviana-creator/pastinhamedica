@@ -913,3 +913,6 @@
   .plan ul{gap:13px;margin-bottom:28px;}
   .plan li{font-size:.94rem;line-height:1.5;}
   .plan-price .val{font-size:2rem;}
+
+  /* CTA final — seção mais compacta (evita excesso de respiro em volta da caixa) */
+  #contato{padding:clamp(44px,6vw,72px) 0;}
