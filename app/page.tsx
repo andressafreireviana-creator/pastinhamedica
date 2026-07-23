@@ -3,26 +3,13 @@ import Link from "next/link";
 import { LandingInteractions } from "./landing-interactions";
 import { ChecklistForm } from "./checklist-form";
 import { CvExampleModal } from "./cv-modal";
-import { editais } from "./editais-data";
 import { homeFaqItems } from "./faq-data";
+import { EditaisCta, EditalChips } from "./editais-view";
 import { SiteHeader, SiteFooter, WaFloat, phoneNumber, whatsappHref, waIcon } from "./chrome";
 
 // Placeholder on-brand em public/andressa.jpg. Substitua pelo arquivo real
 // (mesmo caminho) que a foto aparece automaticamente.
 const andressaPhotoSrc = "/andressa.jpg";
-
-function statusPill(status?: string) {
-  switch (status) {
-    case "Inscrição em breve":
-      return "rose";
-    case "Inscrições abertas":
-      return "ok";
-    case "Encerrado":
-      return "muted";
-    default:
-      return "ok";
-  }
-}
 
 function PortraitPlaceholder() {
   if (andressaPhotoSrc) {
@@ -67,30 +54,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pastinhamedica.
 
 const homeJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "@id": `${siteUrl}#faq`,
-      mainEntity: homeFaqItems.map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    },
-    {
-      "@type": "ItemList",
-      "@id": `${siteUrl}#editais`,
-      name: "Editais de residência médica acompanhados",
-      description:
-        "Principais editais de residência médica com previsão de inscrições, datas de prova e envio documental.",
-      itemListElement: editais.map((e, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: e.n,
-        url: e.url,
-      })),
-    },
-  ],
+  "@type": "FAQPage",
+  "@id": `${siteUrl}#faq`,
+  mainEntity: homeFaqItems.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
 };
 
 export default function Home() {
@@ -299,43 +269,9 @@ export default function Home() {
             <h2>Editais de residência médica: inscrições, datas e previsões</h2>
             <p className="lead">Acompanhe inscrições, datas de prova e previsões dos principais editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e outras bancas) e apresente seu currículo no padrão de cada uma.</p>
           </div>
-          <div className="editais-cta reveal">
-            <div className="ec-txt">
-              <b>Quer a pasta pronta com antecedência?</b>
-              <span>Comece agora, no seu ritmo, e chegue tranquilo à inscrição.</span>
-            </div>
-            <a className="btn btn-hook" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-              {waIcon}
-              Quero organizar meu currículo
-            </a>
-          </div>
-          <div className="editais-list reveal">
-            {editais.map((e) => {
-              const premium = e.t.startsWith("Premium");
-              return (
-                <div className="edital-card" key={e.n}>
-                  <div className="ec-top">
-                    <b>{e.n}</b>
-                    <span className={`pill ${premium ? "gold" : "sage"}`}>{e.t}</span>
-                  </div>
-                  <dl className="ec-dates">
-                    <div><dt>Inscrição</dt><dd>{e.inscricao ?? "A confirmar"}</dd></div>
-                    <div><dt>Prova</dt><dd>{e.prova ?? "A confirmar"}</dd></div>
-                  </dl>
-                  <div className="ec-foot">
-                    <span className={`pill ${statusPill(e.status)}`}>{e.status ?? "A confirmar"}</span>
-                    {e.url && (
-                      <a className="ec-link" href={e.url} target="_blank" rel="noopener noreferrer">
-                        Ver edital
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <p className="cal-note reveal">Lista de referência das principais bancas e instituições. As datas oficiais variam a cada ano e confirmamos cada edital junto com você.</p>
+          <EditaisCta />
+          <EditalChips />
+          <p className="plans-note reveal">Veja inscrições, datas de prova, status e o link oficial de cada banca. <Link href="/editais">Ver todos os editais</Link>.</p>
         </div>
       </section>
 

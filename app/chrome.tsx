@@ -41,7 +41,7 @@ export function SiteHeader({ base = "" }: { base?: string }) {
         <nav className="nav-links" aria-label="Navegação principal">
           <Link href={`${base}#recebe`}>O que você recebe</Link>
           <Link href={`${base}#como-funciona`}>Como funciona</Link>
-          <Link href={`${base}#editais`}>Editais</Link>
+          <Link href="/editais">Editais</Link>
           <Link href={`${base}#planos`}>Planos</Link>
           <Link href={`${base}#institucional`}>Quem sou</Link>
         </nav>
