@@ -83,7 +83,10 @@ export default function Home() {
       <header className="site-header" id="siteHeader">
         <div className="container header-inner">
           <a className="wordmark" href="#top" aria-label="Pastinha Médica, início">
-            <span className="wordmark-ico" aria-hidden="true"><span></span><span></span></span>
+            <span className="brandmark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3.5 9v8.4a1.3 1.3 0 0 0 1.3 1.3h14.4a1.3 1.3 0 0 0 1.3-1.3V10.2a1.3 1.3 0 0 0-1.3-1.3h-7.1l-1.6-1.7H4.8A1.3 1.3 0 0 0 3.5 8.5z"/><path d="M8.4 13.2l2.1 2.1L15 11"/></svg>
+              <span className="dot"></span>
+            </span>
             <span className="wordmark-text">
               <b>Pastinha&nbsp;Médica</b>
               <span className="wordmark-by">Por Andressa Freire Viana</span>
@@ -111,12 +114,12 @@ export default function Home() {
       <section className="hero hero--offer" aria-label="Apresentação">
         <div className="container">
           <div className="hero-offer reveal">
-            <p className="eyebrow hero-eyebrow"><span className="rule"></span>Organização curricular para residência médica</p>
+            <p className="eyebrow hero-eyebrow"><span className="rule"></span>Comece sua pasta antes do edital abrir</p>
             <h1 className="hero-name">Seu currículo para residência médica, no padrão exigido pela banca.</h1>
-            <p className="hero-sub">Você envia a documentação e nós organizamos a pasta e elaboramos o currículo no formato do edital. Um serviço operacional para estudantes de Medicina, internos e recém-formados.</p>
+            <p className="hero-sub">Você envia a documentação; nós organizamos a pasta e elaboramos o currículo no formato do edital. Serviço operacional para estudantes de Medicina, internos e recém-formados.</p>
 
             <div className="hero-actions">
-              <a className="btn btn-primary btn-lg" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-hook btn-lg" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
                 {waIcon}
                 Quero organizar meu currículo
               </a>
@@ -179,7 +182,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head section-head--center reveal">
             <h2>O que você recebe</h2>
-            <p className="lead">Tudo reunido em uma única pasta organizada: currículos, documentos e materiais de apoio, prontos para a inscrição.</p>
+            <p className="lead">Tudo em uma única pasta: currículos, documentos e materiais de apoio, prontos para a inscrição.</p>
           </div>
           <div className="folder-map reveal">
             <svg className="fm-lines" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -252,8 +255,8 @@ export default function Home() {
         <div className="container">
           <div className="section-head reveal">
             <h2>Por que o currículo importa</h2>
-            <p className="lead">Em muitos processos seletivos de residência médica, a análise curricular influencia diretamente a classificação final do candidato.</p>
-            <p className="body-note context-note">Atividades acadêmicas, monitorias, pesquisa científica, extensão universitária e produção intelectual costumam compor parte da pontuação dos editais. Apresentar tudo isso conforme os critérios da banca reduz problemas na inscrição e evita a perda de pontos por formato.</p>
+            <p className="lead">Em muitos processos seletivos, a análise curricular influencia diretamente a classificação final.</p>
+            <p className="body-note context-note">Monitorias, pesquisa, extensão e produção intelectual costumam pontuar no edital. Apresentar tudo no formato da banca evita perder pontos por formatação.</p>
           </div>
           <div className="grid-3 reveal">
             <div className="card">
@@ -303,14 +306,14 @@ export default function Home() {
         <div className="container">
           <div className="section-head reveal">
             <h2>Editais de residência médica: inscrições, datas e previsões</h2>
-            <p className="lead">Acompanhe as inscrições, as datas de prova e as previsões dos principais editais de residência médica (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e outras bancas) e apresente seu currículo conforme os critérios de cada banca.</p>
+            <p className="lead">Acompanhe inscrições, datas de prova e previsões dos principais editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e outras bancas) e apresente seu currículo no padrão de cada uma.</p>
           </div>
           <div className="editais-cta reveal">
             <div className="ec-txt">
               <b>Quer a pasta pronta com antecedência?</b>
-              <span>Comece a organização agora, no seu ritmo, e chegue tranquilo à inscrição.</span>
+              <span>Comece agora, no seu ritmo, e chegue tranquilo à inscrição.</span>
             </div>
-            <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-hook" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
               {waIcon}
               Quero organizar meu currículo
             </a>
@@ -354,9 +357,9 @@ export default function Home() {
             </div>
             <div className="inst-text reveal">
               <h2>Quem monta a sua pastinha</h2>
-              <p className="first">Oi! Eu sou a <span className="name-hl">Andressa Freire Viana</span>, quem opera a Pastinha Médica. Se você chegou até aqui, provavelmente está se preparando para a residência e quer deixar a documentação impecável, sem perder ponto por um detalhe de formato.</p>
-              <p>Sou comunicóloga e há mais de seis anos organizo informações e materiais técnicos. Já trabalhei com conteúdo médico em uma startup nacional, como Analista Curricular Médico e como Social Media. Hoje dedico meu tempo a entender os editais, a pontuação e o formato que cada banca exige.</p>
-              <p>Eu mesma cuido de cada pasta, com método e no padrão que a banca espera. Organizo a sua documentação e elaboro os seus currículos. É trabalho operacional, técnico e ao seu lado: <b>não é mentoria nem curso.</b></p>
+              <p className="first">Oi! Eu sou a <span className="name-hl">Andressa Freire Viana</span>, quem opera a Pastinha Médica. Se você chegou até aqui, está se preparando para a residência e quer a documentação impecável, sem perder ponto por formato.</p>
+              <p>Sou comunicóloga e há mais de seis anos organizo materiais técnicos. Já atuei com conteúdo médico em uma startup nacional, como Analista Curricular Médico. Hoje dedico meu tempo aos editais, à pontuação e ao formato que cada banca exige.</p>
+              <p>Eu mesma cuido de cada pasta, no padrão que a banca espera. Organizo a documentação e elaboro os currículos. É trabalho operacional e técnico: <b>não é mentoria nem curso.</b></p>
               <ul className="inst-points">
                 <li><span className="rb-check" aria-hidden="true">{check}</span>Experiência com conteúdo médico</li>
                 <li><span className="rb-check" aria-hidden="true">{check}</span>Atuação com análise curricular médica</li>
@@ -516,6 +519,26 @@ export default function Home() {
               <button className="faq-q" aria-expanded="false" aria-controls="faq8">Quais editais de residência médica vocês acompanham?<span className="faq-icon" aria-hidden="true"></span></button>
               <div className="faq-a" id="faq8"><div className="faq-a-inner">Acompanhamos os principais editais: PSU-MG (AREMG), USP-SP, USP-RP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês, HCPA, HC-UFPR, HC-UFMG, FAMERP, Beneficência Portuguesa e Hospital Moinhos de Vento, com a pasta de documentos montada conforme cada edital.</div></div>
             </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq9">Como montar meu currículo médico para a residência?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq9"><div className="faq-a-inner">Reúna seus comprovantes, identifique o que pontua no barema do edital e organize tudo no formato exigido pela banca. É exatamente esse trabalho que fazemos por você: você envia a documentação e recebe o currículo pronto, em PDF e versão editável.</div></div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq10">Quais são os formatos de currículo exigidos pela banca?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq10"><div className="faq-a-inner">Cada banca define seu próprio barema e a ordem de apresentação dos documentos. Por isso o currículo é adaptado ao formato de cada edital (USP, UNICAMP, UNIFESP e outras), com a pontuação organizada conforme os critérios oficiais.</div></div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq11">O que precisa colocar no currículo médico?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq11"><div className="faq-a-inner">Formação, monitorias, ligas acadêmicas, pesquisa e iniciação científica, extensão, publicações, premiações e cursos. Cada item entra com a comprovação e a carga horária no padrão que a banca pede.</div></div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq12">Como organizar minha pasta de documentos e certificações médicas?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq12"><div className="faq-a-inner">Separe os documentos por categoria, siga a ordem do anexo do edital e mantenha uma árvore de pastas padronizada. Fazemos essa organização digital completa e você ainda recebe um checklist para reunir tudo com tranquilidade.</div></div>
+            </div>
+            <div className="faq-item">
+              <button className="faq-q" aria-expanded="false" aria-controls="faq13">Como renomear meus arquivos de medicina?<span className="faq-icon" aria-hidden="true"></span></button>
+              <div className="faq-a" id="faq13"><div className="faq-a-inner">Use um padrão único de nomeação, como ANO_Tipo_Descrição (por exemplo, 2025_Monitoria_Fisiologia). Isso facilita a conferência da banca e evita retrabalho. Padronizamos todos os seus arquivos nesse formato.</div></div>
+            </div>
           </div>
         </div>
       </section>
@@ -526,9 +549,9 @@ export default function Home() {
           <div className="editais-cta cta-final reveal">
             <div className="ec-txt">
               <b>Pronto para deixar seu currículo no padrão da banca?</b>
-              <span>Envie sua documentação pelo WhatsApp e cuidamos de toda a organização e elaboração para você.</span>
+              <span>Envie sua documentação pelo WhatsApp e cuidamos de toda a organização para você.</span>
             </div>
-            <a className="btn btn-primary btn-lg" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-hook btn-lg" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
               {waIcon}
               Quero organizar meu currículo
             </a>
@@ -543,9 +566,9 @@ export default function Home() {
           <div className="footer-top">
             <div>
               <div className="footer-name">Pastinha Médica</div>
-              <div className="footer-tagline">Serviço operacional de organização documental e elaboração de currículos médicos para residência, conforme a banca. Por Andressa Freire Viana.</div>
+              <div className="footer-tagline">Organização documental e elaboração de currículos médicos para residência, conforme a banca. Por Andressa Freire Viana.</div>
             </div>
-            <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-hook" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
               {waIcon}
               Falar pelo WhatsApp
             </a>
