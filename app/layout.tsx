@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · Pastinha Médica",
   },
   description:
-    "Currículo médico e organização da pasta de documentos conforme o edital, para a residência médica. Acompanhe inscrições, datas de prova e previsões dos editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais) e monte sua pasta no padrão de cada banca.",
+    "Como montar o currículo médico para a residência: elaboramos o currículo no formato exigido pela banca e organizamos sua pasta de documentos e certificações conforme o edital. Saiba o que colocar no currículo, os formatos exigidos pela banca e como renomear seus arquivos. Acompanhe inscrições, datas de prova e previsões dos editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais).",
   applicationName: "Pastinha Médica",
   authors: [{ name: "Andressa Freire Viana" }],
   creator: "Andressa Freire Viana",
@@ -32,6 +32,12 @@ export const metadata: Metadata = {
   keywords: [
     "currículo médico",
     "currículo para residência médica",
+    "como montar meu currículo médico",
+    "o que colocar no currículo médico",
+    "formatos de currículo exigidos pela banca",
+    "como organizar pasta de documentos médicos",
+    "como organizar certificações médicas",
+    "como renomear arquivos de medicina",
     "organização de pasta conforme edital",
     "organização documental residência médica",
     "editais de residência médica 2026",
@@ -39,7 +45,6 @@ export const metadata: Metadata = {
     "datas de prova residência médica",
     "previsão de editais residência médica",
     "análise curricular médica",
-    "currículo Lattes residência",
     "currículo USP UNICAMP UNIFESP UNESP",
     "prova de títulos residência médica",
     "pastinha médica",
@@ -167,6 +172,26 @@ const jsonLd = {
         {
           q: "Quais editais de residência médica vocês acompanham?",
           a: "Acompanhamos os principais editais: PSU-MG (AREMG), USP-SP, USP-RP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês, HCPA, HC-UFPR, HC-UFMG, FAMERP, Beneficência Portuguesa e Hospital Moinhos de Vento, com a pasta de documentos montada conforme cada edital.",
+        },
+        {
+          q: "Como montar meu currículo médico para a residência?",
+          a: "Reúna seus comprovantes, identifique o que pontua no barema do edital e organize tudo no formato exigido pela banca. É exatamente esse trabalho que fazemos por você: você envia a documentação e recebe o currículo pronto, em PDF e versão editável.",
+        },
+        {
+          q: "Quais são os formatos de currículo exigidos pela banca?",
+          a: "Cada banca define seu próprio barema e a ordem de apresentação dos documentos. Por isso o currículo é adaptado ao formato de cada edital (USP, UNICAMP, UNIFESP e outras), com a pontuação organizada conforme os critérios oficiais.",
+        },
+        {
+          q: "O que precisa colocar no currículo médico?",
+          a: "Formação, monitorias, ligas acadêmicas, pesquisa e iniciação científica, extensão, publicações, premiações e cursos. Cada item entra com a comprovação e a carga horária no padrão que a banca pede.",
+        },
+        {
+          q: "Como organizar minha pasta de documentos e certificações médicas?",
+          a: "Separe os documentos por categoria, siga a ordem do anexo do edital e mantenha uma árvore de pastas padronizada. Fazemos essa organização digital completa e você ainda recebe um checklist para reunir tudo com tranquilidade.",
+        },
+        {
+          q: "Como renomear meus arquivos de medicina?",
+          a: "Use um padrão único de nomeação, como ANO_Tipo_Descrição (por exemplo, 2025_Monitoria_Fisiologia). Isso facilita a conferência da banca e evita retrabalho. Padronizamos todos os seus arquivos nesse formato.",
         },
       ].map(({ q, a }) => ({
         "@type": "Question",

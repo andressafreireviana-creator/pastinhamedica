@@ -924,3 +924,70 @@
   .section-head{margin-bottom:clamp(30px,3.6vw,44px);}
   .hero--offer{padding:clamp(40px,5.5vw,72px) 0 clamp(36px,5vw,60px);}
   #contato{padding:clamp(40px,5vw,64px) 0;}
+
+  /* ===================================================================
+     KIT DE MARCA — FUSÃO
+     Fundo sempre claro. Magenta = urgência (pontual): eyebrow, CTA de
+     conversão e bloco de aresta do hero. Sage em traço fino = acolhimento.
+     Navy só no rodapé, nunca na página inteira.
+     =================================================================== */
+
+  :root{
+    --graphite:#1E2A2E;        /* texto padrão (mais frio) */
+    --muted:#4A5A5E;           /* texto secundário */
+    --success:#7A9E7E;         /* validado */
+    --rose:#B0554A; --rose-text:#B0554A;   /* erro / alerta */
+    --gold:#B8974E;            /* selo raro */
+    --sage-deeper:#24494D;     /* hover primário */
+    --line:#C6D4D6;            /* borda padrão fria */
+    --hook:#E4127A;            /* urgência / conversão (pontual) */
+    --hook-hover:#C40F6B;
+    --hook-dark:#0E1730;       /* capa do rodapé */
+  }
+  body{color:var(--graphite);}
+
+  /* Marca no cabeçalho — badge circular petróleo + ponto magenta */
+  .brandmark{position:relative;width:40px;height:40px;flex:0 0 auto;border-radius:50%;
+    background:var(--ink);display:flex;align-items:center;justify-content:center;}
+  .brandmark svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+  .brandmark .dot{position:absolute;top:-1px;right:-1px;width:11px;height:11px;border-radius:50%;
+    background:var(--hook);border:2px solid var(--sand);}
+
+  /* Botão de conversão magenta (urgência) — cantos levemente mais soltos */
+  .btn-hook{background:var(--hook);color:#fff;border:1px solid var(--hook);border-radius:8px;
+    box-shadow:0 10px 24px -14px rgba(228,18,122,.55);}
+  .btn-hook:hover{background:var(--hook-hover);border-color:var(--hook-hover);}
+  .btn-hook:active{transform:translateY(1px);}
+  .btn-hook svg{stroke:#fff;}
+
+  /* Foco visível magenta (kit) */
+  :focus-visible{outline:2px solid var(--hook);outline-offset:2px;}
+  .btn:focus-visible,.faq-q:focus-visible,.wa-float:focus-visible,
+  .lf-field input:focus-visible{outline:2px solid var(--hook);outline-offset:2px;}
+
+  /* Hero — título navy, eyebrow magenta, bloco de aresta magenta + traço sage */
+  .hero--offer{position:relative;overflow:clip;}
+  .hero-offer .hero-name{color:var(--hook-dark);}
+  .hero-eyebrow{color:var(--hook);}
+  .hero-eyebrow .rule{background:var(--hook);}
+  .hero--offer::before{content:"";position:absolute;inset:0 0 0 auto;width:32%;
+    background:var(--hook);clip-path:polygon(52% 0,100% 0,100% 100%,74% 100%);
+    opacity:.92;pointer-events:none;z-index:0;}
+  .hero--offer::after{content:"";position:absolute;inset:0 0 0 auto;width:32%;
+    background:var(--sage);clip-path:polygon(49% 0,50.4% 0,72.4% 100%,71% 100%);
+    opacity:.5;pointer-events:none;z-index:0;}
+  .hero--offer .container{position:relative;z-index:1;}
+  @media(max-width:820px){
+    .hero--offer::before{width:52%;opacity:.10;}
+    .hero--offer::after{display:none;}
+  }
+
+  /* Rodapé — capa navy (único uso de fundo escuro) */
+  .footer{background:var(--hook-dark);border-top:1px solid rgba(255,255,255,.10);}
+  .footer-name{color:#fff;}
+  .footer-tagline{color:rgba(255,255,255,.60);}
+  .fc-block .fc-label{color:#fff;opacity:.66;}
+  .fc-block a,.fc-block span{color:#fff;}
+  .fc-block a:hover{color:var(--hook);}
+  .footer-bottom{border-top-color:rgba(255,255,255,.12);}
+  .footer-bottom small{color:rgba(255,255,255,.5);}
