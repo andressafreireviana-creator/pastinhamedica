@@ -1,12 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { LandingInteractions } from "./landing-interactions";
 import { ChecklistForm } from "./checklist-form";
 import { CvExampleModal } from "./cv-modal";
 import { editais } from "./editais-data";
-
-type PlanName = "Essencial" | "Avançado" | "Premium";
-
-const phoneNumber = "5514991457503";
+import { homeFaqItems } from "./faq-data";
+import { SiteHeader, SiteFooter, WaFloat, phoneNumber, whatsappHref, waIcon } from "./chrome";
 
 // Placeholder on-brand em public/andressa.jpg. Substitua pelo arquivo real
 // (mesmo caminho) que a foto aparece automaticamente.
@@ -24,18 +23,6 @@ function statusPill(status?: string) {
       return "ok";
   }
 }
-
-function whatsappHref(plan?: PlanName) {
-  const message = plan
-    ? `Olá, Andressa. Tenho interesse no Plano ${plan} para organizar meu currículo para residência médica.`
-    : "Olá, Andressa. Quero organizar meu currículo para residência médica.";
-
-  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-}
-
-const waIcon = (
-  <svg className="ico-wa" viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
-);
 
 function PortraitPlaceholder() {
   if (andressaPhotoSrc) {
@@ -76,37 +63,41 @@ const check = (
   <svg viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2" /></svg>
 );
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pastinhamedica.com.br";
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}#faq`,
+      mainEntity: homeFaqItems.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${siteUrl}#editais`,
+      name: "Editais de residência médica acompanhados",
+      description:
+        "Principais editais de residência médica com previsão de inscrições, datas de prova e envio documental.",
+      itemListElement: editais.map((e, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: e.n,
+        url: e.url,
+      })),
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div id="top">
       <LandingInteractions />
-      <header className="site-header" id="siteHeader">
-        <div className="container header-inner">
-          <a className="wordmark" href="#top" aria-label="Pastinha Médica, início">
-            <span className="brandmark" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3.5 9v8.4a1.3 1.3 0 0 0 1.3 1.3h14.4a1.3 1.3 0 0 0 1.3-1.3V10.2a1.3 1.3 0 0 0-1.3-1.3h-7.1l-1.6-1.7H4.8A1.3 1.3 0 0 0 3.5 8.5z"/><path d="M8.4 13.2l2.1 2.1L15 11"/></svg>
-              <span className="dot"></span>
-            </span>
-            <span className="wordmark-text">
-              <b>Pastinha&nbsp;Médica</b>
-              <span className="wordmark-by">Por Andressa Freire Viana</span>
-            </span>
-          </a>
-          <nav className="nav-links" aria-label="Navegação principal">
-            <a href="#recebe">O que você recebe</a>
-            <a href="#como-funciona">Como funciona</a>
-            <a href="#editais">Editais</a>
-            <a href="#planos">Planos</a>
-            <a href="#institucional">Quem sou</a>
-          </nav>
-          <div className="header-cta">
-            <a className="btn btn-primary btn-sm" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-              {waIcon}
-              <span className="lbl">WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="conteudo">
 
@@ -480,66 +471,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10 — FAQ */}
+      {/* 10 — FAQ (resumo; completo em /duvidas) */}
       <section className="section" id="faq" aria-label="Perguntas frequentes">
         <div className="container">
           <div className="section-head section-head--center reveal">
             <h2>Perguntas frequentes</h2>
           </div>
           <div className="faq reveal">
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq1">O que exatamente a Pastinha Médica faz?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq1"><div className="faq-a-inner">Organizamos a sua documentação e elaboramos o seu currículo médico no formato exigido pelo edital da banca escolhida. Você envia os comprovantes e nós fazemos todo o trabalho técnico de organização e estruturação da pasta. Não é mentoria, curso ou consultoria: é a execução operacional do serviço.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq2">Quais documentos preciso enviar?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq2"><div className="faq-a-inner">Certificados de cursos, monitorias, ligas, pesquisa, extensão, publicações, premiações e demais comprovantes acadêmicos. Logo no início você recebe um checklist para reunir tudo com tranquilidade.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq3">Vocês atendem qualquer banca?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq3"><div className="faq-a-inner">Sim. O currículo é elaborado conforme os critérios da banca ou instituição que você indicar. Também é possível preparar versões para mais de um processo seletivo.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq4">Como recebo o material?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq4"><div className="faq-a-inner">Você recebe o currículo em PDF final e em versão editável, junto com a pasta organizada. Assim fica pronto para a inscrição e fácil de atualizar em processos futuros.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq5">Qual o prazo de entrega?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq5"><div className="faq-a-inner">O prazo é combinado no início, conforme o volume de documentos e o plano escolhido. Você acompanha cada etapa até a entrega da pasta completa.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq6">O currículo garante aprovação?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq6"><div className="faq-a-inner">Não. O currículo não garante aprovação. O objetivo é organizar e apresentar as suas informações de forma clara, profissional e adequada aos critérios documentais de cada processo seletivo.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq7">Quando abrem as inscrições da residência médica?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq7"><div className="faq-a-inner">As datas variam a cada ano e por banca. USP, UNICAMP e UNIFESP costumam abrir as inscrições entre setembro e outubro, com provas entre novembro e dezembro. No mapa de editais do site você acompanha a previsão de inscrição, a data de prova e o link oficial de cada banca.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq8">Quais editais de residência médica vocês acompanham?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq8"><div className="faq-a-inner">Acompanhamos os principais editais: PSU-MG (AREMG), USP-SP, USP-RP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês, HCPA, HC-UFPR, HC-UFMG, FAMERP, Beneficência Portuguesa e Hospital Moinhos de Vento, com a pasta de documentos montada conforme cada edital.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq9">Como montar meu currículo médico para a residência?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq9"><div className="faq-a-inner">Reúna seus comprovantes, identifique o que pontua no barema do edital e organize tudo no formato exigido pela banca. É exatamente esse trabalho que fazemos por você: você envia a documentação e recebe o currículo pronto, em PDF e versão editável.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq10">Quais são os formatos de currículo exigidos pela banca?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq10"><div className="faq-a-inner">Cada banca define seu próprio barema e a ordem de apresentação dos documentos. Por isso o currículo é adaptado ao formato de cada edital (USP, UNICAMP, UNIFESP e outras), com a pontuação organizada conforme os critérios oficiais.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq11">O que precisa colocar no currículo médico?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq11"><div className="faq-a-inner">Formação, monitorias, ligas acadêmicas, pesquisa e iniciação científica, extensão, publicações, premiações e cursos. Cada item entra com a comprovação e a carga horária no padrão que a banca pede.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq12">Como organizar minha pasta de documentos e certificações médicas?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq12"><div className="faq-a-inner">Separe os documentos por categoria, siga a ordem do anexo do edital e mantenha uma árvore de pastas padronizada. Fazemos essa organização digital completa e você ainda recebe um checklist para reunir tudo com tranquilidade.</div></div>
-            </div>
-            <div className="faq-item">
-              <button className="faq-q" aria-expanded="false" aria-controls="faq13">Como renomear meus arquivos de medicina?<span className="faq-icon" aria-hidden="true"></span></button>
-              <div className="faq-a" id="faq13"><div className="faq-a-inner">Use um padrão único de nomeação, como ANO_Tipo_Descrição (por exemplo, 2025_Monitoria_Fisiologia). Isso facilita a conferência da banca e evita retrabalho. Padronizamos todos os seus arquivos nesse formato.</div></div>
-            </div>
+            {homeFaqItems.map((f) => (
+              <div className="faq-item" key={f.id}>
+                <button className="faq-q" aria-expanded="false" aria-controls={f.id}>
+                  {f.q}
+                  <span className="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div className="faq-a" id={f.id}><div className="faq-a-inner">{f.a}</div></div>
+              </div>
+            ))}
           </div>
+          <p className="plans-note reveal">Tem outra dúvida sobre currículo, formato da banca ou organização da pasta? <Link href="/duvidas">Ver todas as dúvidas</Link>.</p>
         </div>
       </section>
 
@@ -561,47 +510,13 @@ export default function Home() {
 
       </main>
 
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-top">
-            <div>
-              <div className="footer-name">Pastinha Médica</div>
-              <div className="footer-tagline">Organização documental e elaboração de currículos médicos para residência, conforme a banca. Por Andressa Freire Viana.</div>
-            </div>
-            <a className="btn btn-hook" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
-              {waIcon}
-              Falar pelo WhatsApp
-            </a>
-          </div>
-          <div className="footer-contact">
-            <div className="fc-block">
-              <div className="fc-label">WhatsApp</div>
-              <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">(14) 99145-7503</a>
-            </div>
-            <div className="fc-block">
-              <div className="fc-label">E-mail</div>
-              <a href="mailto:andressafreireviana@gmail.com">andressafreireviana@gmail.com</a>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <small>© 2026 Andressa Freire Viana. Todos os direitos reservados.</small>
-            <small>Pastinha Médica · Currículo médico · Residência médica</small>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
+      <WaFloat />
 
-      <a
-        className="wa-float"
-        href={whatsappHref()}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar pelo WhatsApp"
-      >
-        <span className="wa-float-ico" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20 11.4a7.4 7.4 0 0 1-10.9 6.6L4 19.4l1.4-4.1A7.4 7.4 0 1 1 20 11.4z"/></svg>
-        </span>
-        <span className="wa-float-label">Fale comigo</span>
-      </a>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
     </div>
   );
 }
