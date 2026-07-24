@@ -19,8 +19,12 @@ export const waIcon = (
 export function Brandmark() {
   return (
     <span className="brandmark" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M3.5 9v8.4a1.3 1.3 0 0 0 1.3 1.3h14.4a1.3 1.3 0 0 0 1.3-1.3V10.2a1.3 1.3 0 0 0-1.3-1.3h-7.1l-1.6-1.7H4.8A1.3 1.3 0 0 0 3.5 8.5z"/><path d="M8.4 13.2l2.1 2.1L15 11"/></svg>
-      <span className="dot"></span>
+      <svg viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="31" fill="#2F5D62" />
+        <path d="M15 43.8 V25.8 a3.2 3.2 0 0 1 3.2 -3.2 H29 l3.5 3.6 H45.8 a3.2 3.2 0 0 1 3.2 3.2 V43.8 a3.2 3.2 0 0 1 -3.2 3.2 H18.2 A3.2 3.2 0 0 1 15 43.8 Z" fill="none" stroke="#F4F6F7" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" />
+        <circle cx="46.5" cy="45.5" r="9.5" fill="#E4127A" />
+        <path d="M42.3 45.7 l2.9 2.9 L51 42.6" fill="none" stroke="#FFFFFF" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
     </span>
   );
 }
@@ -46,7 +50,7 @@ export function SiteHeader({ base = "" }: { base?: string }) {
           <Link href={`${base}#institucional`}>Quem sou</Link>
         </nav>
         <div className="header-cta">
-          <a className="btn btn-primary btn-sm" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-hook btn-sm" href={whatsappHref()} target="_blank" rel="noopener noreferrer">
             {waIcon}
             <span className="lbl">WhatsApp</span>
           </a>
