@@ -84,6 +84,11 @@ export function SiteFooter() {
             <a href="mailto:andressafreireviana@gmail.com">andressafreireviana@gmail.com</a>
           </div>
         </div>
+        <nav className="footer-links" aria-label="Páginas do site">
+          <Link href="/curriculo-para-residencia-medica">Currículo para residência médica</Link>
+          <Link href="/editais">Editais</Link>
+          <Link href="/duvidas">Dúvidas</Link>
+        </nav>
         <div className="footer-bottom">
           <small>© 2026 Andressa Freire Viana. Todos os direitos reservados.</small>
           <small>Pastinha Médica · Currículo médico · Residência médica</small>

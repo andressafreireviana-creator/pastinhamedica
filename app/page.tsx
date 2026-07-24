@@ -173,7 +173,7 @@ export default function Home() {
             <article className="fm-node n7"><svg className="ico" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14" rx="2"/><path d="M4 9.5h16M8 3.5v4M16 3.5v4"/></svg><span className="fm-t">Calendário de Editais</span></article>
             <article className="fm-node n8"><svg className="ico" viewBox="0 0 24 24"><path d="M12 6.2C10.3 5 8.2 4.5 6 4.5v13c2.2 0 4.3.5 6 1.7 1.7-1.2 3.8-1.7 6-1.7v-13c-2.2 0-4.3.5-6 1.7z"/><path d="M12 6.2v13"/></svg><span className="fm-t">Manual Estratégico</span></article>
           </div>
-          <p className="section-note reveal">Organize a sua trajetória de forma clara e objetiva, com tudo no lugar certo na hora da inscrição.</p>
+          <p className="section-note reveal">Organize a sua trajetória de forma clara e objetiva, com tudo no lugar certo na hora da inscrição. Entenda como montamos o <Link href="/curriculo-para-residencia-medica">currículo para residência médica</Link>.</p>
           <div className="recebe-cta reveal">
             <CvExampleModal />
           </div>

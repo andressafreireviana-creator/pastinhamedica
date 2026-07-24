@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteUrl}/curriculo-para-residencia-medica`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/editais`,
       lastModified,
       changeFrequency: "weekly",
