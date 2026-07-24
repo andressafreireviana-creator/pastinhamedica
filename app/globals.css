@@ -979,6 +979,18 @@
     .hero--offer::after{display:none;}
   }
 
+  /* Lista de etapas (página de currículo) */
+  .steps-list{list-style:none;margin:0;padding:0;max-width:720px;display:flex;flex-direction:column;gap:16px;}
+  .steps-list li{display:flex;gap:14px;align-items:flex-start;}
+  .steps-list .rb-check{margin-top:2px;}
+  .steps-list b{display:block;color:var(--ink);font-weight:600;font-size:1.02rem;}
+  .steps-list span{display:block;color:var(--muted);font-size:.95rem;line-height:1.5;margin-top:2px;}
+
+  /* Links internos no rodapé (navegação + SEO) */
+  .footer-links{display:flex;flex-wrap:wrap;gap:16px 26px;margin-bottom:28px;}
+  .footer-links a{color:rgba(255,255,255,.72);font-size:.9rem;letter-spacing:.01em;}
+  .footer-links a:hover{color:var(--hook);}
+
   /* Resumo compacto dos editais na home (chips) */
   .edital-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;}
   .edital-chips li{font-size:.85rem;font-weight:500;color:var(--ink);

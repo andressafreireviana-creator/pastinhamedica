@@ -18,11 +18,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pastinhamedica.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Pastinha Médica · Currículo para residência médica | Andressa Freire Viana",
+    default: "Currículo para residência médica: nós montamos o seu | Pastinha Médica",
     template: "%s · Pastinha Médica",
   },
   description:
-    "Como montar o currículo médico para a residência: elaboramos o currículo no formato exigido pela banca e organizamos sua pasta de documentos e certificações conforme o edital. Saiba o que colocar no currículo, os formatos exigidos pela banca e como renomear seus arquivos. Acompanhe inscrições, datas de prova e previsões dos editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais).",
+    "Serviço que monta o seu currículo para residência médica e organiza a pasta de documentos conforme o edital. Análise curricular, o que pontua, formato de cada banca e como enviar. Para estudantes de Medicina, internos e recém-formados. Acompanhe também os editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais).",
   applicationName: "Pastinha Médica",
   authors: [{ name: "Andressa Freire Viana" }],
   creator: "Andressa Freire Viana",
