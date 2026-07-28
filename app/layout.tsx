@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     "pastinha médica",
   ],
   alternates: { canonical: "/" },
+  verification: { google: "qMbxf7niIvkBKGg3Kn4DL9iAqD6Ze38tO71GqDQoqAo" },
   formatDetection: { telephone: false, email: false, address: false },
   openGraph: {
     type: "website",

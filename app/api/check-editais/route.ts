@@ -102,10 +102,17 @@ export async function GET(request: Request) {
     });
   }
 
+  const emailConfigured = Boolean(
+    process.env.WEB3FORMS_ACCESS_KEY ||
+      (process.env.RESEND_API_KEY && process.env.LEAD_TO_EMAIL),
+  );
+
   return Response.json({
     checked: targets.length,
     failed,
     kv: kvEnabled(),
+    emailConfigured,
+    active: kvEnabled() && emailConfigured,
     changed: changed.map((e) => e.n),
     emailed,
   });
