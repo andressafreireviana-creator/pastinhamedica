@@ -337,7 +337,6 @@ export default function Home() {
               <p className="plan-desc">Para quem disputa mais de uma banca.</p>
               <div className="plan-rule"></div>
               <ul>
-                <li>{check}Currículo Mestre (Vitae)</li>
                 <li>{check}Currículo adaptado ao barema (formato de acordo com a banca)</li>
                 <li>{check}Currículo Hospitais Premium</li>
                 <li>{check}Versão PDF</li>
