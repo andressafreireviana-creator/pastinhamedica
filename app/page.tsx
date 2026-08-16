@@ -336,7 +336,7 @@ export default function Home() {
               <p className="plan-desc">Para quem disputa mais de uma banca.</p>
               <div className="plan-rule"></div>
               <ul>
-                <li>{check}Currículo adaptado ao barema (formato de acordo com a banca)</li>
+                <li>{check}Dois currículos adaptados ao barema (formato de acordo com as bancas)</li>
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
