@@ -325,7 +325,6 @@ export default function Home() {
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
-                <li>{check}Análise curricular e checklist de pontuação para a banca escolhida</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 250,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
@@ -337,13 +336,11 @@ export default function Home() {
               <p className="plan-desc">Para quem disputa mais de uma banca.</p>
               <div className="plan-rule"></div>
               <ul>
-                <li>{check}Currículo Mestre (Vitae)</li>
-                <li>{check}Currículo adaptado ao barema (formato de acordo com a banca)</li>
-                <li>{check}Currículo Hospitais Premium</li>
+                <li>{check}Dois currículos adaptados ao barema (formato de acordo com as bancas)</li>
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
-                <li>{check}Análise curricular e checklist de pontuação para a banca escolhida</li>
+                <li>{check}<span><span className="plan-bonus">BÔNUS*</span>Análise curricular e checklist de pontuação para a banca escolhida</span></li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span></div>
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
@@ -356,12 +353,11 @@ export default function Home() {
               <ul>
                 <li>{check}Currículo Mestre (Vitae)</li>
                 <li>{check}Currículo adaptado ao barema (até duas bancas diferentes)</li>
-                <li>{check}Currículo Hospitais Premium</li>
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
                 <li>{check}Relatório com a pontuação estimada do candidato</li>
-                <li>{check}Análise curricular e checklist de pontuação para a banca escolhida</li>
+                <li>{check}<span><span className="plan-bonus">BÔNUS*</span>Análise curricular e checklist de pontuação para a banca escolhida</span></li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 750,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
