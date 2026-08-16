@@ -341,7 +341,7 @@ export default function Home() {
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
-                <li>{check}<span>Análise curricular e checklist de pontuação para a banca escolhida<span className="plan-bonus">BÔNUS*</span></span></li>
+                <li className="plan-bonus-row">{check}<span>Análise curricular e checklist de pontuação para a banca escolhida<span className="plan-bonus-tag">BÔNUS</span></span></li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span></div>
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
@@ -358,8 +358,8 @@ export default function Home() {
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital da documentação</li>
-                <li>{check}Relatório com a pontuação estimada do candidato</li>
-                <li>{check}<span>Análise curricular e checklist de pontuação para a banca escolhida<span className="plan-bonus">BÔNUS*</span></span></li>
+                <li>{check}Relatório com a pontuação (em porcentagem) estimada do candidato para a banca escolhida</li>
+                <li>{check}Análise curricular e checklist de pontuação para a banca escolhida</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 750,00</span></div>
               <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
