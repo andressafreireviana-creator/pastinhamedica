@@ -257,12 +257,13 @@
   /* Serviços adicionais — botão revelador (details/summary) + painel */
   .services-extra{margin-top:clamp(26px,3vw,40px);text-align:center;}
   .services-disclosure{max-width:900px;margin-inline:auto;}
-  .services-toggle{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:9px;
-    padding:12px 26px;border:1px solid var(--sage-deep);border-radius:var(--r-pill);
-    background:var(--white);color:var(--sage-deep);font-weight:600;font-size:.95rem;
-    transition:border-color .2s ease,background .2s ease;}
+  .services-toggle{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+    padding:14px 32px;border:1px solid var(--sage-deep);border-radius:var(--r-pill);
+    background:var(--sage-deep);color:#fff;font-weight:600;font-size:1.02rem;
+    box-shadow:var(--shadow-lift);
+    transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease;}
   .services-toggle::-webkit-details-marker{display:none;}
-  .services-toggle:hover{background:rgba(47,93,98,.05);border-color:var(--sage-deeper);}
+  .services-toggle:hover{background:var(--sage-deeper);border-color:var(--sage-deeper);transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(47,93,98,.5);}
   .services-chevron{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;
     stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease;}
   .services-disclosure[open] .services-chevron{transform:rotate(180deg);}
