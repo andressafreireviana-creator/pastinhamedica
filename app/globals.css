@@ -249,6 +249,8 @@
   .plan-kicker{font-size:.82rem;font-weight:600;color:var(--sage-deep);margin:7px 0 0;}
   .plan-kicker + .plan-rule{margin-top:14px;}
   .plan-subnote{display:block;font-size:.8rem;font-weight:400;color:var(--muted);line-height:1.4;margin-top:3px;}
+  .svc-name{font-weight:600;}
+  .plan ul.plan-services{gap:14px;}
   .plan-price{margin-bottom:22px;}
   .plan-price .pre{font-size:.78rem;letter-spacing:.04em;color:var(--muted);}
   .plan-price .val{font-size:1.85rem;font-weight:600;color:var(--ink);font-family:var(--font-inter),sans-serif;letter-spacing:-.01em;display:block;margin-top:2px;}

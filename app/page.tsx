@@ -318,7 +318,7 @@ export default function Home() {
           <div className="plans-grid reveal">
             <div className="plan p-ess">
               <div className="plan-name">Essencial</div>
-              <p className="plan-desc">Para quem vai concorrer em uma banca específica.</p>
+              <p className="plan-desc">Para quem precisa de uma solução para uma banca específica.</p>
               <p className="plan-kicker">Solução objetiva.</p>
               <div className="plan-rule"></div>
               <ul>
@@ -334,7 +334,7 @@ export default function Home() {
             <div className="plan featured p-adv">
               <span className="plan-flag">Mais escolhido</span>
               <div className="plan-name">Avançado</div>
-              <p className="plan-desc">Para quem disputa mais de uma banca.</p>
+              <p className="plan-desc">Para quem deseja uma solução mais completa para diferentes bancas.</p>
               <p className="plan-kicker">Melhor custo-benefício.</p>
               <div className="plan-rule"></div>
               <ul>
@@ -350,22 +350,17 @@ export default function Home() {
             </div>
 
             <div className="plan p-prem">
-              <div className="plan-name">Premium</div>
-              <p className="plan-desc">Para a organização mais completa da sua trajetória.</p>
-              <p className="plan-kicker">A experiência mais estratégica.</p>
+              <div className="plan-name">Serviços adicionais</div>
+              <p className="plan-desc">Serviços que complementam seu currículo e fortalecem sua apresentação profissional.</p>
               <div className="plan-rule"></div>
-              <ul>
-                <li>{check}Currículo Mestre (Vitae)</li>
-                <li>{check}Currículo adaptado ao barema para até duas bancas diferentes</li>
-                <li>{check}Currículo estratégico para processos seletivos hospitalares</li>
-                <li>{check}Versão PDF</li>
-                <li>{check}Versão editável</li>
-                <li>{check}Organização digital dos documentos e certificados</li>
-                <li>{check}Relatório com estimativa de pontuação conforme os critérios publicados pela banca</li>
-                <li>{check}Análise curricular e checklist de pontuação para a banca escolhida</li>
+              <ul className="plan-services">
+                <li>{check}<span><span className="svc-name">Currículo hospitalar</span><span className="plan-subnote">Currículo estratégico para processos seletivos hospitalares.</span></span></li>
+                <li>{check}<span><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para uma segunda banca.</span></span></li>
+                <li>{check}<span><span className="svc-name">LinkedIn</span><span className="plan-subnote">Organização e otimização do seu perfil profissional.</span></span></li>
+                <li>{check}<span><span className="svc-name">Site profissional</span><span className="plan-subnote">Criação de um site para apresentar sua trajetória e atuação.</span></span></li>
+                <li>{check}<span><span className="svc-name">Social Media</span><span className="plan-subnote">Estratégia e produção de conteúdo para suas redes profissionais.</span></span></li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 750,00</span></div>
-              <a className="btn btn-line" href={whatsappHref("Premium")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
+              <a className="btn btn-line" href={whatsappHref("Serviços adicionais")} target="_blank" rel="noopener noreferrer">CONSULTAR VALORES</a>
             </div>
           </div>
           <p className="plans-note reveal">Ficou em dúvida sobre qual plano combina com o seu momento? <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a> que eu te ajudo a escolher.</p>
