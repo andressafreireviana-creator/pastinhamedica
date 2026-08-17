@@ -2,12 +2,15 @@ import Link from "next/link";
 
 export const phoneNumber = "5514991457503";
 
-type PlanName = "Essencial" | "Avançado" | "Premium";
+type PlanName = "Essencial" | "Avançado" | "Premium" | "Serviços adicionais";
 
 export function whatsappHref(plan?: PlanName) {
-  const message = plan
-    ? `Olá, Andressa. Tenho interesse no Plano ${plan} para organizar meu currículo para residência médica.`
-    : "Olá, Andressa. Quero organizar meu currículo para residência médica.";
+  const message =
+    plan === "Serviços adicionais"
+      ? "Olá, Andressa. Tenho interesse nos serviços adicionais para fortalecer minha apresentação profissional."
+      : plan
+      ? `Olá, Andressa. Tenho interesse no Plano ${plan} para organizar meu currículo para residência médica.`
+      : "Olá, Andressa. Quero organizar meu currículo para residência médica.";
 
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 }
