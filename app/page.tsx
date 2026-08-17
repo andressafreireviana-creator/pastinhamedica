@@ -348,20 +348,25 @@ export default function Home() {
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span></div>
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
+          </div>
 
-            <div className="plan p-prem">
-              <div className="plan-name">Serviços adicionais</div>
-              <p className="plan-desc">Serviços que complementam seu currículo e fortalecem sua apresentação profissional.</p>
-              <div className="plan-rule"></div>
-              <ul className="plan-services">
-                <li>{check}<span><span className="svc-name">Currículo hospitalar</span><span className="plan-subnote">Currículo estratégico para processos seletivos hospitalares.</span></span></li>
-                <li>{check}<span><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para uma segunda banca.</span></span></li>
-                <li>{check}<span><span className="svc-name">LinkedIn</span><span className="plan-subnote">Organização e otimização do seu perfil profissional.</span></span></li>
-                <li>{check}<span><span className="svc-name">Site profissional</span><span className="plan-subnote">Criação de um site para apresentar sua trajetória e atuação.</span></span></li>
-                <li>{check}<span><span className="svc-name">Social Media</span><span className="plan-subnote">Estratégia e produção de conteúdo para suas redes profissionais.</span></span></li>
-              </ul>
-              <a className="btn btn-line" href={whatsappHref("Serviços adicionais")} target="_blank" rel="noopener noreferrer">CONSULTAR VALORES</a>
-            </div>
+          <div className="services-extra reveal">
+            <details className="services-disclosure">
+              <summary className="services-toggle">
+                Serviços adicionais
+                <svg className="services-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </summary>
+              <div className="services-panel">
+                <p className="services-intro">Serviços que complementam seu currículo e fortalecem sua apresentação profissional.</p>
+                <ul className="services-list">
+                  <li><span className="svc-name">Currículo hospitalar</span><span className="plan-subnote">Currículo estratégico para processos seletivos hospitalares.</span></li>
+                  <li><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para uma segunda banca.</span></li>
+                  <li><span className="svc-name">LinkedIn</span><span className="plan-subnote">Organização e otimização do seu perfil profissional.</span></li>
+                  <li><span className="svc-name">Site profissional</span><span className="plan-subnote">Criação de um site para apresentar sua trajetória e atuação.</span></li>
+                </ul>
+                <a className="btn btn-line services-cta" href={whatsappHref("Serviços adicionais")} target="_blank" rel="noopener noreferrer">CONSULTAR VALORES</a>
+              </div>
+            </details>
           </div>
           <p className="plans-note reveal">Ficou em dúvida sobre qual plano combina com o seu momento? <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Fale comigo no WhatsApp</a> que eu te ajudo a escolher.</p>
         </div>
