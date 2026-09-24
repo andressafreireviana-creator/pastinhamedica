@@ -313,7 +313,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head section-head--center reveal">
             <h2>Escolha como quer organizar seu currículo</h2>
-            <p className="lead">Escolha conforme o número de bancas que você vai disputar e o nível de organização e estratégia que você precisa.</p>
+            <p className="lead">Escolha conforme o nível de organização e estratégia que você precisa.</p>
           </div>
           <div className="plans-grid reveal">
             <div className="plan p-ess">
@@ -334,12 +334,12 @@ export default function Home() {
             <div className="plan featured p-adv">
               <span className="plan-flag">Mais escolhido</span>
               <div className="plan-name">Avançado</div>
-              <p className="plan-desc">Para quem deseja uma solução mais completa para diferentes bancas.</p>
+              <p className="plan-desc">Para quem deseja uma solução mais completa.</p>
               <p className="plan-kicker">Melhor custo-benefício.</p>
               <div className="plan-rule"></div>
               <ul>
                 <li>{check}<span>Currículo Mestre (Vitae)<span className="plan-subnote">Documento-base completo, que reúne toda a trajetória acadêmica e profissional.</span></span></li>
-                <li>{check}Currículo adaptado ao barema, de acordo com cada banca</li>
+                <li>{check}Currículo adaptado ao barema, no formato exigido pela banca</li>
                 <li>{check}Versão PDF</li>
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital dos documentos e certificados</li>
