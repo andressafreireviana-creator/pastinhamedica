@@ -1,3 +1,5 @@
+import { referralPromo } from "./promo";
+
 export type FaqItem = {
   id: string;
   q: string;
@@ -12,6 +14,12 @@ export const faqItems: FaqItem[] = [
     home: true,
     q: "O que exatamente a Pastinha Médica faz?",
     a: "Organizamos a sua documentação e elaboramos o seu currículo médico no formato exigido pelo edital da banca escolhida. Você envia os comprovantes e nós fazemos todo o trabalho técnico de organização e estruturação da pasta. Não é mentoria, curso ou consultoria: é a execução operacional do serviço.",
+  },
+  {
+    id: "faq-indicacao",
+    home: true,
+    q: "A Pastinha Médica tem desconto por indicação?",
+    a: `Sim. ${referralPromo.resumo} ${referralPromo.comoUsar}`,
   },
   {
     id: "faq-como-montar",

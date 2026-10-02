@@ -3,13 +3,14 @@ import Link from "next/link";
 import { LandingInteractions } from "../landing-interactions";
 import { SiteHeader, SiteFooter, WaFloat, whatsappHref, waIcon } from "../chrome";
 import { faqItems } from "../faq-data";
+import { PromoBand } from "../promo-view";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pastinhamedica.com.br";
 
 export const metadata: Metadata = {
   title: "Dúvidas: como montar o currículo médico e organizar a pasta",
   description:
-    "Respostas objetivas: como montar o currículo médico para a residência, os formatos exigidos pela banca, o que colocar no currículo, como organizar a pasta de documentos e certificações e como renomear os arquivos.",
+    "Respostas objetivas: como montar o currículo médico para a residência, os formatos exigidos pela banca, o que colocar no currículo, como organizar a pasta de documentos e certificações, como renomear os arquivos e o desconto de 10% por indicação (outubro a dezembro).",
   alternates: { canonical: "/duvidas" },
   openGraph: {
     type: "article",
@@ -72,6 +73,8 @@ export default function Duvidas() {
                 Quero organizar meu currículo
               </a>
             </div>
+
+            <PromoBand />
 
             <p className="cal-note reveal"><Link href="/">← Voltar para a página inicial</Link></p>
           </div>

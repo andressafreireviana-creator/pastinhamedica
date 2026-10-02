@@ -6,6 +6,7 @@ import { CvExampleModal } from "./cv-modal";
 import { homeFaqItems } from "./faq-data";
 import { EditaisCta, EditalChips } from "./editais-view";
 import { SiteHeader, SiteFooter, WaFloat, phoneNumber, whatsappHref, waIcon } from "./chrome";
+import { PromoBand, PromoStrip } from "./promo-view";
 
 // Placeholder on-brand em public/andressa.jpg. Substitua pelo arquivo real
 // (mesmo caminho) que a foto aparece automaticamente.
@@ -75,6 +76,7 @@ export default function Home() {
       <section className="hero hero--offer" aria-label="Apresentação">
         <div className="container">
           <div className="hero-offer reveal">
+            <PromoStrip />
             <p className="eyebrow hero-eyebrow"><span className="rule"></span>Comece sua pasta antes do edital abrir</p>
             <h1 className="hero-name">Seu currículo para residência médica, no padrão exigido pela banca.</h1>
             <p className="hero-sub">Você envia a documentação; nós organizamos a pasta e elaboramos o currículo no formato do edital. Serviço operacional para estudantes de Medicina, internos e recém-formados.</p>
@@ -349,6 +351,8 @@ export default function Home() {
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
           </div>
+
+          <PromoBand />
 
           <div className="services-extra reveal">
             <details className="services-disclosure">

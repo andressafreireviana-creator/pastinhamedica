@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { referralPromo } from "./promo";
 
 // Brand kit: uma só família (Inter). A hierarquia vem do peso, nunca de uma
 // segunda fonte. As variáveis --font-cormorant/--font-libre são mapeadas para
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · Pastinha Médica",
   },
   description:
-    "Serviço que monta o seu currículo para residência médica e organiza a pasta de documentos conforme o edital. Análise curricular, o que pontua, formato de cada banca e como enviar. Para estudantes de Medicina, internos e recém-formados. Acompanhe também os editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais).",
+    "Outubro, novembro e dezembro: 10% de desconto para quem indica e para quem é indicado. Serviço que monta o seu currículo para residência médica e organiza a pasta de documentos conforme o edital. Análise curricular, o que pontua, formato de cada banca e como enviar. Para estudantes de Medicina, internos e recém-formados. Acompanhe também os editais (USP, UNICAMP, UNIFESP, UNESP, Einstein, Sírio-Libanês e mais).",
   applicationName: "Pastinha Médica",
   authors: [{ name: "Andressa Freire Viana" }],
   creator: "Andressa Freire Viana",
@@ -47,6 +48,9 @@ export const metadata: Metadata = {
     "currículo USP UNICAMP UNIFESP UNESP",
     "prova de títulos residência médica",
     "pastinha médica",
+    "pastinha médica desconto",
+    "desconto por indicação currículo médico",
+    "cupom de desconto currículo residência médica",
   ],
   alternates: { canonical: "/" },
   verification: { google: "qMbxf7niIvkBKGg3Kn4DL9iAqD6Ze38tO71GqDQoqAo" },
@@ -58,13 +62,13 @@ export const metadata: Metadata = {
     siteName: "Pastinha Médica",
     title: "Currículo médico e editais de residência | Pastinha Médica",
     description:
-      "Currículo médico e organização da pasta de documentos conforme o edital. Acompanhe inscrições, datas e previsões dos editais de residência médica.",
+      "10% de desconto em outubro, novembro e dezembro para quem indica e para quem é indicado. Currículo médico e organização da pasta de documentos conforme o edital. Acompanhe inscrições, datas e previsões dos editais de residência médica.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Currículo médico e editais de residência | Pastinha Médica",
     description:
-      "Currículo médico e pasta de documentos no padrão do edital. Inscrições, datas e previsões dos editais de residência médica.",
+      "10% de desconto (out–dez) para quem indica e para quem é indicado. Currículo médico e pasta de documentos no padrão do edital. Inscrições, datas e previsões dos editais de residência médica.",
   },
   robots: {
     index: true,
@@ -93,8 +97,7 @@ const jsonLd = {
       "@type": "ProfessionalService",
       "@id": `${siteUrl}#business`,
       name: "Pastinha Médica",
-      description:
-        "Organização curricular e documental para candidatos à residência médica.",
+      description: `Organização curricular e documental para candidatos à residência médica. ${referralPromo.resumo}`,
       url: siteUrl,
       email: "andressafreireviana@gmail.com",
       telephone: "+55-14-99145-7503",
@@ -134,6 +137,21 @@ const jsonLd = {
           price: "750.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
+        },
+        {
+          "@type": "Offer",
+          "@id": `${siteUrl}#indicacao`,
+          name: `Desconto por indicação: ${referralPromo.titulo}`,
+          description: `${referralPromo.resumo} ${referralPromo.comoUsar}`,
+          url: `${siteUrl}/#indicacao`,
+          category: "Desconto por indicação",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "BRL",
+            description: `${referralPromo.percent}% de desconto sobre o valor do plano`,
+          },
+          validFrom: referralPromo.validFrom,
+          validThrough: referralPromo.validThrough,
         },
       ],
     },
