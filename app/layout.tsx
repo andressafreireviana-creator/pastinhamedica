@@ -127,6 +127,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Plano Avançado",
+          description: "Atende 1 banca. Para 2 bancas, acréscimo de R$ 100,00 (total R$ 550,00).",
           price: "450.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
