@@ -120,6 +120,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Plano Essencial",
+          description: "Atende 1 banca. Cada banca adicional: + R$ 100,00.",
           price: "250.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
@@ -127,7 +128,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Plano Avançado",
-          description: "Atende 1 banca. Para 2 bancas, acréscimo de R$ 100,00 (total R$ 550,00).",
+          description: "Atende 1 banca. Cada banca adicional: + R$ 100,00.",
           price: "450.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
@@ -136,6 +137,14 @@ const jsonLd = {
           "@type": "Offer",
           name: "Plano Premium",
           price: "750.00",
+          priceCurrency: "BRL",
+          category: "Organização curricular",
+        },
+        {
+          "@type": "Offer",
+          name: "Banca adicional",
+          description: "Adaptação do currículo para mais uma banca, em qualquer plano. Valor por banca adicional.",
+          price: "100.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },
