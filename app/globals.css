@@ -253,6 +253,7 @@
   .plan-price{margin-bottom:22px;}
   .plan-price .pre{font-size:.78rem;letter-spacing:.04em;color:var(--muted);}
   .plan-price .val{font-size:1.85rem;font-weight:600;color:var(--ink);font-family:var(--font-inter),sans-serif;letter-spacing:-.01em;display:block;margin-top:2px;}
+  .plan-price .plan-price-note{display:block;font-size:.82rem;color:var(--muted);margin-top:4px;}
   .plan .btn{width:100%;justify-content:center;}
   /* Serviços adicionais — botão revelador (details/summary) + painel */
   .services-extra{margin-top:clamp(26px,3vw,40px);text-align:center;}
