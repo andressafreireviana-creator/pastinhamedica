@@ -1040,3 +1040,35 @@
   .fc-block a:hover{color:var(--hook);}
   .footer-bottom{border-top-color:rgba(255,255,255,.12);}
   .footer-bottom small{color:rgba(255,255,255,.5);}
+
+  /* ---------- Campanha de indicação (10% para quem indica e para quem é indicado) ---------- */
+  .promo-strip{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:100%;
+    margin:0 0 22px;padding:7px 16px 7px 7px;border-radius:var(--r-pill);
+    background:rgba(228,18,122,.07);border:1px solid rgba(228,18,122,.32);
+    color:var(--graphite);font-size:.88rem;line-height:1.4;text-decoration:none;
+    transition:background .2s ease,border-color .2s ease;}
+  .promo-strip:hover{background:rgba(228,18,122,.12);border-color:var(--hook);}
+  .promo-strip b{color:var(--hook);}
+  .promo-strip-tag{background:var(--hook);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.1em;
+    padding:4px 10px;border-radius:var(--r-pill);white-space:nowrap;}
+  .promo-band{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(16px,2.5vw,28px);align-items:center;
+    margin-top:clamp(26px,3vw,40px);padding:clamp(18px,2.5vw,26px);background:var(--white);
+    border:2px solid var(--hook);border-radius:8px;box-shadow:0 10px 26px -18px rgba(228,18,122,.6);
+    scroll-margin-top:96px;}
+  .promo-band-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    width:104px;height:104px;border-radius:50%;background:var(--hook);color:#fff;text-align:center;line-height:1;}
+  .promo-band-badge b{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;}
+  .promo-band-badge span{font-size:.7rem;font-weight:600;margin-top:4px;text-transform:uppercase;letter-spacing:.06em;}
+  .promo-band-txt{display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .promo-band-kicker{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--hook);}
+  .promo-band-txt > b{font-size:clamp(1.05rem,1.6vw,1.25rem);font-weight:700;color:var(--ink);line-height:1.3;}
+  .promo-band-list{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px;font-size:.92rem;}
+  .promo-band-list strong{color:var(--graphite);}
+  .promo-band-how{font-size:.84rem;color:var(--muted);}
+  @media(max-width:780px){
+    .promo-strip{border-radius:12px;}
+    .promo-band{grid-template-columns:1fr;justify-items:start;}
+    .promo-band-badge{width:84px;height:84px;}
+    .promo-band-badge b{font-size:1.7rem;}
+    .promo-band .btn{width:100%;justify-content:center;}
+  }

@@ -2,12 +2,14 @@ import Link from "next/link";
 
 export const phoneNumber = "5514991457503";
 
-type PlanName = "Essencial" | "Avançado" | "Premium" | "Serviços adicionais";
+type PlanName = "Essencial" | "Avançado" | "Premium" | "Serviços adicionais" | "Indicação";
 
 export function whatsappHref(plan?: PlanName) {
   const message =
     plan === "Serviços adicionais"
       ? "Olá, Andressa. Tenho interesse nos serviços adicionais para fortalecer minha apresentação profissional."
+      : plan === "Indicação"
+      ? "Olá, Andressa. Vim por indicação de [nome de quem indicou] e quero usar os 10% de desconto da campanha de indicação."
       : plan
       ? `Olá, Andressa. Tenho interesse no Plano ${plan} para organizar meu currículo para residência médica.`
       : "Olá, Andressa. Quero organizar meu currículo para residência médica.";

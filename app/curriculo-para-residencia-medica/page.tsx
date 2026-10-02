@@ -3,6 +3,7 @@ import Link from "next/link";
 import { LandingInteractions } from "../landing-interactions";
 import { SiteHeader, SiteFooter, WaFloat, whatsappHref, waIcon } from "../chrome";
 import { EditaisCta } from "../editais-view";
+import { PromoBand } from "../promo-view";
 import { faqItems } from "../faq-data";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pastinhamedica.com.br";
@@ -188,6 +189,7 @@ export default function CurriculoResidencia() {
                 Quero organizar meu currículo
               </a>
             </div>
+            <PromoBand />
             <p className="cal-note reveal"><Link href="/">← Voltar para a página inicial</Link></p>
           </div>
         </section>
