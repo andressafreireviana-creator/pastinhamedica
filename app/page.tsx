@@ -330,7 +330,7 @@ export default function Home() {
                 <li>{check}Versão editável</li>
                 <li>{check}Organização digital dos documentos e certificados</li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 250,00</span></div>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 250,00</span><span className="plan-price-note">Valor para 1 banca<br /><b>+ R$ 100,00 por banca adicional</b></span></div>
               <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
 
@@ -348,7 +348,7 @@ export default function Home() {
                 <li>{check}Organização digital dos documentos e certificados</li>
                 <li className="plan-bonus-row">{check}<span>Análise curricular e checklist de pontuação para a banca escolhida<span className="plan-bonus-tag">BÔNUS</span></span></li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span><span className="plan-price-note">Para 1 banca · <b>2 bancas: + R$ 100,00</b></span></div>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span><span className="plan-price-note">Valor para 1 banca<br /><b>+ R$ 100,00 por banca adicional</b></span></div>
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
           </div>
@@ -363,7 +363,7 @@ export default function Home() {
                 <p className="services-intro">Serviços que complementam seu currículo e fortalecem sua apresentação profissional.</p>
                 <ul className="services-list">
                   <li><span className="svc-name">Currículo hospitalar</span><span className="plan-subnote">Currículo estratégico para processos seletivos hospitalares.</span></li>
-                  <li><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para uma segunda banca.</span></li>
+                  <li><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para mais uma banca: + R$ 100,00 por banca.</span></li>
                   <li><span className="svc-name">LinkedIn</span><span className="plan-subnote">Organização e otimização do seu perfil profissional.</span></li>
                   <li><span className="svc-name">Site profissional</span><span className="plan-subnote">Criação de um site para apresentar sua trajetória e atuação.</span></li>
                 </ul>
