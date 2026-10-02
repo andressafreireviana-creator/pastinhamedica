@@ -6,7 +6,7 @@ import { CvExampleModal } from "./cv-modal";
 import { homeFaqItems } from "./faq-data";
 import { EditaisCta, EditalChips } from "./editais-view";
 import { SiteHeader, SiteFooter, WaFloat, phoneNumber, whatsappHref, waIcon } from "./chrome";
-import { PromoBand, PromoStrip } from "./promo-view";
+import { PromoBand } from "./promo-view";
 
 // Placeholder on-brand em public/andressa.jpg. Substitua pelo arquivo real
 // (mesmo caminho) que a foto aparece automaticamente.
@@ -76,7 +76,7 @@ export default function Home() {
       <section className="hero hero--offer" aria-label="Apresentação">
         <div className="container">
           <div className="hero-offer reveal">
-            <PromoStrip />
+            <PromoBand id="indicacao-topo" className="promo-band--hero" compact />
             <p className="eyebrow hero-eyebrow"><span className="rule"></span>Comece sua pasta antes do edital abrir</p>
             <h1 className="hero-name">Seu currículo para residência médica, no padrão exigido pela banca.</h1>
             <p className="hero-sub">Você envia a documentação; nós organizamos a pasta e elaboramos o currículo no formato do edital. Serviço operacional para estudantes de Medicina, internos e recém-formados.</p>
@@ -317,6 +317,7 @@ export default function Home() {
             <h2>Escolha como quer organizar seu currículo</h2>
             <p className="lead">Escolha conforme o número de bancas que você vai disputar e o nível de organização e estratégia que você precisa.</p>
           </div>
+          <PromoBand className="promo-band--plans" />
           <div className="plans-grid reveal">
             <div className="plan p-ess">
               <div className="plan-name">Essencial</div>
@@ -351,8 +352,6 @@ export default function Home() {
               <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
           </div>
-
-          <PromoBand />
 
           <div className="services-extra reveal">
             <details className="services-disclosure">
