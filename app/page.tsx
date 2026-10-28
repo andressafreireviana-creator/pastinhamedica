@@ -315,12 +315,11 @@ export default function Home() {
         <div className="container">
           <div className="section-head section-head--center reveal">
             <h2>Escolha como quer organizar seu currículo</h2>
-            <p className="lead">Escolha conforme o nível de organização e estratégia que você precisa.</p>
+            <p className="lead">Currículo médico e organização de documentos em dois formatos: para quem está se inscrevendo nos editais de residência médica ou para quem quer organizar toda a trajetória profissional.</p>
           </div>
           <PromoBand className="promo-band--plans" />
           <div className="plans-grid reveal">
-            <div className="plan featured p-pastinha">
-              <span className="plan-flag">Recomendado</span>
+            <div className="plan p-pastinha">
               <div className="plan-name">Plano Pastinha</div>
               <p className="plan-desc">Para quem vai se inscrever em uma banca e quer chegar com tudo pronto, nos critérios do edital.</p>
               <p className="plan-kicker">Foco total na sua banca.</p>
@@ -345,7 +344,7 @@ export default function Home() {
                 <li>{check}Pasta digital com os documentos classificados, padronizados e renomeados</li>
               </ul>
               <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 370,00</span></div>
-              <a className="btn btn-line" href={whatsappHref("Combo Currículo Mestre")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
+              <a className="btn btn-primary" href={whatsappHref("Combo Currículo Mestre")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
           </div>
 
@@ -358,7 +357,6 @@ export default function Home() {
               <div className="services-panel">
                 <p className="services-intro">Serviços que complementam seu currículo e fortalecem sua apresentação profissional.</p>
                 <ul className="services-list">
-                  <li><span className="svc-name">Currículo hospitalar</span><span className="plan-subnote">Currículo estratégico para processos seletivos hospitalares.</span></li>
                   <li><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para mais uma banca: + R$ 120,00 por banca.</span></li>
                   <li><span className="svc-name">LinkedIn</span><span className="plan-subnote">Organização e otimização do seu perfil profissional.</span></li>
                   <li><span className="svc-name">Site profissional</span><span className="plan-subnote">Criação de um site para apresentar sua trajetória e atuação.</span></li>

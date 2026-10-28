@@ -1,18 +1,26 @@
-import { editais } from "./editais-data";
+import { editais, editalStatus, formatInscricao, formatProva, type EditalStatus } from "./editais-data";
 import { whatsappHref, waIcon } from "./chrome";
 
-function statusPill(status?: string) {
+function statusPill(status: EditalStatus) {
   switch (status) {
     case "Inscrição em breve":
       return "rose";
     case "Inscrições abertas":
       return "ok";
-    case "Encerrado":
+    case "Inscrições encerradas":
       return "muted";
     default:
       return "ok";
   }
 }
+
+// Inscrições abertas primeiro, depois as próximas e, por fim, as encerradas.
+const statusOrder: Record<EditalStatus, number> = {
+  "Inscrições abertas": 0,
+  "Inscrição em breve": 1,
+  "A confirmar": 2,
+  "Inscrições encerradas": 3,
+};
 
 // Caixa de urgência (acolhedora) usada na home e na página /editais.
 export function EditaisCta() {
@@ -32,9 +40,13 @@ export function EditaisCta() {
 
 // Lista completa (cards com datas, status e link oficial) — página /editais.
 export function EditaisList() {
+  const items = editais
+    .map((e) => ({ e, status: editalStatus(e) }))
+    .sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
+
   return (
     <div className="editais-list reveal">
-      {editais.map((e) => {
+      {items.map(({ e, status }) => {
         const premium = e.t.startsWith("Premium");
         return (
           <div className="edital-card" key={e.n}>
@@ -43,11 +55,12 @@ export function EditaisList() {
               <span className={`pill ${premium ? "gold" : "sage"}`}>{e.t}</span>
             </div>
             <dl className="ec-dates">
-              <div><dt>Inscrição</dt><dd>{e.inscricao ?? "A confirmar"}</dd></div>
-              <div><dt>Prova</dt><dd>{e.prova ?? "A confirmar"}</dd></div>
+              <div><dt>Inscrição</dt><dd>{formatInscricao(e)}</dd></div>
+              <div><dt>Prova</dt><dd>{formatProva(e)}</dd></div>
             </dl>
+            {e.obs && <p className="ec-note">{e.obs}</p>}
             <div className="ec-foot">
-              <span className={`pill ${statusPill(e.status)}`}>{e.status ?? "A confirmar"}</span>
+              <span className={`pill ${statusPill(status)}`}>{status}</span>
               {e.url && (
                 <a className="ec-link" href={e.url} target="_blank" rel="noopener noreferrer">
                   Ver edital
