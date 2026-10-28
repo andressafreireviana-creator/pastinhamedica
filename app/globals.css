@@ -750,9 +750,8 @@
 
   /* Planos — mais cor por acento, destaque com leve realce (acessível) */
   .plan{--accent:var(--sage);border-top:3px solid var(--accent);}
-  .plan.p-ess{--accent:#6FA6B8;}
-  .plan.p-adv{--accent:#2F5D62;}
-  .plan.p-prem{--accent:#B8A16A;}
+  .plan.p-mestre{--accent:#6FA6B8;}
+  .plan.p-pastinha{--accent:#2F5D62;}
   .plan li svg{stroke:var(--accent);}
   .plan .plan-rule{background:linear-gradient(90deg,var(--accent),transparent);height:2px;}
   .plan.featured{background:rgba(47,93,98,.045);border-color:var(--line-2);}
@@ -813,9 +812,8 @@
   /* Quem monta: foto alinhada ao topo do texto */
   .inst-grid{align-items:start;}
 
-  /* Planos: destaque dourado no recomendado (Avancado); Premium em petroleo */
-  .plan.p-adv{--accent:var(--gold);}
-  .plan.p-prem{--accent:#2F5D62;}
+  /* Planos: destaque dourado no recomendado (Plano Pastinha) */
+  .plan.p-pastinha{--accent:var(--gold);}
   .plan.featured{border:2px solid var(--gold);background:rgba(184,161,106,.10);}
   .plan.featured .plan-flag{background:var(--gold);color:#2b2b28;}
   .plan.featured:hover{box-shadow:0 2px 4px rgba(46,46,46,.05),0 26px 48px -24px rgba(184,161,106,.6);}

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const phoneNumber = "5514991457503";
 
-type PlanName = "Essencial" | "Avançado" | "Premium" | "Serviços adicionais" | "Indicação";
+type PlanName = "Plano Pastinha" | "Combo Currículo Mestre" | "Serviços adicionais" | "Indicação";
 
 export function whatsappHref(plan?: PlanName) {
   const message =
@@ -11,7 +11,7 @@ export function whatsappHref(plan?: PlanName) {
       : plan === "Indicação"
       ? "Olá, Andressa. Vim por indicação de [nome de quem indicou] e quero usar os 10% de desconto da campanha de indicação."
       : plan
-      ? `Olá, Andressa. Tenho interesse no Plano ${plan} para organizar meu currículo para residência médica.`
+      ? `Olá, Andressa. Tenho interesse no ${plan} para organizar meu currículo para residência médica.`
       : "Olá, Andressa. Quero organizar meu currículo para residência médica.";
 
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

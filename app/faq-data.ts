@@ -55,7 +55,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "faq-bancas",
     q: "Vocês atendem qualquer banca?",
-    a: "Sim. O currículo é elaborado conforme os critérios da banca ou instituição que você indicar. Cada plano cobre 1 banca. Para incluir mais bancas, cada banca adicional custa R$ 100,00 a mais.",
+    a: "Sim. O currículo é elaborado conforme os critérios da banca ou instituição que você indicar. O Plano Pastinha cobre 1 banca. Para incluir mais bancas, cada banca adicional custa R$ 120,00 a mais.",
   },
   {
     id: "faq-material",

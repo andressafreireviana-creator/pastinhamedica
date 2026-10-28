@@ -103,7 +103,7 @@ const jsonLd = {
       telephone: "+55-14-99145-7503",
       areaServed: "BR",
       inLanguage: "pt-BR",
-      priceRange: "R$250 a R$750",
+      priceRange: "R$370 a R$420",
       serviceType:
         "Organização de currículo médico e da pasta de documentos para residência médica, conforme o edital",
       slogan: "Sua trajetória acadêmica apresentada da forma correta.",
@@ -119,24 +119,19 @@ const jsonLd = {
       makesOffer: [
         {
           "@type": "Offer",
-          name: "Plano Essencial",
-          description: "Atende 1 banca. Cada banca adicional: + R$ 100,00.",
-          price: "250.00",
+          name: "Plano Pastinha",
+          description:
+            "Diagnóstico curricular, currículo voltado para a banca e pastinha com os documentos que pontuam. Atende apenas 1 banca. Cada banca adicional: + R$ 120,00.",
+          price: "420.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },
         {
           "@type": "Offer",
-          name: "Plano Avançado",
-          description: "Atende 1 banca. Cada banca adicional: + R$ 100,00.",
-          price: "450.00",
-          priceCurrency: "BRL",
-          category: "Organização curricular",
-        },
-        {
-          "@type": "Offer",
-          name: "Plano Premium",
-          price: "750.00",
+          name: "Combo Currículo Mestre",
+          description:
+            "Currículo Vitae completo, Currículo Lattes criado ou atualizado e pasta digital com os documentos classificados, padronizados e renomeados.",
+          price: "370.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },
@@ -144,7 +139,7 @@ const jsonLd = {
           "@type": "Offer",
           name: "Banca adicional",
           description: "Adaptação do currículo para mais uma banca, em qualquer plano. Valor por banca adicional.",
-          price: "100.00",
+          price: "120.00",
           priceCurrency: "BRL",
           category: "Organização curricular",
         },

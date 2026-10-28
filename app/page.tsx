@@ -319,37 +319,33 @@ export default function Home() {
           </div>
           <PromoBand className="promo-band--plans" />
           <div className="plans-grid reveal">
-            <div className="plan p-ess">
-              <div className="plan-name">Essencial</div>
-              <p className="plan-desc">Para quem precisa de uma solução para uma banca específica.</p>
-              <p className="plan-kicker">Solução objetiva.</p>
+            <div className="plan featured p-pastinha">
+              <span className="plan-flag">Recomendado</span>
+              <div className="plan-name">Plano Pastinha</div>
+              <p className="plan-desc">Para quem vai se inscrever em uma banca e quer chegar com tudo pronto, nos critérios do edital.</p>
+              <p className="plan-kicker">Foco total na sua banca.</p>
               <div className="plan-rule"></div>
               <ul>
-                <li>{check}Currículo adaptado ao barema, no formato exigido pela banca</li>
-                <li>{check}Versão PDF</li>
-                <li>{check}Versão editável</li>
-                <li>{check}Organização digital dos documentos e certificados</li>
+                <li>{check}<span>Diagnóstico curricular<span className="plan-subnote">Documento que cruza os seus dados com as informações do edital: média de pontuação, documentos que precisam de atenção e um diagnóstico completo do seu currículo.</span></span></li>
+                <li>{check}<span>Currículo voltado para a banca<span className="plan-subnote">Currículo no formato exigido pela banca, nos critérios da instituição.</span></span></li>
+                <li>{check}<span>Pastinha com os documentos que pontuam<span className="plan-subnote">Os documentos que pontuam em cada barema, renomeados de acordo com o edital.</span></span></li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 250,00</span><span className="plan-price-note">Valor para 1 banca<br /><b>+ R$ 100,00 por banca adicional</b></span></div>
-              <a className="btn btn-line" href={whatsappHref("Essencial")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 420,00</span><span className="plan-price-note">Valor para apenas 1 banca<br /><b>+ R$ 120,00 por banca adicional</b></span></div>
+              <a className="btn btn-primary" href={whatsappHref("Plano Pastinha")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
 
-            <div className="plan featured p-adv">
-              <span className="plan-flag">Mais escolhido</span>
-              <div className="plan-name">Avançado</div>
-              <p className="plan-desc">Para quem deseja uma solução mais completa para a sua banca.</p>
-              <p className="plan-kicker">Melhor custo-benefício.</p>
+            <div className="plan p-mestre">
+              <div className="plan-name">Combo Currículo Mestre</div>
+              <p className="plan-desc">Para quem quer toda a trajetória organizada em um só lugar, pronta para usar em qualquer processo.</p>
+              <p className="plan-kicker">A base completa da sua carreira.</p>
               <div className="plan-rule"></div>
               <ul>
-                <li>{check}<span>Currículo Mestre (Vitae)<span className="plan-subnote">Documento-base completo, que reúne toda a trajetória acadêmica e profissional.</span></span></li>
-                <li>{check}<span>Currículo adaptado ao barema de <b>apenas 1 banca</b></span></li>
-                <li>{check}Versão PDF</li>
-                <li>{check}Versão editável</li>
-                <li>{check}Organização digital dos documentos e certificados</li>
-                <li className="plan-bonus-row">{check}<span>Análise curricular e checklist de pontuação para a banca escolhida<span className="plan-bonus-tag">BÔNUS</span></span></li>
+                <li>{check}<span>Currículo Vitae completo<span className="plan-subnote">Com sumário, trajetória acadêmica e profissional e anexos organizados.</span></span></li>
+                <li>{check}Currículo Lattes criado ou atualizado</li>
+                <li>{check}Pasta digital com os documentos classificados, padronizados e renomeados</li>
               </ul>
-              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 450,00</span><span className="plan-price-note">Valor para 1 banca<br /><b>+ R$ 100,00 por banca adicional</b></span></div>
-              <a className="btn btn-primary" href={whatsappHref("Avançado")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
+              <div className="plan-price"><span className="pre">Investimento</span><span className="val">R$ 370,00</span></div>
+              <a className="btn btn-line" href={whatsappHref("Combo Currículo Mestre")} target="_blank" rel="noopener noreferrer">Quero este plano</a>
             </div>
           </div>
 
@@ -363,7 +359,7 @@ export default function Home() {
                 <p className="services-intro">Serviços que complementam seu currículo e fortalecem sua apresentação profissional.</p>
                 <ul className="services-list">
                   <li><span className="svc-name">Currículo hospitalar</span><span className="plan-subnote">Currículo estratégico para processos seletivos hospitalares.</span></li>
-                  <li><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para mais uma banca: + R$ 100,00 por banca.</span></li>
+                  <li><span className="svc-name">Banca adicional</span><span className="plan-subnote">Adaptação do currículo para mais uma banca: + R$ 120,00 por banca.</span></li>
                   <li><span className="svc-name">LinkedIn</span><span className="plan-subnote">Organização e otimização do seu perfil profissional.</span></li>
                   <li><span className="svc-name">Site profissional</span><span className="plan-subnote">Criação de um site para apresentar sua trajetória e atuação.</span></li>
                 </ul>
